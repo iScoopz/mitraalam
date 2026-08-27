@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel:wght@400;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+:root {
+  --bg-navy-dark: #061527;
+  --bg-navy-card: #0A1D34;
+  --bg-cream-light: #FAF7F0;
+  --bg-cream-card: #FDFBF7;
+  --gold-primary: #D4AF37;
+  --gold-light: #E6C875;
+  --gold-dark: #9A7B1C;
+  --text-navy: #061527;
+  --text-dark: #1E293B;
+  --text-muted: #64748B;
+  --text-cream: #FDFBF7;
+}
+
+body {
+  background-color: var(--bg-cream-light);
+  color: var(--text-dark);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* Custom Fonts */
+.font-serif-luxury {
+  font-family: 'Cinzel', 'Playfair Display', serif;
+}
+
+.font-playfair {
+  font-family: 'Playfair Display', serif;
+}
+
+.font-script-luxury {
+  font-family: 'Alex Brush', cursive;
+}
+
+.font-sans-clean {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* Luxury Color Gradients */
+.gold-text-gradient {
+  background: linear-gradient(135deg, #FFF0BA 0%, #D4AF37 50%, #AA820A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-button-gradient {
+  background: linear-gradient(135deg, #E6C875 0%, #D4AF37 50%, #B89025 100%);
+  transition: all 0.3s ease;
+}
+
+.gold-button-gradient:hover {
+  background: linear-gradient(135deg, #F3D98B 0%, #E2BD48 50%, #C9A030 100%);
+  box-shadow: 0 10px 25px -5px rgba(212, 175, 55, 0.4);
+}
+
+.navy-gradient {
+  background: linear-gradient(180deg, #061527 0%, #081C33 100%);
+}
+
+/* Greek Key Border Motif */
+.greek-key-border {
+  background-image: repeating-linear-gradient(
+    90deg,
+    #D4AF37 0,
+    #D4AF37 8px,
+    transparent 8px,
+    transparent 12px,
+    #D4AF37 12px,
+    #D4AF37 20px
+  );
+}
+
+.greek-pattern-bg {
+  background-image: radial-gradient(rgba(212, 175, 55, 0.12) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+/* Glassmorphism & Shadow Cards */
+.cream-card-shadow {
+  box-shadow: 0 20px 40px -15px rgba(6, 21, 39, 0.07);
+}
+
+.gold-glow {
+  box-shadow: 0 0 30px rgba(212, 175, 55, 0.25);
+}
+
+.navy-card-shadow {
+  box-shadow: 0 25px 50px -12px rgba(2, 8, 16, 0.6);
+}
+
+/* Rotating Seal Animation */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 25s linear infinite;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #061527;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D4AF37;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #E6C875;
+}
