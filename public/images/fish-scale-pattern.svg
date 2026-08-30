@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60">
+  <defs>
+    <radialGradient id="scale-grad" cx="50%" cy="100%" r="90%">
+      <stop offset="0%" stop-color="#2dd4bf" stop-opacity="0.16" />
+      <stop offset="60%" stop-color="#0e7490" stop-opacity="0.08" />
+      <stop offset="100%" stop-color="#021a24" stop-opacity="0.25" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Scale 1 (Top-Left & Top-Right) -->
+  <path d="M -30 0 A 30 30 0 0 1 30 0 A 30 30 0 0 1 90 0 L 90 30 L -30 30 Z" fill="none" stroke="rgba(255,255,255,0.07)" stroke-width="1.5"/>
+  <path d="M 0 30 A 30 30 0 0 1 60 30" fill="none" stroke="rgba(255,255,255,0.09)" stroke-width="1.5"/>
+  <path d="M -30 30 A 30 30 0 0 1 30 30" fill="none" stroke="rgba(255,255,255,0.09)" stroke-width="1.5"/>
+  <path d="M 30 30 A 30 30 0 0 1 90 30" fill="none" stroke="rgba(255,255,255,0.09)" stroke-width="1.5"/>
+
+  <!-- Lower tier scales -->
+  <path d="M -30 60 A 30 30 0 0 1 30 60" fill="none" stroke="rgba(255,255,255,0.09)" stroke-width="1.5"/>
+  <path d="M 0 60 A 30 30 0 0 1 60 60" fill="none" stroke="rgba(255,255,255,0.09)" stroke-width="1.5"/>
+  <path d="M 30 60 A 30 30 0 0 1 90 60" fill="none" stroke="rgba(255,255,255,0.09)" stroke-width="1.5"/>
+
+  <!-- Shading layer for 3D scalloped fish scale depth -->
+  <path d="M 0 30 A 30 30 0 0 1 60 30 L 60 45 A 30 30 0 0 1 0 45 Z" fill="url(#scale-grad)"/>
+  <path d="M -30 60 A 30 30 0 0 1 30 60 L 30 75 A 30 30 0 0 1 -30 75 Z" fill="url(#scale-grad)"/>
+  <path d="M 30 60 A 30 30 0 0 1 90 60 L 90 75 A 30 30 0 0 1 30 75 Z" fill="url(#scale-grad)"/>
+</svg>

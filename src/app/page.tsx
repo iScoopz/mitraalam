@@ -3,61 +3,51 @@
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import FeaturePillars from "@/components/FeaturePillars";
-import OurStory from "@/components/OurStory";
-import PortfolioShowcase, { ProjectItem } from "@/components/PortfolioShowcase";
-import ReservationBanner from "@/components/ReservationBanner";
-import GalleryAndReviews from "@/components/GalleryAndReviews";
+import ExportCertifications from "@/components/ExportCertifications";
+import ProductShowcase from "@/components/ProductShowcase";
+import AboutUs from "@/components/AboutUs";
+import FacilitiesSection from "@/components/FacilitiesSection";
+import GallerySlider from "@/components/GallerySlider";
 import Footer from "@/components/Footer";
-import ProjectModal from "@/components/ProjectModal";
-import BookingModal from "@/components/BookingModal";
+import ProductModal, { SeafoodProduct } from "@/components/ProductModal";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 
 export default function Home() {
-  const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null);
-  const [bookingDetails, setBookingDetails] = useState<{
-    date: string;
-    time: string;
-    guests: string;
-    name: string;
-  } | null>(null);
-  const [isBookingOpen, setIsBookingOpen] = useState(false);
-
-  const handleOpenGeneralBooking = () => {
-    // Scroll to reservations section
-    const el = document.getElementById("reservations");
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+  const [selectedProduct, setSelectedProduct] = useState<SeafoodProduct | null>(null);
 
   return (
-    <main className="min-h-screen flex flex-col bg-[#FAF7F0]">
-      {/* Fixed Navbar */}
-      <Navbar onOpenBooking={handleOpenGeneralBooking} />
+    <main className="min-h-screen flex flex-col bg-[#041822] text-[#f1f5f9]">
+      {/* Fixed Navigation Bar */}
+      <Navbar />
 
-      {/* Main Sections */}
-      <Hero onOpenBooking={handleOpenGeneralBooking} />
-      <FeaturePillars />
-      <OurStory />
-      <PortfolioShowcase onSelectProject={(p) => setSelectedProject(p)} />
-      <ReservationBanner
-        onBookingSuccess={(details) => setBookingDetails(details)}
-      />
-      <GalleryAndReviews />
+      {/* Hero Section */}
+      <Hero />
 
-      {/* Footer */}
+      {/* Export Destinations & HACCP Certifications */}
+      <ExportCertifications />
+
+      {/* Our Products with Horizontal Side Slider */}
+      <ProductShowcase onSelectProduct={(p) => setSelectedProduct(p)} />
+
+      {/* About Us, Commitment & Core Values */}
+      <AboutUs />
+
+      {/* Processing Capacity & Cold Storage Facilities Stats */}
+      <FacilitiesSection />
+
+      {/* Visual Atmosphere & Facility Gallery Horizontal Slider */}
+      <GallerySlider />
+
+      {/* Footer with Maps, Location, Contact & Social */}
       <Footer />
 
-      {/* Modals */}
-      <ProjectModal
-        project={selectedProject}
-        onClose={() => setSelectedProject(null)}
-        onBookCall={handleOpenGeneralBooking}
-      />
+      {/* Floating WhatsApp Quick Action */}
+      <FloatingWhatsApp />
 
-      <BookingModal
-        details={bookingDetails}
-        onClose={() => setBookingDetails(null)}
+      {/* Detailed Product Specifications Modal */}
+      <ProductModal
+        product={selectedProduct}
+        onClose={() => setSelectedProduct(null)}
       />
     </main>
   );

@@ -1,125 +1,105 @@
-@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel:wght@400;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
 @import "tailwindcss";
 
 :root {
-  --bg-navy-dark: #061527;
-  --bg-navy-card: #0A1D34;
-  --bg-cream-light: #FAF7F0;
-  --bg-cream-card: #FDFBF7;
-  --gold-primary: #D4AF37;
-  --gold-light: #E6C875;
-  --gold-dark: #9A7B1C;
-  --text-navy: #061527;
-  --text-dark: #1E293B;
-  --text-muted: #64748B;
-  --text-cream: #FDFBF7;
+  --bg-ocean-dark: #041822;
+  --bg-ocean-deep: #072331;
+  --bg-ocean-mid: #0b3548;
+  --bg-ocean-teal: #104c64;
+  --bg-cyan-soft: #429ca0;
+  --bg-cyan-light: #e0f2f1;
+  --accent-cyan: #22d3ee;
+  --accent-teal: #14b8a6;
+  --metallic-card: #e4edf4;
+  --metallic-border: #cbdce8;
+  --text-ocean-dark: #072331;
 }
 
 body {
-  background-color: var(--bg-cream-light);
-  color: var(--text-dark);
+  background-color: #041822;
+  color: #f1f5f9;
   font-family: 'Plus Jakarta Sans', sans-serif;
   overflow-x: hidden;
   scroll-behavior: smooth;
 }
 
-/* Custom Fonts */
-.font-serif-luxury {
-  font-family: 'Cinzel', 'Playfair Display', serif;
+/* Custom Typography */
+.font-display {
+  font-family: 'Outfit', sans-serif;
 }
 
-.font-playfair {
-  font-family: 'Playfair Display', serif;
+.font-tech {
+  font-family: 'Space Grotesk', monospace;
 }
 
-.font-script-luxury {
-  font-family: 'Alex Brush', cursive;
-}
-
-.font-sans-clean {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-}
-
-/* Luxury Color Gradients */
-.gold-text-gradient {
-  background: linear-gradient(135deg, #FFF0BA 0%, #D4AF37 50%, #AA820A 100%);
+/* Silver Metallic 3D Text Gradient */
+.silver-metallic-text {
+  background: linear-gradient(180deg, #ffffff 0%, #e2ecf4 35%, #9cb8cc 70%, #ffffff 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.6));
 }
 
-.gold-button-gradient {
-  background: linear-gradient(135deg, #E6C875 0%, #D4AF37 50%, #B89025 100%);
-  transition: all 0.3s ease;
+/* Metallic Brushed Silver Card */
+.metallic-card {
+  background: linear-gradient(145deg, #f8fbfd 0%, #e2ecf3 50%, #d2e1ec 100%);
+  box-shadow: 0 10px 25px -5px rgba(4, 24, 34, 0.25), inset 0 1px 1px rgba(255, 255, 255, 0.9);
+  border: 1px solid #c5d9e8;
 }
 
-.gold-button-gradient:hover {
-  background: linear-gradient(135deg, #F3D98B 0%, #E2BD48 50%, #C9A030 100%);
-  box-shadow: 0 10px 25px -5px rgba(212, 175, 55, 0.4);
+.metallic-ribbon {
+  background: linear-gradient(90deg, #d3e1eb 0%, #f4f8fb 25%, #ffffff 50%, #d8e5ef 75%, #bccedc 100%);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25), inset 0 2px 3px rgba(255, 255, 255, 0.9);
 }
 
-.navy-gradient {
-  background: linear-gradient(180deg, #061527 0%, #081C33 100%);
+.metallic-facility-card {
+  background: linear-gradient(135deg, #d6e4ee 0%, #c4d7e4 50%, #b3c9d8 100%);
+  box-shadow: 0 12px 30px -8px rgba(3, 17, 24, 0.4), inset 0 1px 2px rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.6);
 }
 
-/* Greek Key Border Motif */
-.greek-key-border {
-  background-image: repeating-linear-gradient(
-    90deg,
-    #D4AF37 0,
-    #D4AF37 8px,
-    transparent 8px,
-    transparent 12px,
-    #D4AF37 12px,
-    #D4AF37 20px
-  );
+/* Clean Ocean Gradients Without Texture */
+.ocean-hero-gradient {
+  background: linear-gradient(180deg, #05202c 0%, #082d3e 45%, #0b384d 100%);
 }
 
-.greek-pattern-bg {
-  background-image: radial-gradient(rgba(212, 175, 55, 0.12) 1px, transparent 0);
-  background-size: 24px 24px;
+.ocean-teal-banner {
+  background: linear-gradient(180deg, #082d3e 0%, #0d4157 50%, #104c64 100%);
 }
 
-/* Glassmorphism & Shadow Cards */
-.cream-card-shadow {
-  box-shadow: 0 20px 40px -15px rgba(6, 21, 39, 0.07);
+.ocean-teal-section {
+  background: linear-gradient(180deg, #3a8b94 0%, #43969e 50%, #3a8b94 100%);
 }
 
-.gold-glow {
-  box-shadow: 0 0 30px rgba(212, 175, 55, 0.25);
+.ocean-teal-card {
+  background: linear-gradient(180deg, #072938 0%, #051e2a 100%);
+  border: 1px solid rgba(34, 211, 238, 0.2);
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.5);
 }
 
-.navy-card-shadow {
-  box-shadow: 0 25px 50px -12px rgba(2, 8, 16, 0.6);
+/* Hide scrollbar for clean carousels */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
-/* Rotating Seal Animation */
-@keyframes spin-slow {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.animate-spin-slow {
-  animation: spin-slow 25s linear infinite;
-}
-
-/* Custom Scrollbar */
+/* Custom Scrollbar for Main Viewport */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #061527;
+  background: #041822;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #D4AF37;
+  background: #14b8a6;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #E6C875;
+  background: #22d3ee;
 }
