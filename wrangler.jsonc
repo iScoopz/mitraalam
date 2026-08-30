@@ -2,6 +2,9 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "mitraalam",
   "compatibility_date": "2026-08-28",
+  "assets": {
+    "directory": "./out"
+  },
   "observability": {
     "enabled": true
   }
