@@ -84,12 +84,6 @@ export default function AboutUs() {
                 fill
                 className="object-cover group-hover:scale-108 transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#072433]/70 via-transparent to-transparent opacity-60" />
-              <div className="absolute bottom-3 left-0 right-0 text-center">
-                <span className="text-[10px] font-bold tracking-widest uppercase bg-[#072433]/90 text-cyan-300 px-3 py-1 rounded-full border border-cyan-400/40">
-                  Strict QC Inspection
-                </span>
-              </div>
             </div>
           </div>
 
@@ -140,12 +134,6 @@ export default function AboutUs() {
                 fill
                 className="object-cover object-[center_40%] group-hover:scale-108 transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#072433]/80 via-transparent to-transparent pointer-events-none" />
-              <div className="absolute bottom-4 left-4 right-4">
-                <span className="text-xs font-bold uppercase tracking-wider text-cyan-300 drop-shadow">
-                  Export Packaging & Cold Storage Operations
-                </span>
-              </div>
             </div>
           </div>
         </div>

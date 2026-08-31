@@ -1,59 +1,57 @@
 "use client";
 
-import { useState, useRef, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
-import { ChevronLeft, ChevronRight, Maximize2, X, Sparkles } from "lucide-react";
+import { ChevronLeft, ChevronRight, Maximize2, X } from "lucide-react";
+
+interface GalleryItem {
+  src: string;
+  title: string;
+  caption: string;
+}
 
 interface GallerySlide {
   id: number;
-  items: {
-    src: string;
-    title: string;
-    caption: string;
-  }[];
+  items: GalleryItem[];
 }
 
 export default function GallerySlider() {
   const [activeSlide, setActiveSlide] = useState(0);
-  const [lightboxImage, setLightboxImage] = useState<{
-    src: string;
-    title: string;
-    caption: string;
-  } | null>(null);
+  const [lightboxImage, setLightboxImage] = useState<GalleryItem | null>(null);
 
   const slides: GallerySlide[] = [
     {
       id: 1,
       items: [
         {
-          src: "/assets/4. STORY/IMG_7531.JPG",
-          title: "Quality & Core Temperature Control",
-          caption: "Precision core temperature verification on octopus before flash freezing.",
+          src: "/assets/8. GALLERY/1.jpeg",
+          title: "Processing & Freezing Operations",
+          caption: "Daily processing line operations under strict hygiene protocols.",
         },
         {
-          src: "/assets/5. COMMITMENT/5-02.png",
-          title: "Packaging & Cold Staging",
-          caption: "Export-grade packaging under strict cold chain management.",
+          src: "/assets/8. GALLERY/2.JPG",
+          title: "Cold Chain Temperature Control",
+          caption: "Maintaining core temperatures throughout handling and staging.",
         },
         {
-          src: "/assets/3. PRODUCT/cuttlefish.jpeg",
-          title: "Cleaned Cuttlefish Prep",
-          caption: "Pristine white cleaned cuttlefish prepared for individual quick freezing.",
+          src: "/assets/8. GALLERY/3.JPG",
+          title: "Air Blast Freezing Facilities",
+          caption: "Rapid flash-freezing preserving moisture and cellular integrity.",
         },
         {
-          src: "/assets/3. PRODUCT/snapper.jpg",
-          title: "Fresh Demersal Fish Landing",
-          caption: "Direct landing dock inspection of fresh wild-caught red snapper.",
+          src: "/assets/8. GALLERY/4.jpg",
+          title: "Raw Material Grading",
+          caption: "Detailed size and quality inspection upon dock landing.",
         },
         {
-          src: "/assets/3. PRODUCT/octopus.jpeg",
-          title: "Whole Cleaned Octopus",
-          caption: "Cleaned ball octopus packed for premium sushi and gourmet export markets.",
+          src: "/assets/8. GALLERY/5.jpeg",
+          title: "Clean Processing Environment",
+          caption: "Sanitized stainless steel workstations meeting international HACCP standards.",
         },
         {
-          src: "/assets/3. PRODUCT/squid.jpeg",
-          title: "Loligo Squid Processing",
-          caption: "Wild caught Loligo squid selected for block quick freezing.",
+          src: "/assets/8. GALLERY/6.JPG",
+          title: "Cold Storage Warehouse",
+          caption: "Organized racking and palletized storage at -20°C to -25°C.",
         },
       ],
     },
@@ -61,34 +59,104 @@ export default function GallerySlider() {
       id: 2,
       items: [
         {
-          src: "/assets/3. PRODUCT/grouper.jpg",
-          title: "Whole Grouper Inspection",
-          caption: "Export grade whole fresh grouper sourced from sustainable local fisheries.",
+          src: "/assets/8. GALLERY/7.jpeg",
+          title: "Seafood Selection & Sizing",
+          caption: "Precision sorting and manual quality inspection.",
         },
         {
-          src: "/assets/3. PRODUCT/parrot fish.jpg",
-          title: "Parrot Fish Processing",
-          caption: "Gilled, gutted, scaled, and glazed parrot fish ready for freezing.",
+          src: "/assets/8. GALLERY/8.jpeg",
+          title: "Packaging & Sealing",
+          caption: "Vacuum sealing and protective carton packing.",
         },
         {
-          src: "/assets/3. PRODUCT/rabbit fish.jpg",
-          title: "Rabbit Fish Sizing",
-          caption: "Carefully graded fresh rabbit fish for Asian retail & wholesale markets.",
+          src: "/assets/8. GALLERY/9.JPG",
+          title: "Staff Hygiene & GMP Protocols",
+          caption: "Fully geared processing staff following strict GMP standards.",
         },
         {
-          src: "/assets/3. PRODUCT/leather jacket.jpg",
-          title: "Leather Jacket Fish",
-          caption: "Headless, gutted, and skinned leather jacket fish prepared for export.",
+          src: "/assets/8. GALLERY/10.jpg",
+          title: "Dockside Landing Inspection",
+          caption: "Fresh raw seafood inspection directly at Makassar harbor.",
         },
         {
-          src: "/assets/3. PRODUCT/mackerel scad.jpg",
-          title: "Mackerel Scad Block Freezing",
-          caption: "High quality pelagic mackerel prepared for high capacity block air blast freezing.",
+          src: "/assets/8. GALLERY/11.jpg",
+          title: "Cephalopod Preparation",
+          caption: "Specialized cleaning and ball-rolling for export octopus.",
         },
         {
-          src: "/assets/3. PRODUCT/spanish mackerel.jpeg",
-          title: "Spanish Mackerel Steaks & Fillets",
-          caption: "Prime Indonesian Tenggiri frozen to perfection for global export.",
+          src: "/assets/8. GALLERY/12.jpg",
+          title: "Block Quick Freezing (BQF)",
+          caption: "Uniform block freezing for industrial and culinary export.",
+        },
+      ],
+    },
+    {
+      id: 3,
+      items: [
+        {
+          src: "/assets/8. GALLERY/13.jpg",
+          title: "Demersal Fish Filleting",
+          caption: "Careful precision filleting and skinning processes.",
+        },
+        {
+          src: "/assets/8. GALLERY/14.jpeg",
+          title: "Export Inspection Verification",
+          caption: "Verification of export specifications prior to container loading.",
+        },
+        {
+          src: "/assets/8. GALLERY/15.jpg",
+          title: "Glazing & Protective Layer",
+          caption: "Uniform ice glazing ensuring extended shelf life.",
+        },
+        {
+          src: "/assets/8. GALLERY/16.jpg",
+          title: "Cold Storage Staging",
+          caption: "Master cartons organized for seamless reefer container loading.",
+        },
+        {
+          src: "/assets/8. GALLERY/17.jpg",
+          title: "Quality Control Laboratory",
+          caption: "Microbiological and chemical testing for food safety compliance.",
+        },
+        {
+          src: "/assets/8. GALLERY/18.jpg",
+          title: "Factory Facility View",
+          caption: "Modern seafood processing facility in KIMA Industrial Estate.",
+        },
+      ],
+    },
+    {
+      id: 4,
+      items: [
+        {
+          src: "/assets/8. GALLERY/19.jpeg",
+          title: "Staff Training & QC Briefing",
+          caption: "Continuous quality training for export processing personnel.",
+        },
+        {
+          src: "/assets/8. GALLERY/20.jpeg",
+          title: "Weighing & Verification",
+          caption: "Precision digital weighing per packaging batch.",
+        },
+        {
+          src: "/assets/8. GALLERY/21.jpeg",
+          title: "Inner Polybag Sealing",
+          caption: "Moisture-proof inner liners protecting frozen seafood.",
+        },
+        {
+          src: "/assets/8. GALLERY/22.JPG",
+          title: "Cold Storage Inventory",
+          caption: "108 Tons cold storage warehouse operation in Makassar.",
+        },
+        {
+          src: "/assets/8. GALLERY/23.JPG",
+          title: "Reefer Container Loading",
+          caption: "Direct plug-in cold chain loading for international shipments.",
+        },
+        {
+          src: "/assets/8. GALLERY/24.jpg",
+          title: "Finished Export Ready Products",
+          caption: "Certified premium frozen seafood ready for global delivery.",
         },
       ],
     },
@@ -123,7 +191,7 @@ export default function GallerySlider() {
       className="py-16 sm:py-24 ocean-teal-section text-white relative overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-8 text-center">
-        {/* Section Title matching Mockup */}
+        {/* Section Title */}
         <div className="space-y-1">
           <span className="text-[11px] sm:text-xs font-black tracking-[0.25em] text-[#072433] uppercase block">
             VISUAL ATMOSPHERE
@@ -131,6 +199,9 @@ export default function GallerySlider() {
           <h2 className="font-display text-4xl sm:text-5xl font-black text-white tracking-wider uppercase drop-shadow-md">
             GALLERY
           </h2>
+          <p className="text-slate-100 text-xs sm:text-sm max-w-xl mx-auto font-medium">
+            Explore our daily seafood processing, cold chain storage, and export logistics in Makassar.
+          </p>
         </div>
 
         {/* Multi-Slide Carousel Container with Left/Right Navigation Arrows */}
@@ -153,7 +224,7 @@ export default function GallerySlider() {
             <ChevronRight className="w-6 h-6 stroke-[2.5]" />
           </button>
 
-          {/* Current Gallery Slide: 2 rows x 3 columns Grid matching Screenshot 3 & 4 */}
+          {/* Current Gallery Slide: 2 rows x 3 columns Grid */}
           <div className="transition-all duration-500 ease-in-out">
             <div className="grid grid-cols-2 md:grid-cols-3 gap-3.5 sm:gap-5">
               {slides[activeSlide].items.map((item, idx) => (
@@ -188,14 +259,16 @@ export default function GallerySlider() {
             </div>
           </div>
 
-          {/* Slide Indicator Dots */}
+          {/* Slide Indicator Dots (4 Slides for all 24 photos) */}
           <div className="flex justify-center items-center gap-2 pt-6">
             {slides.map((_, i) => (
               <button
                 key={i}
                 onClick={() => setActiveSlide(i)}
-                className={`h-2.5 rounded-full transition-all duration-300 ${
-                  activeSlide === i ? "w-8 bg-[#072433] border border-cyan-400" : "w-2.5 bg-white/40 hover:bg-white/70"
+                className={`h-2.5 rounded-full transition-all duration-300 cursor-pointer ${
+                  activeSlide === i
+                    ? "w-8 bg-[#072433] border border-cyan-400"
+                    : "w-2.5 bg-white/40 hover:bg-white/70"
                 }`}
                 aria-label={`Slide ${i + 1}`}
               />
