@@ -85,11 +85,11 @@ export default function ExportCertifications() {
         </div>
 
         {/* Stainless Steel Metallic Gradient Banner for the 3 Certificates */}
-        <div className="stainless-steel-ribbon rounded-2xl p-4 sm:p-6 text-slate-900 shadow-2xl relative overflow-hidden">
-          <div className="flex flex-wrap items-center justify-around gap-6 sm:gap-10">
+        <div className="stainless-steel-ribbon rounded-2xl p-6 sm:p-7 text-slate-900 shadow-2xl relative overflow-hidden">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-10 justify-items-center items-center">
             {/* Official GMP Quality Badge */}
-            <div className="flex items-center gap-3 group">
-              <div className="relative w-16 h-16 sm:w-20 sm:h-20 shrink-0 drop-shadow-md group-hover:scale-105 transition-transform flex items-center justify-center">
+            <div className="flex items-center gap-4 group w-full max-w-[280px] md:max-w-none md:justify-center">
+              <div className="relative w-20 h-16 sm:w-24 sm:h-20 shrink-0 drop-shadow-md group-hover:scale-105 transition-transform flex items-center justify-center">
                 <Image
                   src="/assets/2. CERTIFICATE/GMP.png"
                   alt="GMP Certified Indonesian Seafood Processing Facility - CV. Mitra Alam"
@@ -97,19 +97,19 @@ export default function ExportCertifications() {
                   className="object-contain"
                 />
               </div>
-              <div>
-                <span className="font-display font-black text-sm sm:text-base text-slate-900 uppercase block tracking-wider">
+              <div className="text-left flex-1 min-w-0">
+                <span className="font-display font-black text-sm sm:text-base text-slate-900 uppercase block tracking-wider leading-tight">
                   GMP Certified
                 </span>
-                <span className="text-[11px] text-slate-700 font-bold">
+                <span className="text-[11px] text-slate-700 font-bold block pt-0.5">
                   Good Manufacturing Practice
                 </span>
               </div>
             </div>
 
             {/* Official FDA Badge */}
-            <div className="flex items-center gap-3 group">
-              <div className="relative w-24 h-14 sm:w-28 sm:h-16 shrink-0 drop-shadow-md group-hover:scale-105 transition-transform flex items-center justify-center">
+            <div className="flex items-center gap-4 group w-full max-w-[280px] md:max-w-none md:justify-center">
+              <div className="relative w-20 h-16 sm:w-24 sm:h-20 shrink-0 drop-shadow-md group-hover:scale-105 transition-transform flex items-center justify-center">
                 <Image
                   src="/assets/2. CERTIFICATE/Food_and_Drug_Administration_logo.svg.png"
                   alt="US FDA Registered Seafood Facility No 12621818410 - CV. Mitra Alam"
@@ -117,32 +117,32 @@ export default function ExportCertifications() {
                   className="object-contain"
                 />
               </div>
-              <div>
-                <span className="font-display font-black text-sm sm:text-base text-slate-900 uppercase block tracking-wider">
+              <div className="text-left flex-1 min-w-0">
+                <span className="font-display font-black text-sm sm:text-base text-slate-900 uppercase block tracking-wider leading-tight">
                   US FDA Registered
                 </span>
-                <span className="text-[11px] text-slate-700 font-bold">
+                <span className="text-[11px] text-slate-700 font-bold block pt-0.5">
                   Reg No: 12621818410
                 </span>
               </div>
             </div>
 
             {/* Official HACCP Certified Medal Badge */}
-            <div className="flex items-center gap-3 group">
-              <div className="relative w-16 h-16 sm:w-20 sm:h-20 shrink-0 drop-shadow-md group-hover:scale-105 transition-transform flex items-center justify-center">
+            <div className="flex items-center gap-4 group w-full max-w-[280px] md:max-w-none md:justify-center">
+              <div className="relative w-20 h-16 sm:w-24 sm:h-20 shrink-0 drop-shadow-md group-hover:scale-105 transition-transform flex items-center justify-center">
                 <Image
                   src="/assets/2. CERTIFICATE/haccp-removebg-preview.png"
                   alt="HACCP Certified Indonesian Frozen Seafood Exporter - CV. Mitra Alam"
                   fill
-                  style={{ transform: "scale(2.3)" }}
+                  style={{ transform: "scale(2.2)" }}
                   className="object-contain"
                 />
               </div>
-              <div>
-                <span className="font-display font-black text-sm sm:text-base text-slate-900 uppercase block tracking-wider">
+              <div className="text-left flex-1 min-w-0">
+                <span className="font-display font-black text-sm sm:text-base text-slate-900 uppercase block tracking-wider leading-tight">
                   HACCP Verified
                 </span>
-                <span className="text-[11px] text-slate-700 font-bold">
+                <span className="text-[11px] text-slate-700 font-bold block pt-0.5">
                   Food Safety Management
                 </span>
               </div>
