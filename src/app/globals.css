@@ -74,14 +74,14 @@ body {
 .stainless-steel-ribbon {
   background: linear-gradient(
     90deg,
-    #cfd4d9 0%,
-    #edf0f3 30%,
+    #6b7884 0%,
+    #b0bcc6 22%,
     #ffffff 50%,
-    #edf0f3 70%,
-    #cfd4d9 100%
+    #b0bcc6 78%,
+    #6b7884 100%
   );
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.35), inset 0 1px 2px rgba(255, 255, 255, 0.95), inset 0 -1px 2px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 0 14px 35px -5px rgba(0, 0, 0, 0.45), inset 0 1px 2px rgba(255, 255, 255, 0.95), inset 0 -2px 4px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.75);
 }
 
 .stainless-steel-line {
