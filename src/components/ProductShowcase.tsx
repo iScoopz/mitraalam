@@ -178,13 +178,13 @@ export default function ProductShowcase({ onSelectProduct }: ProductShowcaseProp
   return (
     <section
       id="product"
-      className="py-16 sm:py-24 ocean-teal-section text-white relative overflow-hidden"
+      className="pt-16 pb-20 text-white relative overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-8">
         {/* Section Header matching Screenshot 1 */}
         <div className="text-center space-y-3">
           <h2 className="font-display text-4xl sm:text-5xl font-black text-white tracking-wide uppercase drop-shadow-md">
-            Our <span className="text-[#072433]">PRODUCT</span>
+            Our <span className="text-cyan-400 drop-shadow-[0_2px_10px_rgba(34,211,238,0.3)]">PRODUCT</span>
           </h2>
           <p className="text-slate-100 text-xs sm:text-sm max-w-2xl mx-auto font-medium leading-relaxed drop-shadow-sm">
             We specialize in processing high-quality seafood, freezing fresh raw materials at peak freshness.

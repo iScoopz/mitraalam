@@ -5,21 +5,33 @@ import { ExternalLink, MessageCircle, Mail } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer id="contact" className="bg-[#051c27] text-white pt-12 relative overflow-hidden">
-      {/* Top Wave Divider */}
-      <div className="absolute top-0 left-0 right-0 h-8 bg-gradient-to-b from-[#3a8b94] to-transparent opacity-60 pointer-events-none" />
+    <footer id="contact" className="text-white pt-14 relative overflow-hidden">
+      {/* Stainless Steel Metallic Gradient Top Line Divider matching Navbar */}
+      <div className="absolute top-0 left-0 right-0 h-[1.5px] stainless-steel-line z-20 pointer-events-none shadow-[0_1px_6px_rgba(255,255,255,0.4)]" />
+
+      {/* Background Image: BACKGROUND-14.png rotated 180 degrees */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <Image
+          src="/assets/1. COVER/BACKGROUND-14.png"
+          alt="CV. MITRA ALAM Footer Ocean Background"
+          fill
+          className="object-cover object-center rotate-180 scale-105"
+        />
+        {/* Subtle dark overlay for perfect text contrast while keeping the rotated ocean pattern visible */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#041822]/40 via-[#041822]/70 to-[#041822]/95 pointer-events-none" />
+      </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 pt-6 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
           {/* Column 1: Brand Info & Social Icons */}
           <div className="lg:col-span-4 space-y-4 text-left">
             <div>
-              <h3 className="font-display font-extrabold text-xl text-white tracking-wider uppercase">
+              <h3 className="font-display font-extrabold text-xl text-white tracking-wider uppercase drop-shadow-md">
                 CV. MITRA ALAM
               </h3>
             </div>
 
-            <p className="text-xs sm:text-sm text-slate-300 font-normal leading-relaxed max-w-sm">
+            <p className="text-xs sm:text-sm text-slate-200 font-normal leading-relaxed max-w-sm drop-shadow">
               We select raw material carefully, produce high quality frozen seafood, ready to deliver ocean freshness directly to Global Markets.
             </p>
 
@@ -30,7 +42,7 @@ export default function Footer() {
                 href="https://wa.me/6282190931111?text=Hello%20CV.%20Mitra%20Alam%2C%20I%20would%20like%20to%20inquire%20about%20your%20frozen%20seafood%20export%20services."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-[#072d3e] text-cyan-300 border border-cyan-400/40 flex items-center justify-center hover:bg-emerald-600 hover:text-white hover:border-emerald-400 transition-all shadow-md cursor-pointer"
+                className="w-10 h-10 rounded-full bg-[#072d3e]/90 text-cyan-300 border border-cyan-400/40 flex items-center justify-center hover:bg-emerald-600 hover:text-white hover:border-emerald-400 transition-all shadow-md cursor-pointer backdrop-blur-sm"
                 aria-label="Contact via WhatsApp"
               >
                 <MessageCircle className="w-5 h-5" />
@@ -41,7 +53,7 @@ export default function Footer() {
                 href="https://www.instagram.com/cv.mitraalam?igsi=NHR0NDE3bGNxZjli"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-[#072d3e] text-cyan-300 border border-cyan-400/40 flex items-center justify-center hover:bg-gradient-to-tr hover:from-amber-500 hover:via-pink-600 hover:to-purple-600 hover:text-white hover:border-pink-400 transition-all shadow-md cursor-pointer"
+                className="w-10 h-10 rounded-full bg-[#072d3e]/90 text-cyan-300 border border-cyan-400/40 flex items-center justify-center hover:bg-gradient-to-tr hover:from-amber-500 hover:via-pink-600 hover:to-purple-600 hover:text-white hover:border-pink-400 transition-all shadow-md cursor-pointer backdrop-blur-sm"
                 aria-label="Follow CV. Mitra Alam on Instagram"
               >
                 <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
@@ -52,7 +64,7 @@ export default function Footer() {
               {/* Email Direct Link */}
               <a
                 href="mailto:mitraalam9@gmail.com"
-                className="w-10 h-10 rounded-full bg-[#072d3e] text-cyan-300 border border-cyan-400/40 flex items-center justify-center hover:bg-cyan-600 hover:text-white hover:border-cyan-300 transition-all shadow-md cursor-pointer"
+                className="w-10 h-10 rounded-full bg-[#072d3e]/90 text-cyan-300 border border-cyan-400/40 flex items-center justify-center hover:bg-cyan-600 hover:text-white hover:border-cyan-300 transition-all shadow-md cursor-pointer backdrop-blur-sm"
                 aria-label="Email CV. Mitra Alam directly"
               >
                 <Mail className="w-5 h-5" />
@@ -62,12 +74,12 @@ export default function Footer() {
 
           {/* Column 2: REAL GOOGLE MAPS EMBED */}
           <div className="lg:col-span-4 space-y-3 text-left">
-            <h4 className="font-display font-black text-sm tracking-wider uppercase text-cyan-300">
+            <h4 className="font-display font-black text-sm tracking-wider uppercase text-cyan-300 drop-shadow">
               MAPS
             </h4>
 
             {/* Real Interactive Google Maps Embed */}
-            <div className="rounded-2xl overflow-hidden border-2 border-cyan-400/40 shadow-lg relative h-44 bg-[#0d3446] group">
+            <div className="rounded-2xl overflow-hidden border-2 border-cyan-400/40 shadow-xl relative h-44 bg-[#0d3446] group">
               <iframe
                 title="CV. MITRA ALAM Real Factory Location Map"
                 src="https://maps.google.com/maps?q=Jl.+Lantebung+No.+9,+Makassar,+Sulawesi+Selatan&t=&z=15&ie=UTF8&iwloc=&output=embed"
@@ -93,12 +105,12 @@ export default function Footer() {
 
           {/* Column 3: LOCATION & CONTACT */}
           <div className="lg:col-span-4 space-y-3 text-left">
-            <h4 className="font-display font-black text-sm tracking-wider uppercase text-cyan-300">
+            <h4 className="font-display font-black text-sm tracking-wider uppercase text-cyan-300 drop-shadow">
               LOCATION & CONTACT
             </h4>
 
             {/* Frosted White/Silver Card */}
-            <div className="metallic-card rounded-2xl p-5 text-[#072331] shadow-xl space-y-3.5 border border-white/80">
+            <div className="metallic-card rounded-2xl p-5 text-[#072331] shadow-xl space-y-3.5 border border-white/80 backdrop-blur-md">
               <div className="flex items-start gap-3 text-xs leading-relaxed font-semibold">
                 <div className="relative w-5 h-5 shrink-0 mt-0.5">
                   <Image
@@ -153,7 +165,7 @@ export default function Footer() {
       </div>
 
       {/* Bottom Copyright Bar */}
-      <div className="bg-[#031119] text-center py-4 border-t border-cyan-500/20">
+      <div className="bg-[#031119]/90 text-center py-4 border-t border-cyan-500/20 relative z-10 backdrop-blur-sm">
         <p className="text-[11px] text-slate-400 font-medium tracking-wider">
           &copy;2026 by CV. Mitra Alam. All Rights Reserved.
         </p>

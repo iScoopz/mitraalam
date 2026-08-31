@@ -71,7 +71,10 @@ export default function AboutUs() {
   ];
 
   return (
-    <section id="about" className="py-20 ocean-teal-section text-white relative overflow-hidden">
+    <section
+      id="about"
+      className="py-20 text-white relative overflow-hidden"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-20">
         {/* Top Subsection: We Produce High-Quality Frozen Seafood */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
@@ -109,7 +112,7 @@ export default function AboutUs() {
           {/* Left Commitment Text */}
           <div className="lg:col-span-6 space-y-5 text-left order-2 lg:order-1">
             <h3 className="font-display text-3xl sm:text-4xl font-black text-white uppercase drop-shadow-md">
-              Our <span className="text-[#072433]">COMMITMENT</span>
+              Our <span className="text-cyan-400 drop-shadow-[0_2px_10px_rgba(34,211,238,0.3)]">COMMITMENT</span>
             </h3>
 
             <div className="space-y-4 text-slate-100 text-sm sm:text-base font-normal leading-relaxed">
@@ -141,7 +144,7 @@ export default function AboutUs() {
         {/* Bottom Subsection: Our CORE VALUES matching User's Mockup */}
         <div className="space-y-8 pt-8 border-t border-cyan-200/20 text-center">
           <h3 className="font-display text-3xl sm:text-4xl font-black text-white uppercase drop-shadow-md">
-            Our <span className="text-[#072433]">CORE VALUES</span>
+            Our <span className="text-cyan-400 drop-shadow-[0_2px_10px_rgba(34,211,238,0.3)]">CORE VALUES</span>
           </h3>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch">

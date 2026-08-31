@@ -139,6 +139,17 @@ body {
   box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.5);
 }
 
+/* Organic Fluid Water Flow Texture - Asymmetric, Natural, Zero-Weight SVG Vector */
+.water-flow-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='360' height='260' viewBox='0 0 360 260' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M-30 45 C 50 15, 130 75, 210 38 C 290 2, 330 55, 410 32 M-20 115 C 65 80, 145 142, 230 102 C 310 62, 350 128, 420 90 M-40 185 C 40 152, 120 215, 205 170 C 285 125, 325 195, 400 158 M-10 240 C 75 208, 160 265, 240 228 C 320 192, 360 248, 430 218' fill='none' stroke='%23ffffff' stroke-width='1.2' stroke-opacity='0.035' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M-15 80 C 60 108, 140 55, 220 92 C 300 128, 360 75, 420 102 M-35 152 C 45 178, 128 126, 212 162 C 295 198, 355 146, 415 172' fill='none' stroke='%2338bdf8' stroke-width='0.9' stroke-opacity='0.025' stroke-dasharray='10 18' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-size: 360px 260px;
+}
+
+.water-caustic-drift {
+  background-image: url("data:image/svg+xml,%3Csvg width='480' height='360' viewBox='0 0 480 360' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 60 Q 120 120, 240 40 T 480 80 M0 180 Q 150 240, 300 140 T 480 200 M0 300 Q 100 360, 260 270 T 480 320' fill='none' stroke='%2322d3ee' stroke-width='1.5' stroke-opacity='0.02' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-size: 480px 360px;
+}
+
 /* Hide scrollbar for clean carousels */
 .no-scrollbar::-webkit-scrollbar {
   display: none;

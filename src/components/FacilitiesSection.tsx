@@ -25,7 +25,7 @@ export default function FacilitiesSection() {
   ];
 
   return (
-    <section className="py-14 ocean-teal-section text-white relative">
+    <section className="py-14 text-white relative">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 text-center">
         {/* Explore Our Facilities Pill Badge matching Mockup */}
         <div className="flex justify-center">

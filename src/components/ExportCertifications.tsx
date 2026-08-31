@@ -19,21 +19,8 @@ export default function ExportCertifications() {
   ];
 
   return (
-    <section id="certification" className="text-white relative pt-12 pb-20 overflow-hidden">
-      {/* Official Cover Background Image BACKGROUND-14.png */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src="/assets/1. COVER/BACKGROUND-14.png"
-          alt="CV. MITRA ALAM Export Destinations and Certifications Background"
-          fill
-          priority
-          className="object-cover object-center"
-        />
-        {/* Subtle overlay so the beautiful BACKGROUND-14.png image is fully visible */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#041822]/35 via-transparent to-[#041822]/40" />
-      </div>
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-10">
+    <section id="certification" className="relative text-white pt-4 pb-28">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
         {/* Two-Column Specification Box */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16 items-start">
           {/* Left Column: Export Destination Registration Numbers */}

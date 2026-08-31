@@ -247,12 +247,12 @@ export default function GallerySlider() {
   return (
     <section
       id="gallery"
-      className="py-16 sm:py-24 ocean-teal-section text-white relative overflow-hidden"
+      className="pt-16 pb-10 text-white relative overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-8 text-center">
         {/* Section Title */}
         <div className="space-y-1">
-          <span className="text-[11px] sm:text-xs font-black tracking-[0.25em] text-[#072433] uppercase block">
+          <span className="text-[11px] sm:text-xs font-black tracking-[0.25em] text-cyan-300 uppercase block drop-shadow-sm">
             VISUAL ATMOSPHERE
           </span>
           <h2 className="font-display text-4xl sm:text-5xl font-black text-white tracking-wider uppercase drop-shadow-md">

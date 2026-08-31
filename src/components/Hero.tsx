@@ -6,22 +6,9 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-[80vh] sm:min-h-[85vh] text-white pt-28 pb-16 flex items-center overflow-hidden"
+      className="relative text-white pt-28 pb-10 flex items-center"
     >
-      {/* Official Cover Background Image from Assets */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src="/assets/1. COVER/BACKGROUND-13.png"
-          alt="CV. MITRA ALAM Ocean Background"
-          fill
-          priority
-          className="object-cover object-center"
-        />
-        {/* Deep Ocean Gradient Overlay for high text contrast and visual depth */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#041822]/95 via-[#041822]/85 to-[#041822]/60" />
-      </div>
-
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           {/* Left Column: Headline & Subtitle */}
           <div className="lg:col-span-7 space-y-4 sm:space-y-6 text-left">
