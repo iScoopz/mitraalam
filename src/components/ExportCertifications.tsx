@@ -129,12 +129,12 @@ export default function ExportCertifications() {
 
             {/* Official HACCP Certified Medal Badge */}
             <div className="flex items-center gap-3 group">
-              <div className="relative w-16 h-20 sm:w-20 sm:h-24 shrink-0 drop-shadow-md group-hover:scale-105 transition-transform flex items-center justify-center">
+              <div className="relative w-18 h-18 sm:w-22 sm:h-22 shrink-0 drop-shadow-md group-hover:scale-105 transition-transform flex items-center justify-center">
                 <Image
                   src="/assets/2. CERTIFICATE/haccp-removebg-preview.png"
                   alt="HACCP Certified Indonesian Frozen Seafood Exporter - CV. Mitra Alam"
                   fill
-                  className="object-contain"
+                  className="object-contain scale-[1.35]"
                 />
               </div>
               <div>
