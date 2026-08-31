@@ -192,7 +192,37 @@ export default function GallerySlider() {
     });
   }, [allGalleryItems.length]);
 
-  // Touch swipe handling for mobile gestures
+  // Touch swipe handling for main gallery grid slides (tablet & mobile)
+  const slideTouchStartX = useRef<number | null>(null);
+  const slideTouchEndX = useRef<number | null>(null);
+
+  const handleSlideTouchStart = (e: React.TouchEvent) => {
+    slideTouchStartX.current = e.targetTouches[0].clientX;
+    slideTouchEndX.current = null;
+  };
+
+  const handleSlideTouchMove = (e: React.TouchEvent) => {
+    slideTouchEndX.current = e.targetTouches[0].clientX;
+  };
+
+  const handleSlideTouchEnd = () => {
+    if (slideTouchStartX.current === null || slideTouchEndX.current === null) return;
+    const diff = slideTouchStartX.current - slideTouchEndX.current;
+    const minSwipeDistance = 40;
+
+    if (diff > minSwipeDistance) {
+      // Swiped Left -> Go Next Slide
+      handleNextSlide();
+    } else if (diff < -minSwipeDistance) {
+      // Swiped Right -> Go Previous Slide
+      handlePrevSlide();
+    }
+
+    slideTouchStartX.current = null;
+    slideTouchEndX.current = null;
+  };
+
+  // Touch swipe handling for lightbox fullscreen modal
   const touchStartX = useRef<number | null>(null);
   const touchEndX = useRef<number | null>(null);
 
@@ -263,8 +293,13 @@ export default function GallerySlider() {
           </p>
         </div>
 
-        {/* Multi-Slide Carousel Container with Left/Right Navigation Arrows */}
-        <div className="relative group/gallery">
+        {/* Multi-Slide Carousel Container with Left/Right Navigation Arrows & Touch Gestures */}
+        <div
+          className="relative group/gallery touch-pan-y select-none"
+          onTouchStart={handleSlideTouchStart}
+          onTouchMove={handleSlideTouchMove}
+          onTouchEnd={handleSlideTouchEnd}
+        >
           {/* Scroll Left Button */}
           <button
             onClick={handlePrevSlide}

@@ -44,24 +44,43 @@ body {
 .metallic-card {
   background: linear-gradient(
     145deg,
-    #ffffff 0%,
-    #f2f7fa 25%,
-    #e2edf4 65%,
-    #d1e0ec 100%
+    #7a8894 0%,
+    #b0bcc6 15%,
+    #f0f5f8 35%,
+    #ffffff 50%,
+    #dbe5ec 70%,
+    #8d9aa5 100%
   );
-  box-shadow: 0 16px 36px -6px rgba(4, 24, 34, 0.35), inset 0 1px 2px rgba(255, 255, 255, 0.95);
+  box-shadow: 0 16px 36px -6px rgba(4, 24, 34, 0.4), inset 0 1px 2px rgba(255, 255, 255, 0.95);
   border: 1px solid rgba(255, 255, 255, 0.9);
 }
 
 .metallic-ribbon {
-  background: linear-gradient(90deg, #d3e1eb 0%, #f4f8fb 25%, #ffffff 50%, #d8e5ef 75%, #bccedc 100%);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25), inset 0 2px 3px rgba(255, 255, 255, 0.9);
+  background: linear-gradient(
+    90deg,
+    #7a8894 0%,
+    #b0bcc6 15%,
+    #f0f5f8 35%,
+    #ffffff 50%,
+    #dbe5ec 70%,
+    #8d9aa5 100%
+  );
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35), inset 0 2px 3px rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.9);
 }
 
 .metallic-facility-card {
-  background: linear-gradient(135deg, #d6e4ee 0%, #c4d7e4 50%, #b3c9d8 100%);
-  box-shadow: 0 12px 30px -8px rgba(3, 17, 24, 0.4), inset 0 1px 2px rgba(255, 255, 255, 0.85);
-  border: 1px solid rgba(255, 255, 255, 0.6);
+  background: linear-gradient(
+    135deg,
+    #7a8894 0%,
+    #b0bcc6 15%,
+    #f0f5f8 35%,
+    #ffffff 50%,
+    #dbe5ec 70%,
+    #8d9aa5 100%
+  );
+  box-shadow: 0 14px 32px -6px rgba(4, 24, 34, 0.4), inset 0 1px 2px rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.9);
 }
 
 /* Pure Silver Metallic Themes */
