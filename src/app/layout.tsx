@@ -156,13 +156,13 @@ const jsonLd = {
       ],
       priceRange: "$$$$",
       telephone: "+628114619717",
-      email: "mitraalam017@gmail.com",
+      email: "mitraalam9@gmail.com",
       contactPoint: [
         {
           "@type": "ContactPoint",
           telephone: "+628114619717",
           contactType: "Sales & Export Inquiries",
-          email: "mitraalam017@gmail.com",
+          email: "mitraalam9@gmail.com",
           areaServed: [
             "Worldwide",
             "China",
@@ -456,7 +456,7 @@ const jsonLd = {
           name: "How can international buyers request a quote or product catalog?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "You can contact our export sales division directly via WhatsApp at +6282190931111 / +628114619717, or email us at mitraalam017@gmail.com. We provide comprehensive FOB / CIF quotations and product specification sheets promptly.",
+            text: "You can contact our export sales division directly via WhatsApp at +6282190931111 / +628114619717, or email us at mitraalam9@gmail.com. We provide comprehensive FOB / CIF quotations and product specification sheets promptly.",
           },
         },
       ],

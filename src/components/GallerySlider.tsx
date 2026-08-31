@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight, Maximize2, X } from "lucide-react";
 
@@ -17,7 +17,7 @@ interface GallerySlide {
 
 export default function GallerySlider() {
   const [activeSlide, setActiveSlide] = useState(0);
-  const [lightboxImage, setLightboxImage] = useState<GalleryItem | null>(null);
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
   const slides: GallerySlide[] = [
     {
@@ -162,6 +162,9 @@ export default function GallerySlider() {
     },
   ];
 
+  // Flatten all 24 items into a single array for sequential navigation
+  const allGalleryItems = slides.flatMap((s) => s.items);
+
   const handlePrevSlide = () => {
     setActiveSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
   };
@@ -170,12 +173,65 @@ export default function GallerySlider() {
     setActiveSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
   };
 
+  // Lightbox sequential navigation
+  const handlePrevLightbox = useCallback(() => {
+    setLightboxIndex((prev) => {
+      if (prev === null) return null;
+      const newIdx = prev === 0 ? allGalleryItems.length - 1 : prev - 1;
+      setActiveSlide(Math.floor(newIdx / 6));
+      return newIdx;
+    });
+  }, [allGalleryItems.length]);
+
+  const handleNextLightbox = useCallback(() => {
+    setLightboxIndex((prev) => {
+      if (prev === null) return null;
+      const newIdx = prev === allGalleryItems.length - 1 ? 0 : prev + 1;
+      setActiveSlide(Math.floor(newIdx / 6));
+      return newIdx;
+    });
+  }, [allGalleryItems.length]);
+
+  // Touch swipe handling for mobile gestures
+  const touchStartX = useRef<number | null>(null);
+  const touchEndX = useRef<number | null>(null);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.targetTouches[0].clientX;
+    touchEndX.current = null;
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    touchEndX.current = e.targetTouches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    if (touchStartX.current === null || touchEndX.current === null) return;
+    const diff = touchStartX.current - touchEndX.current;
+    const minSwipeDistance = 45;
+
+    if (diff > minSwipeDistance) {
+      // Swiped Left -> Go Next
+      handleNextLightbox();
+    } else if (diff < -minSwipeDistance) {
+      // Swiped Right -> Go Previous
+      handlePrevLightbox();
+    }
+
+    touchStartX.current = null;
+    touchEndX.current = null;
+  };
+
   // Keyboard navigation for lightbox
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setLightboxImage(null);
+      if (lightboxIndex === null) return;
+      if (e.key === "Escape") setLightboxIndex(null);
+      if (e.key === "ArrowLeft") handlePrevLightbox();
+      if (e.key === "ArrowRight") handleNextLightbox();
     };
-    if (lightboxImage) {
+
+    if (lightboxIndex !== null) {
       document.body.style.overflow = "hidden";
       window.addEventListener("keydown", handleKeyDown);
     }
@@ -183,7 +239,10 @@ export default function GallerySlider() {
       document.body.style.overflow = "unset";
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [lightboxImage]);
+  }, [lightboxIndex, handlePrevLightbox, handleNextLightbox]);
+
+  const currentLightboxItem =
+    lightboxIndex !== null ? allGalleryItems[lightboxIndex] : null;
 
   return (
     <section
@@ -227,35 +286,40 @@ export default function GallerySlider() {
           {/* Current Gallery Slide: 2 rows x 3 columns Grid */}
           <div className="transition-all duration-500 ease-in-out">
             <div className="grid grid-cols-2 md:grid-cols-3 gap-3.5 sm:gap-5">
-              {slides[activeSlide].items.map((item, idx) => (
-                <div
-                  key={idx}
-                  onClick={() => setLightboxImage(item)}
-                  className="relative h-44 sm:h-56 md:h-64 rounded-2xl overflow-hidden shadow-lg border-2 border-white/70 bg-[#072433] group/item cursor-pointer hover:border-cyan-300 transition-all duration-300"
-                >
-                  <Image
-                    src={item.src}
-                    alt={item.title}
-                    fill
-                    className="object-cover group-hover/item:scale-110 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#041822]/90 via-[#041822]/30 to-transparent opacity-0 group-hover/item:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-4 text-left">
-                    <div className="flex justify-end">
-                      <span className="w-8 h-8 rounded-full bg-[#072433]/80 text-cyan-300 flex items-center justify-center shadow-md">
-                        <Maximize2 className="w-4 h-4" />
-                      </span>
-                    </div>
-                    <div>
-                      <h4 className="font-display font-bold text-xs sm:text-sm text-white drop-shadow">
-                        {item.title}
-                      </h4>
-                      <p className="text-[10px] text-slate-300 line-clamp-1 font-light">
-                        {item.caption}
-                      </p>
+              {slides[activeSlide].items.map((item, idx) => {
+                const flatIndex = activeSlide * 6 + idx;
+                return (
+                  <div
+                    key={idx}
+                    onClick={() => setLightboxIndex(flatIndex)}
+                    className="relative h-44 sm:h-56 md:h-64 rounded-2xl overflow-hidden shadow-lg border-2 border-white/70 bg-[#072433] group/item cursor-pointer hover:border-cyan-300 transition-all duration-300"
+                  >
+                    <Image
+                      src={item.src}
+                      alt={item.title}
+                      fill
+                      sizes="(max-width: 768px) 50vw, 33vw"
+                      className="object-cover group-hover/item:scale-110 transition-transform duration-700"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#041822]/90 via-[#041822]/30 to-transparent opacity-0 group-hover/item:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-4 text-left">
+                      <div className="flex justify-end">
+                        <span className="w-8 h-8 rounded-full bg-[#072433]/80 text-cyan-300 flex items-center justify-center shadow-md">
+                          <Maximize2 className="w-4 h-4" />
+                        </span>
+                      </div>
+                      <div>
+                        <h4 className="font-display font-bold text-xs sm:text-sm text-white drop-shadow">
+                          {item.title}
+                        </h4>
+                        <p className="text-[10px] text-slate-300 line-clamp-1 font-light">
+                          {item.caption}
+                        </p>
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
 
@@ -277,44 +341,84 @@ export default function GallerySlider() {
         </div>
       </div>
 
-      {/* Lightbox Fullscreen Modal */}
-      {lightboxImage && (
+      {/* Lightbox Fullscreen Modal with Swipe & Next/Prev Controls */}
+      {currentLightboxItem && lightboxIndex !== null && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-[#041822]/95 backdrop-blur-md p-4 sm:p-8 animate-in fade-in duration-200"
-          onClick={() => setLightboxImage(null)}
+          className="fixed inset-0 z-50 flex items-center justify-center bg-[#041822]/95 backdrop-blur-md p-3 sm:p-6 animate-in fade-in duration-200 select-none"
+          onClick={() => setLightboxIndex(null)}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
         >
           <div
-            className="relative max-w-4xl w-full max-h-[90vh] flex flex-col items-center justify-center space-y-4 animate-in zoom-in-95 duration-200"
+            className="relative max-w-4xl w-full max-h-[95vh] flex flex-col items-center justify-center space-y-3 animate-in zoom-in-95 duration-200"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Top Bar */}
-            <div className="w-full flex items-center justify-between text-white border-b border-cyan-500/30 pb-3">
-              <h3 className="font-display text-base sm:text-lg font-bold text-cyan-300">
-                {lightboxImage.title}
-              </h3>
+            {/* Top Bar with Title, Counter Badge, and Close Button */}
+            <div className="w-full flex items-center justify-between text-white border-b border-cyan-500/30 pb-3 px-1">
+              <div className="flex items-center gap-3">
+                <h3 className="font-display text-sm sm:text-lg font-bold text-cyan-300 truncate max-w-[200px] sm:max-w-md">
+                  {currentLightboxItem.title}
+                </h3>
+                <span className="text-[10px] sm:text-xs font-bold px-2.5 py-0.5 rounded-full bg-cyan-950/80 text-cyan-300 border border-cyan-400/40">
+                  {lightboxIndex + 1} / {allGalleryItems.length}
+                </span>
+              </div>
+
               <button
-                onClick={() => setLightboxImage(null)}
-                className="w-9 h-9 rounded-full bg-[#072433] text-cyan-300 border border-cyan-400/50 flex items-center justify-center hover:bg-cyan-900/60 transition-colors cursor-pointer"
+                onClick={() => setLightboxIndex(null)}
+                className="w-9 h-9 rounded-full bg-[#072433] text-cyan-300 border border-cyan-400/50 flex items-center justify-center hover:bg-cyan-900/60 hover:scale-105 active:scale-95 transition-all cursor-pointer shrink-0"
                 aria-label="Close Lightbox"
               >
                 <X className="w-5 h-5" />
               </button>
             </div>
 
-            {/* Main Lightbox Image Stage */}
-            <div className="relative w-full h-[55vh] sm:h-[65vh] rounded-2xl overflow-hidden border-2 border-cyan-400/50 shadow-2xl bg-[#041822]">
+            {/* Main Lightbox Image Stage with Interactive Navigation Arrows */}
+            <div className="relative w-full h-[58vh] sm:h-[68vh] rounded-2xl overflow-hidden border-2 border-cyan-400/50 shadow-2xl bg-[#041822] flex items-center justify-center group/lightbox">
               <Image
-                src={lightboxImage.src}
-                alt={lightboxImage.title}
+                src={currentLightboxItem.src}
+                alt={currentLightboxItem.title}
                 fill
-                className="object-contain p-2"
+                sizes="(max-width: 1024px) 100vw, 85vw"
+                className="object-contain p-1 sm:p-2"
                 priority
               />
+
+              {/* Lightbox Previous (<) Floating Button */}
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handlePrevLightbox();
+                }}
+                className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-30 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#062432]/90 text-cyan-300 border border-cyan-400 flex items-center justify-center shadow-2xl hover:bg-[#0a3548] hover:scale-110 active:scale-95 transition-all cursor-pointer backdrop-blur-sm"
+                aria-label="Previous Photo"
+              >
+                <ChevronLeft className="w-6 h-6 stroke-[2.5]" />
+              </button>
+
+              {/* Lightbox Next (>) Floating Button */}
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handleNextLightbox();
+                }}
+                className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-30 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#062432]/90 text-cyan-300 border border-cyan-400 flex items-center justify-center shadow-2xl hover:bg-[#0a3548] hover:scale-110 active:scale-95 transition-all cursor-pointer backdrop-blur-sm"
+                aria-label="Next Photo"
+              >
+                <ChevronRight className="w-6 h-6 stroke-[2.5]" />
+              </button>
             </div>
 
-            <p className="text-xs sm:text-sm text-slate-300 font-light text-center max-w-xl">
-              {lightboxImage.caption}
-            </p>
+            {/* Bottom Caption & Mobile Swipe Hint */}
+            <div className="flex flex-col items-center space-y-1 px-2">
+              <p className="text-xs sm:text-sm text-slate-200 font-light text-center max-w-xl">
+                {currentLightboxItem.caption}
+              </p>
+              <span className="text-[10px] text-cyan-400/80 font-medium tracking-wide">
+                Geser (swipe) atau gunakan panah keyboard untuk melihat foto lainnya
+              </span>
+            </div>
           </div>
         </div>
       )}

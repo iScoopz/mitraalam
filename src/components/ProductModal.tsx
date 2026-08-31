@@ -67,7 +67,7 @@ export default function ProductModal({ product, onClose }: ProductModalProps) {
               src={product.image}
               alt={product.name}
               fill
-              className={`object-cover ${product.imageClass || "scale-125 object-center"}`}
+              className={`object-cover ${product.imageClass || "object-center"}`}
               priority
             />
           ) : (
@@ -123,7 +123,7 @@ export default function ProductModal({ product, onClose }: ProductModalProps) {
           )}
 
           {/* Technical Specifications Grid */}
-          {hasAnySpec ? (
+          {hasAnySpec && (
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 bg-[#051c28] p-4 rounded-xl border border-cyan-500/20 text-xs">
               {validProcessingTypes.length > 0 && (
                 <div className="space-y-1">
@@ -170,10 +170,6 @@ export default function ProductModal({ product, onClose }: ProductModalProps) {
                   </p>
                 </div>
               )}
-            </div>
-          ) : (
-            <div className="bg-[#051c28] p-4 rounded-xl border border-cyan-500/20 text-xs text-center text-slate-300">
-              Detailed export specifications and custom cutting styles are available upon inquiry.
             </div>
           )}
 

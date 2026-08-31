@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { ShieldCheck, Globe2, FileCheck } from "lucide-react";
+import { Globe2, FileCheck } from "lucide-react";
 
 export default function ExportCertifications() {
   const exportDestinations = [
@@ -19,7 +19,20 @@ export default function ExportCertifications() {
   ];
 
   return (
-    <section id="certification" className="ocean-teal-banner text-white relative pt-8 pb-16 overflow-hidden">
+    <section id="certification" className="text-white relative pt-12 pb-20 overflow-hidden">
+      {/* Official Cover Background Image BACKGROUND-14.png */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/assets/1. COVER/BACKGROUND-14.png"
+          alt="CV. MITRA ALAM Export Destinations and Certifications Background"
+          fill
+          priority
+          className="object-cover object-center"
+        />
+        {/* Subtle overlay so the beautiful BACKGROUND-14.png image is fully visible */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#041822]/35 via-transparent to-[#041822]/40" />
+      </div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-10">
         {/* Two-Column Specification Box */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16 items-start">
@@ -36,7 +49,7 @@ export default function ExportCertifications() {
               {exportDestinations.map((item) => (
                 <div
                   key={item.country}
-                  className="flex flex-col sm:flex-row sm:items-center justify-between text-xs sm:text-sm bg-[#051c27]/80 px-4 py-2.5 rounded-lg border border-cyan-500/20 hover:border-cyan-400/40 transition-colors shadow-sm"
+                  className="flex flex-col sm:flex-row sm:items-center justify-between text-xs sm:text-sm bg-[#051c27]/85 px-4 py-2.5 rounded-lg border border-cyan-500/20 hover:border-cyan-400/40 transition-colors shadow-sm backdrop-blur-sm"
                 >
                   <span className="font-bold text-cyan-200 tracking-wide">
                     {item.country}
@@ -62,10 +75,10 @@ export default function ExportCertifications() {
               {haccpCertifications.map((item) => (
                 <div
                   key={item.type}
-                  className="flex flex-col sm:flex-row sm:items-center justify-between text-xs sm:text-sm bg-[#051c27]/80 px-4 py-2.5 rounded-lg border border-cyan-500/20 hover:border-cyan-400/40 transition-colors shadow-sm"
+                  className="flex flex-col sm:flex-row sm:items-center justify-between text-xs sm:text-sm bg-[#051c27]/85 px-4 py-2.5 rounded-lg border border-cyan-500/20 hover:border-cyan-400/40 transition-colors shadow-sm backdrop-blur-sm"
                 >
-                  <span className="font-bold text-cyan-200 tracking-wide flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
+                  <span className="font-bold text-cyan-200 flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
                     {item.type}
                   </span>
                   <span className="font-tech text-white font-medium sm:text-right tracking-wider">
@@ -75,8 +88,21 @@ export default function ExportCertifications() {
               ))}
             </div>
 
-            <div className="bg-[#041720]/90 rounded-lg p-3 border border-cyan-500/20 text-xs text-slate-300 flex items-center gap-3">
-              <ShieldCheck className="w-6 h-6 text-teal-400 shrink-0" />
+            {/* Ministry Compliance Badge */}
+            <div className="mt-3 p-3 rounded-lg bg-[#051c27]/85 border border-cyan-400/20 flex items-center gap-2.5 text-xs text-slate-300 backdrop-blur-sm">
+              <div className="w-5 h-5 rounded-full bg-cyan-400/20 text-cyan-300 flex items-center justify-center shrink-0">
+                <svg
+                  className="w-3 h-3 text-cyan-300"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+              </div>
               <span>
                 Fully verified and compliant under Indonesian Ministry of Marine Affairs & Fisheries (KKP) export protocols.
               </span>

@@ -107,7 +107,7 @@ export default function AboutUs() {
         {/* Middle Subsection: Our COMMITMENT */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center pt-8 border-t border-cyan-200/20">
           {/* Left Commitment Text */}
-          <div className="lg:col-span-7 space-y-5 text-left order-2 lg:order-1">
+          <div className="lg:col-span-6 space-y-5 text-left order-2 lg:order-1">
             <h3 className="font-display text-3xl sm:text-4xl font-black text-white uppercase drop-shadow-md">
               Our <span className="text-[#072433]">COMMITMENT</span>
             </h3>
@@ -125,14 +125,14 @@ export default function AboutUs() {
             </div>
           </div>
 
-          {/* Right Factory Packaging Photo */}
-          <div className="lg:col-span-5 order-1 lg:order-2">
-            <div className="relative h-72 sm:h-84 w-full rounded-2xl overflow-hidden border-4 border-cyan-300 shadow-2xl bg-[#072433] group">
+          {/* Right Factory Packaging Photo - Enlarged and fully visible */}
+          <div className="lg:col-span-6 order-1 lg:order-2">
+            <div className="relative h-80 sm:h-96 md:h-[420px] lg:h-[460px] w-full rounded-3xl overflow-hidden border-4 border-cyan-300 shadow-2xl bg-[#072433] group">
               <Image
                 src="/assets/5. COMMITMENT/5-02.png"
                 alt="CV. Mitra Alam Export Packaging and Cold Storage Operations in Makassar"
                 fill
-                className="object-cover object-[center_40%] group-hover:scale-108 transition-transform duration-700"
+                className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
               />
             </div>
           </div>
