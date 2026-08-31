@@ -84,24 +84,24 @@ export default function ExportCertifications() {
           </div>
         </div>
 
-        {/* Brushed Silver / Chrome Banner Ribbon with Official Uploaded Badges */}
-        <div className="metallic-ribbon rounded-2xl p-4 sm:p-6 text-[#072331] shadow-2xl relative overflow-hidden">
+        {/* Stainless Steel Metallic Gradient Banner for the 3 Certificates */}
+        <div className="stainless-steel-ribbon rounded-2xl p-4 sm:p-6 text-slate-900 shadow-2xl relative overflow-hidden">
           <div className="flex flex-wrap items-center justify-around gap-6 sm:gap-10">
             {/* Official GMP Quality Badge */}
             <div className="flex items-center gap-3 group">
               <div className="relative w-16 h-16 sm:w-20 sm:h-20 shrink-0 drop-shadow-md group-hover:scale-105 transition-transform flex items-center justify-center">
                 <Image
-                  src="/images/badge_gmp_clean.png"
+                  src="/assets/2. CERTIFICATE/GMP.png"
                   alt="GMP Quality Badge"
                   fill
                   className="object-contain"
                 />
               </div>
               <div>
-                <span className="font-display font-extrabold text-sm sm:text-base text-slate-800 uppercase block tracking-wider">
+                <span className="font-display font-black text-sm sm:text-base text-slate-900 uppercase block tracking-wider">
                   GMP Certified
                 </span>
-                <span className="text-[11px] text-slate-600 font-semibold">
+                <span className="text-[11px] text-slate-700 font-bold">
                   Good Manufacturing Practice
                 </span>
               </div>
@@ -111,17 +111,17 @@ export default function ExportCertifications() {
             <div className="flex items-center gap-3 group">
               <div className="relative w-24 h-14 sm:w-28 sm:h-16 shrink-0 drop-shadow-md group-hover:scale-105 transition-transform flex items-center justify-center">
                 <Image
-                  src="/images/badge_fda_clean.png"
+                  src="/assets/2. CERTIFICATE/Food_and_Drug_Administration_logo.svg.png"
                   alt="US FDA Badge"
                   fill
                   className="object-contain"
                 />
               </div>
               <div>
-                <span className="font-display font-extrabold text-sm sm:text-base text-slate-800 uppercase block tracking-wider">
+                <span className="font-display font-black text-sm sm:text-base text-slate-900 uppercase block tracking-wider">
                   US FDA Registered
                 </span>
-                <span className="text-[11px] text-slate-600 font-semibold">
+                <span className="text-[11px] text-slate-700 font-bold">
                   Reg No: 12621818410
                 </span>
               </div>
@@ -131,17 +131,17 @@ export default function ExportCertifications() {
             <div className="flex items-center gap-3 group">
               <div className="relative w-16 h-20 sm:w-20 sm:h-24 shrink-0 drop-shadow-md group-hover:scale-105 transition-transform flex items-center justify-center">
                 <Image
-                  src="/images/badge_haccp_clean.png"
+                  src="/assets/2. CERTIFICATE/haccp-removebg-preview.png"
                   alt="HACCP Certified Badge"
                   fill
                   className="object-contain"
                 />
               </div>
               <div>
-                <span className="font-display font-extrabold text-sm sm:text-base text-slate-800 uppercase block tracking-wider">
+                <span className="font-display font-black text-sm sm:text-base text-slate-900 uppercase block tracking-wider">
                   HACCP Verified
                 </span>
-                <span className="text-[11px] text-slate-600 font-semibold">
+                <span className="text-[11px] text-slate-700 font-bold">
                   Food Safety Management
                 </span>
               </div>

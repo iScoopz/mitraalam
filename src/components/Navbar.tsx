@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Image from "next/image";
 import { Menu, X, Globe, Phone, Mail } from "lucide-react";
 
 export default function Navbar() {
@@ -46,13 +45,18 @@ export default function Navbar() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
-        ? "bg-[#041822]/95 backdrop-blur-md border-b border-cyan-500/20 py-3 shadow-2xl"
+        ? "bg-[#041822]/95 backdrop-blur-md py-3 shadow-2xl"
         : "bg-gradient-to-b from-[#041822] via-[#041822]/80 to-transparent py-4 sm:py-5"
         }`}
     >
+      {/* Stainless Steel Metallic Gradient Bottom Line on Scroll */}
+      {scrolled && (
+        <div className="absolute bottom-0 left-0 right-0 h-[1.5px] stainless-steel-line pointer-events-none shadow-[0_1px_4px_rgba(255,255,255,0.3)]" />
+      )}
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-        {/* Brand Logo & Name */}
-        <a href="#home" className="flex items-center gap-3 group">
+        {/* Brand Name */}
+        <a href="#home" className="flex items-center group">
           <div>
             <span className="font-display font-extrabold text-lg sm:text-xl tracking-wider text-cyan-400 group-hover:text-cyan-300 transition-colors uppercase drop-shadow-md">
               CV. MITRA ALAM

@@ -44,7 +44,7 @@ export default function Hero() {
               {/* Logo container */}
               <div className="relative w-full h-full hover:scale-105 transition-transform duration-500 flex items-center justify-center">
                 <Image
-                  src="/images/logo_mitra_alam_transparent.png"
+                  src="/assets/1. COVER/logo-01.png"
                   alt="CV. Mitra Alam Logo"
                   fill
                   priority

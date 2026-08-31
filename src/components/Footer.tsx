@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { MapPin, Phone, Mail, ExternalLink, MessageCircle } from "lucide-react";
+import { ExternalLink, MessageCircle, MapPin } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -13,12 +13,10 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
           {/* Column 1: Brand Info & Social Icons matching Screenshot 4 */}
           <div className="lg:col-span-4 space-y-4 text-left">
-            <div className="flex items-center gap-3">
-              <div>
-                <h3 className="font-display font-extrabold text-xl text-white tracking-wider uppercase">
-                  CV. MITRA ALAM
-                </h3>
-              </div>
+            <div>
+              <h3 className="font-display font-extrabold text-xl text-white tracking-wider uppercase">
+                CV. MITRA ALAM
+              </h3>
             </div>
 
             <p className="text-xs sm:text-sm text-slate-300 font-normal leading-relaxed max-w-sm">
@@ -105,7 +103,14 @@ export default function Footer() {
             {/* Frosted White/Silver Card matching Screenshot 4 */}
             <div className="metallic-card rounded-2xl p-5 text-[#072331] shadow-xl space-y-3.5 border border-white/80">
               <div className="flex items-start gap-3 text-xs leading-relaxed font-semibold">
-                <MapPin className="w-4 h-4 text-cyan-700 shrink-0 mt-0.5" />
+                <div className="relative w-5 h-5 shrink-0 mt-0.5">
+                  <Image
+                    src="/assets/9. CONTACT US/contact us-10.png"
+                    alt="Location"
+                    fill
+                    className="object-contain"
+                  />
+                </div>
                 <span>
                   Jl. Lantebung No. 9, <br />
                   Kota Makassar, Sulawesi Selatan, 90244, Indonesia
@@ -113,7 +118,14 @@ export default function Footer() {
               </div>
 
               <div className="flex items-center gap-3 text-xs font-bold border-t border-slate-300/60 pt-2.5">
-                <Phone className="w-4 h-4 text-cyan-700 shrink-0" />
+                <div className="relative w-5 h-5 shrink-0">
+                  <Image
+                    src="/assets/9. CONTACT US/contact us-11.png"
+                    alt="Phone"
+                    fill
+                    className="object-contain"
+                  />
+                </div>
                 <a
                   href="tel:+6282190931111"
                   className="hover:text-cyan-800 transition-colors font-tech text-sm"
@@ -123,7 +135,14 @@ export default function Footer() {
               </div>
 
               <div className="flex items-center gap-3 text-xs font-bold border-t border-slate-300/60 pt-2.5">
-                <Mail className="w-4 h-4 text-cyan-700 shrink-0" />
+                <div className="relative w-5 h-5 shrink-0">
+                  <Image
+                    src="/assets/9. CONTACT US/contact us-12.png"
+                    alt="Email"
+                    fill
+                    className="object-contain"
+                  />
+                </div>
                 <a
                   href="mailto:mitraalam9@gmail.com"
                   className="hover:text-cyan-800 transition-colors text-xs font-medium"

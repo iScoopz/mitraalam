@@ -1,25 +1,24 @@
 "use client";
 
 import Image from "next/image";
-import { Award, Target, Handshake, CheckCircle2, ShieldAlert } from "lucide-react";
 
 export default function AboutUs() {
   const coreValues = [
     {
       title: "QUALITY",
-      icon: Award,
+      image: "/assets/6. CORE VALUES/core-03.png",
       description:
         "Raw materials sourced exclusively from certified suppliers with proven cold-chain handling expertise.",
     },
     {
       title: "PRECISION",
-      icon: Target,
+      image: "/assets/6. CORE VALUES/core-04.png",
       description:
         "Delivering the highest quality products with minimal failure tolerance and strict QC standards.",
     },
     {
       title: "FLEXIBILITY",
-      icon: Handshake,
+      image: "/assets/6. CORE VALUES/core-1-05.png",
       description:
         "Specializing in custom product specifications and open to discussing unique client needs.",
     },
@@ -27,7 +26,6 @@ export default function AboutUs() {
 
   return (
     <section id="about" className="py-20 ocean-teal-section text-white relative overflow-hidden">
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-20">
         {/* Top Subsection: We Produce High-Quality Frozen Seafood */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
@@ -35,8 +33,8 @@ export default function AboutUs() {
           <div className="lg:col-span-4 flex justify-center">
             <div className="relative w-60 h-60 sm:w-72 sm:h-72 rounded-full overflow-hidden border-4 border-cyan-300 shadow-2xl bg-[#072433] group">
               <Image
-                src="/images/qc_temp.jpg"
-                alt="Seafood Quality Temperature Inspection"
+                src="/assets/4. STORY/IMG_7531.JPG"
+                alt="Seafood Quality Inspection Story"
                 fill
                 className="object-cover group-hover:scale-108 transition-transform duration-700"
               />
@@ -91,15 +89,15 @@ export default function AboutUs() {
           <div className="lg:col-span-5 order-1 lg:order-2">
             <div className="relative h-64 sm:h-80 w-full rounded-2xl overflow-hidden border-4 border-cyan-300 shadow-2xl bg-[#072433] group">
               <Image
-                src="/images/packing_room.jpg"
-                alt="Seafood Packaging Operation at Mitra Alam"
+                src="/assets/5. COMMITMENT/5-02.png"
+                alt="Mitra Alam Export Commitment"
                 fill
-                className="object-cover group-hover:scale-105 transition-transform duration-700"
+                className="object-contain p-2 group-hover:scale-105 transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#072433]/80 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#072433]/60 via-transparent to-transparent pointer-events-none" />
               <div className="absolute bottom-4 left-4 right-4">
                 <span className="text-xs font-bold uppercase tracking-wider text-cyan-300 drop-shadow">
-                  Export Packaging & Cold Storage Room
+                  Export Packaging & Cold Storage Operations
                 </span>
               </div>
             </div>
@@ -112,28 +110,32 @@ export default function AboutUs() {
             Our <span className="text-[#072433]">CORE VALUES</span>
           </h3>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {coreValues.map((val) => {
-              const Icon = val.icon;
-              return (
-                <div
-                  key={val.title}
-                  className="ocean-teal-card rounded-2xl p-6 sm:p-8 text-center space-y-4 hover:translate-y-[-4px] hover:border-cyan-400 transition-all duration-300"
-                >
-                  <div className="w-14 h-14 rounded-full bg-cyan-500/15 border border-cyan-400/40 flex items-center justify-center mx-auto shadow-inner text-cyan-300">
-                    <Icon className="w-7 h-7" />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
+            {coreValues.map((val) => (
+              <div
+                key={val.title}
+                className="ocean-teal-card rounded-2xl p-6 sm:p-8 text-center space-y-4 hover:translate-y-[-4px] hover:border-cyan-400 transition-all duration-300 flex flex-col items-center justify-start h-full"
+              >
+                <div className="w-16 h-16 rounded-full bg-cyan-500/15 border border-cyan-400/40 flex items-center justify-center mx-auto shadow-inner p-2 shrink-0">
+                  <div className="relative w-10 h-10">
+                    <Image
+                      src={val.image}
+                      alt={val.title}
+                      fill
+                      className="object-contain"
+                    />
                   </div>
-
-                  <h4 className="font-display font-extrabold text-lg sm:text-xl text-cyan-300 tracking-wider uppercase">
-                    {val.title}
-                  </h4>
-
-                  <p className="text-slate-300 text-xs sm:text-sm font-normal leading-relaxed">
-                    {val.description}
-                  </p>
                 </div>
-              );
-            })}
+
+                <h4 className="font-display font-extrabold text-lg sm:text-xl text-cyan-300 tracking-wider uppercase">
+                  {val.title}
+                </h4>
+
+                <p className="text-slate-300 text-xs sm:text-sm font-normal leading-relaxed">
+                  {val.description}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </div>

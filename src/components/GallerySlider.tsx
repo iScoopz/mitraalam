@@ -26,34 +26,34 @@ export default function GallerySlider() {
       id: 1,
       items: [
         {
-          src: "/images/sorting_line.jpg",
-          title: "HACCP Processing Line",
-          caption: "Sanitary processing line with certified food grade stainless steel sorting tables.",
-        },
-        {
-          src: "/images/qc_temp.jpg",
+          src: "/assets/4. STORY/IMG_7531.JPG",
           title: "Quality & Core Temperature Control",
           caption: "Precision core temperature verification on octopus before flash freezing.",
         },
         {
-          src: "/images/weighing_scale.jpg",
-          title: "Precision Sizing & Weighing",
-          caption: "Digital scale calibration ensuring uniform export weight grading.",
-        },
-        {
-          src: "/images/packing_room.jpg",
+          src: "/assets/5. COMMITMENT/5-02.png",
           title: "Packaging & Cold Staging",
-          caption: "Export-grade carton packaging under constant -18°C temperature chain.",
+          caption: "Export-grade packaging under strict cold chain management.",
         },
         {
-          src: "/images/cuttlefish.jpg",
+          src: "/assets/3. PRODUCT/cuttlefish.jpeg",
           title: "Cleaned Cuttlefish Prep",
           caption: "Pristine white cleaned cuttlefish prepared for individual quick freezing.",
         },
         {
-          src: "/images/redsnapper.jpg",
+          src: "/assets/3. PRODUCT/snapper.jpg",
           title: "Fresh Demersal Fish Landing",
           caption: "Direct landing dock inspection of fresh wild-caught red snapper.",
+        },
+        {
+          src: "/assets/3. PRODUCT/octopus.jpeg",
+          title: "Whole Cleaned Octopus",
+          caption: "Cleaned ball octopus packed for premium sushi and gourmet export markets.",
+        },
+        {
+          src: "/assets/3. PRODUCT/squid.jpeg",
+          title: "Loligo Squid Processing",
+          caption: "Wild caught Loligo squid selected for block quick freezing.",
         },
       ],
     },
@@ -61,34 +61,34 @@ export default function GallerySlider() {
       id: 2,
       items: [
         {
-          src: "/images/container_loading.jpg",
-          title: "Refrigerated Container Loading",
-          caption: "Direct containerization into 40ft High Cube reefer containers for international shipment.",
-        },
-        {
-          src: "/images/parrotfish.jpg",
-          title: "Parrot Fish Processing",
-          caption: "Gilled, gutted, scaled, and glazed parrot fish ready for freezing.",
-        },
-        {
-          src: "/images/grouper.jpg",
+          src: "/assets/3. PRODUCT/grouper.jpg",
           title: "Whole Grouper Inspection",
           caption: "Export grade whole fresh grouper sourced from sustainable local fisheries.",
         },
         {
-          src: "/images/mackerel.jpg",
+          src: "/assets/3. PRODUCT/parrot fish.jpg",
+          title: "Parrot Fish Processing",
+          caption: "Gilled, gutted, scaled, and glazed parrot fish ready for freezing.",
+        },
+        {
+          src: "/assets/3. PRODUCT/rabbit fish.jpg",
+          title: "Rabbit Fish Sizing",
+          caption: "Carefully graded fresh rabbit fish for Asian retail & wholesale markets.",
+        },
+        {
+          src: "/assets/3. PRODUCT/leather jacket.jpg",
+          title: "Leather Jacket Fish",
+          caption: "Headless, gutted, and skinned leather jacket fish prepared for export.",
+        },
+        {
+          src: "/assets/3. PRODUCT/mackerel scad.jpg",
           title: "Mackerel Scad Block Freezing",
           caption: "High quality pelagic mackerel prepared for high capacity block air blast freezing.",
         },
         {
-          src: "/images/squid.jpg",
-          title: "Loligo Squid Processing",
-          caption: "Wild caught Loligo squid selected for block quick freezing.",
-        },
-        {
-          src: "/images/octopus.jpg",
-          title: "Whole Cleaned Octopus",
-          caption: "Cleaned ball octopus packed for premium sushi and gourmet export markets.",
+          src: "/assets/3. PRODUCT/spanish mackerel.jpeg",
+          title: "Spanish Mackerel Steaks & Fillets",
+          caption: "Prime Indonesian Tenggiri frozen to perfection for global export.",
         },
       ],
     },

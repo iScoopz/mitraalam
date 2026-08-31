@@ -19,7 +19,7 @@ export default function ProductShowcase({ onSelectProduct }: ProductShowcaseProp
       name: "OCTOPUS",
       scientificName: "Octopus cyaneus",
       category: "Cephalopod",
-      image: "/images/octopus.jpg",
+      image: "/assets/3. PRODUCT/octopus.jpeg",
       processingTypes: ["Whole Cleaned Ball | IQF", "Whole Block | Block Quick Frozen (BQF)"],
       freezingMethod: "Individual Quick Freezing (IQF) / Air Blast Quick Freeze",
       sizeGrades: "1-2 lbs, 2-4 lbs, 4-6 lbs, 6-8 lbs",
@@ -32,7 +32,7 @@ export default function ProductShowcase({ onSelectProduct }: ProductShowcaseProp
       name: "CUTTLEFISH",
       scientificName: "Sepia esculenta",
       category: "Cephalopod",
-      image: "/images/cuttlefish.jpg",
+      image: "/assets/3. PRODUCT/cuttlefish.jpeg",
       processingTypes: ["Whole Cleaned | IQF", "Skin-on / Skinless Fillet | IQF"],
       freezingMethod: "IQF / Contact Plate Freeze",
       sizeGrades: "0/1 pcs/kg, 1-2 pcs/kg, 2-4 pcs/kg",
@@ -45,7 +45,7 @@ export default function ProductShowcase({ onSelectProduct }: ProductShowcaseProp
       name: "SQUID",
       scientificName: "Loligo sp.",
       category: "Cephalopod",
-      image: "/images/squid.jpg",
+      image: "/assets/3. PRODUCT/squid.jpeg",
       processingTypes: ["Whole Block | Block Quick Frozen", "Whole Cleaned Tube & Tentacle | IQF"],
       freezingMethod: "Block Quick Frozen (BQF) / IQF",
       sizeGrades: "Size : *as per request (10-15cm, 15-20cm, 20cm+)",
@@ -54,24 +54,11 @@ export default function ProductShowcase({ onSelectProduct }: ProductShowcaseProp
       description: "Directly sourced from Indonesian clean waters, fresh Loligo squid packed in pristine quick-frozen blocks for industrial and culinary export.",
     },
     {
-      id: "parrotfish",
-      name: "PARROT FISH",
-      scientificName: "Scarus spp.",
-      category: "Demersal",
-      image: "/images/parrotfish.jpg",
-      processingTypes: ["Whole, Gilled, Gutted, Scaled (GGS) | IQF", "Whole Round | IQF"],
-      freezingMethod: "Individual Quick Freezing (IQF) with Glazing",
-      sizeGrades: "0.5-1 lbs, 1-2 lbs, 2-3 lbs",
-      packingSpec: "IWP (Individually Wrapped) / 10 kg Carton",
-      minOrder: "1 x 20ft FCL",
-      description: "Vibrant coral reef demersal fish with firm white flesh, cleaned to international export food safety standards.",
-    },
-    {
       id: "redsnapper",
       name: "RED SNAPPER",
       scientificName: "Lutjanus campechanus",
       category: "Demersal",
-      image: "/images/redsnapper.jpg",
+      image: "/assets/3. PRODUCT/snapper.jpg",
       processingTypes: ["Whole Round / GGS / Fillet | IQF", "Skin-on Scaled Fillet"],
       freezingMethod: "IQF / Air Blast Frozen (-35°C)",
       sizeGrades: "300-500g, 500-800g, 800-1000g, 1000g+",
@@ -84,7 +71,7 @@ export default function ProductShowcase({ onSelectProduct }: ProductShowcaseProp
       name: "GROUPER",
       scientificName: "Epinephelus spp.",
       category: "Demersal",
-      image: "/images/grouper.jpg",
+      image: "/assets/3. PRODUCT/grouper.jpg",
       processingTypes: ["Whole Round / Gilled & Gutted | IQF", "Head-on / Headless Fillet"],
       freezingMethod: "Air Blast Quick Freeze (-35°C)",
       sizeGrades: "500-1000g, 1000-2000g, 2000-3000g",
@@ -93,17 +80,85 @@ export default function ProductShowcase({ onSelectProduct }: ProductShowcaseProp
       description: "Rich and firm white meat grouper, carefully handled and fast-chilled immediately after dock landing in Makassar.",
     },
     {
+      id: "parrotfish",
+      name: "PARROT FISH",
+      scientificName: "Scarus spp.",
+      category: "Demersal",
+      image: "/assets/3. PRODUCT/parrot fish.jpg",
+      processingTypes: ["Whole, Gilled, Gutted, Scaled (GGS) | IQF", "Whole Round | IQF"],
+      freezingMethod: "Individual Quick Freezing (IQF) with Glazing",
+      sizeGrades: "0.5-1 lbs, 1-2 lbs, 2-3 lbs",
+      packingSpec: "IWP (Individually Wrapped) / 10 kg Carton",
+      minOrder: "1 x 20ft FCL",
+      description: "Vibrant coral reef demersal fish with firm white flesh, cleaned to international export food safety standards.",
+    },
+    {
+      id: "rabbitfish",
+      name: "RABBIT FISH",
+      scientificName: "Siganus spp.",
+      category: "Demersal",
+      image: "/assets/3. PRODUCT/rabbit fish.jpg",
+      processingTypes: ["Whole Round | IQF", "Gilled & Gutted | IQF"],
+      freezingMethod: "IQF / Air Blast Frozen (-35°C)",
+      sizeGrades: "200-300g, 300-500g, 500-800g",
+      packingSpec: "10 kg Master Carton",
+      minOrder: "1 x 20ft FCL",
+      description: "Fresh white meat rabbit fish (Ikan Baronang), highly regarded for tender texture and delicate sweet seafood taste.",
+    },
+    {
+      id: "leatherjacket",
+      name: "LEATHER JACKET",
+      scientificName: "Monacanthidae",
+      category: "Demersal",
+      image: "/assets/3. PRODUCT/leather jacket.jpg",
+      isComingSoon: true,
+      processingTypes: ["Headless, Gutted, Skinless (HGT) | IQF", "Whole Cleaned"],
+      freezingMethod: "IQF / BQF",
+      sizeGrades: "100-200g, 200-300g, 300-500g",
+      packingSpec: "10 kg Master Carton",
+      minOrder: "1 x 20ft FCL",
+      description: "Carefully skinned and cleaned leather jacket fish with lean, firm white meat ideal for Asian and global retail markets.",
+    },
+    {
       id: "mackerel",
       name: "MACKEREL SCAD",
       scientificName: "Decapterus macarellus",
       category: "Pelagic",
-      image: "/images/mackerel.jpg",
+      image: "/assets/3. PRODUCT/mackerel scad.jpg",
       processingTypes: ["Whole Round | Block Quick Frozen (BQF)", "Whole Round | IQF"],
       freezingMethod: "BQF 10kg/15kg block in Air Blast Freezer",
       sizeGrades: "4-6 pcs/kg, 6-8 pcs/kg, 8-10 pcs/kg, 10-12 pcs/kg",
       packingSpec: "10 kg / 15 kg net weight carton block",
       minOrder: "1 x 40ft FCL (~27 MT)",
       description: "High oil-content pelagic fish (Ikan Layang), high protein and nutrient rich, popular across Asian and global canned/frozen markets.",
+    },
+    {
+      id: "spanishmackerel",
+      name: "SPANISH MACKEREL",
+      scientificName: "Scomberomorus commerson",
+      category: "Pelagic",
+      image: "/assets/3. PRODUCT/spanish mackerel.jpeg",
+      isComingSoon: true,
+      processingTypes: ["Whole Round / Steak / Fillet | IQF", "Gilled & Gutted"],
+      freezingMethod: "Air Blast Quick Freeze (-35°C)",
+      sizeGrades: "1-2 kg, 2-3 kg, 3-5 kg, 5kg+",
+      packingSpec: "15 kg / 20 kg Master Carton",
+      minOrder: "1 x 20ft FCL",
+      description: "Premium grade Spanish Mackerel (Ikan Tenggiri), richly flavored and firm, renowned for export culinary and surimi applications.",
+    },
+    {
+      id: "largeheadhairtail",
+      name: "LARGEHEAD HAIRTAIL",
+      scientificName: "Trichiurus lepturus",
+      category: "Pelagic",
+      image: "",
+      isComingSoon: true,
+      processingTypes: ["Whole Round | IQF / Block", "Headless, Gutted (HGT)"],
+      freezingMethod: "Air Blast Quick Freeze (-35°C) / IQF",
+      sizeGrades: "200-300g, 300-500g, 500-700g, 700g+",
+      packingSpec: "10 kg Master Carton",
+      minOrder: "1 x 20ft / 40ft FCL",
+      description: "Indonesian Ribbonfish (Ikan Layur), elongated silver pelagic fish, celebrated across global markets for lean and delicate white meat.",
     },
   ];
 
@@ -136,7 +191,6 @@ export default function ProductShowcase({ onSelectProduct }: ProductShowcaseProp
       id="product"
       className="py-16 sm:py-24 ocean-teal-section text-white relative overflow-hidden"
     >
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-8">
         {/* Section Header matching Screenshot 1 */}
         <div className="text-center space-y-3">
@@ -201,26 +255,47 @@ export default function ProductShowcase({ onSelectProduct }: ProductShowcaseProp
               >
                 <div>
                   {/* Category Pill on Card Header */}
-                  <div className="flex justify-center mb-3">
-                    <span className="bg-[#072433] text-cyan-300 text-[10px] font-bold px-4 py-1 rounded-full uppercase tracking-wider shadow-inner">
+                  <div className="flex justify-between items-center mb-3">
+                    <span className="bg-[#072433] text-cyan-300 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-inner">
                       {prod.category}
                     </span>
+                    {prod.isComingSoon && (
+                      <span className="bg-amber-400 text-slate-900 text-[10px] font-black px-2.5 py-0.5 rounded-full uppercase tracking-wider shadow-sm">
+                        Coming Soon
+                      </span>
+                    )}
                   </div>
 
-                  {/* Seafood Image Container */}
-                  <div className="relative h-40 sm:h-44 w-full rounded-xl overflow-hidden bg-white/70 shadow-sm border border-slate-200/80 mb-4">
-                    <Image
-                      src={prod.image}
-                      alt={prod.name}
-                      fill
-                      className="object-cover group-hover/card:scale-108 transition-transform duration-500"
-                    />
-                    <div className="absolute inset-0 bg-[#072433]/30 opacity-0 group-hover/card:opacity-100 transition-opacity flex items-center justify-center">
-                      <span className="bg-[#072433] text-cyan-300 text-[11px] font-bold px-3 py-1.5 rounded-lg flex items-center gap-1 shadow-md">
-                        <Eye className="w-3.5 h-3.5" /> View Specs
-                      </span>
+                  {/* Seafood Image Container or Clean Coming Soon Box */}
+                  {prod.image ? (
+                    <div className="relative h-40 sm:h-44 w-full rounded-xl overflow-hidden bg-white/70 shadow-sm border border-slate-200/80 mb-4">
+                      <Image
+                        src={prod.image}
+                        alt={prod.name}
+                        fill
+                        className="object-cover group-hover/card:scale-108 transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 bg-[#072433]/30 opacity-0 group-hover/card:opacity-100 transition-opacity flex items-center justify-center">
+                        <span className="bg-[#072433] text-cyan-300 text-[11px] font-bold px-3 py-1.5 rounded-lg flex items-center gap-1 shadow-md">
+                          <Eye className="w-3.5 h-3.5" /> View Specs
+                        </span>
+                      </div>
                     </div>
-                  </div>
+                  ) : (
+                    <div className="relative h-40 sm:h-44 w-full rounded-xl overflow-hidden bg-gradient-to-br from-[#062432] via-[#093549] to-[#041a24] shadow-inner border border-cyan-500/30 mb-4 flex flex-col items-center justify-center p-4 text-center group-hover/card:border-amber-400/60 transition-colors">
+                      <span className="bg-amber-400 text-slate-900 font-black text-[10px] uppercase px-3 py-1 rounded-full tracking-widest shadow-md mb-1.5">
+                        Coming Soon
+                      </span>
+                      <span className="text-[10px] font-bold text-slate-300 uppercase tracking-wider">
+                        Image Unavailable
+                      </span>
+                      <div className="absolute inset-0 bg-[#072433]/40 opacity-0 group-hover/card:opacity-100 transition-opacity flex items-center justify-center">
+                        <span className="bg-[#072433] text-cyan-300 text-[11px] font-bold px-3 py-1.5 rounded-lg flex items-center gap-1 shadow-md">
+                          <Eye className="w-3.5 h-3.5" /> View Specs
+                        </span>
+                      </div>
+                    </div>
+                  )}
 
                   {/* Product Title & Latin Name */}
                   <div className="space-y-0.5 mb-3 text-left">

@@ -10,6 +10,7 @@ export interface SeafoodProduct {
   scientificName: string;
   category: "Cephalopod" | "Demersal" | "Pelagic";
   image: string;
+  isComingSoon?: boolean;
   processingTypes: string[];
   freezingMethod: string;
   sizeGrades: string;
@@ -54,30 +55,46 @@ export default function ProductModal({ product, onClose }: ProductModalProps) {
         onClick={(e) => e.stopPropagation()}
       >
         {/* Top Header Bar */}
-        <div className="relative h-60 sm:h-72 w-full bg-slate-900">
-          <Image
-            src={product.image}
-            alt={product.name}
-            fill
-            className="object-cover"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#072433] via-transparent to-black/40" />
+        <div className="relative h-60 sm:h-72 w-full bg-[#051c28] flex items-center justify-center overflow-hidden">
+          {product.image ? (
+            <Image
+              src={product.image}
+              alt={product.name}
+              fill
+              className="object-cover"
+              priority
+            />
+          ) : (
+            <div className="flex flex-col items-center justify-center p-6 text-center space-y-2">
+              <span className="px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-widest bg-amber-400 text-slate-900 shadow-lg">
+                Coming Soon
+              </span>
+              <p className="text-slate-300 text-xs font-tech font-semibold">
+                Photo currently unavailable &bull; Product details verified
+              </p>
+            </div>
+          )}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#072433] via-transparent to-black/40 pointer-events-none" />
 
           {/* Close Button */}
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 w-9 h-9 rounded-full bg-[#041822]/80 text-cyan-300 border border-cyan-400/50 flex items-center justify-center hover:bg-cyan-900/60 hover:text-white transition-colors cursor-pointer shadow-lg"
+            className="absolute top-4 right-4 w-9 h-9 rounded-full bg-[#041822]/80 text-cyan-300 border border-cyan-400/50 flex items-center justify-center hover:bg-cyan-900/60 hover:text-white transition-colors cursor-pointer shadow-lg z-10"
             aria-label="Close modal"
           >
             <X className="w-5 h-5" />
           </button>
 
-          {/* Category Badge */}
-          <div className="absolute top-4 left-4">
+          {/* Badges Container */}
+          <div className="absolute top-4 left-4 flex items-center gap-2 z-10">
             <span className="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-cyan-500/90 text-[#041822] shadow-md">
               {product.category}
             </span>
+            {product.isComingSoon && (
+              <span className="px-3 py-1 rounded-full text-xs font-black uppercase tracking-wider bg-amber-400 text-slate-900 shadow-md">
+                Coming Soon
+              </span>
+            )}
           </div>
 
           {/* Bottom Title on Image */}
@@ -86,7 +103,7 @@ export default function ProductModal({ product, onClose }: ProductModalProps) {
               {product.name}
             </h2>
             <p className="text-cyan-300 text-sm font-tech italic">
-              {product.scientificName}
+              ( {product.scientificName} )
             </p>
           </div>
         </div>
