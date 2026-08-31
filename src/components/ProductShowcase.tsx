@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight, Eye, Sparkles } from "lucide-react";
 import { SeafoodProduct } from "./ProductModal";
@@ -11,6 +11,7 @@ interface ProductShowcaseProps {
 
 export default function ProductShowcase({ onSelectProduct }: ProductShowcaseProps) {
   const [activeCategory, setActiveCategory] = useState<string>("All");
+  const [activeIndex, setActiveIndex] = useState<number>(0);
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const products: SeafoodProduct[] = [
@@ -31,7 +32,7 @@ export default function ProductShowcase({ onSelectProduct }: ProductShowcaseProp
       name: "CUTTLEFISH",
       scientificName: "Sepia esculenta",
       category: "Cephalopod",
-      image: "/assets/3. PRODUCT/Salinan CEP. CUTTLEFISH WC _ 1.jpeg",
+      image: "/assets/3. PRODUCT/cuttlefish.png",
       imageClass: "object-cover object-center",
       processingTypes: ["Whole Cleaned"],
       freezingMethod: "IQF / Air Blast Quick Freezing",
@@ -43,7 +44,7 @@ export default function ProductShowcase({ onSelectProduct }: ProductShowcaseProp
       name: "SQUID",
       scientificName: "Loligo sp.",
       category: "Cephalopod",
-      image: "/assets/3. PRODUCT/squid.jpeg",
+      image: "/assets/3. PRODUCT/squid.png",
       imageClass: "object-cover object-center",
       processingTypes: ["Whole Block"],
       freezingMethod: "Air Blast Quick Freezing",
@@ -55,7 +56,7 @@ export default function ProductShowcase({ onSelectProduct }: ProductShowcaseProp
       name: "SNAPPER",
       scientificName: "Lutjanus spp.",
       category: "Demersal",
-      image: "/assets/3. PRODUCT/snapper.jpg",
+      image: "/assets/3. PRODUCT/snapper.png",
       imageClass: "object-cover object-center",
       processingTypes: ["Whole Round / WGGS / Fillet", "Skin-on Scaled Fillet"],
       freezingMethod: "IQF / Air Blast Quick Freezing",
@@ -67,7 +68,7 @@ export default function ProductShowcase({ onSelectProduct }: ProductShowcaseProp
       name: "GROUPER",
       scientificName: "Epinephelus spp.",
       category: "Demersal",
-      image: "/assets/3. PRODUCT/grouper.jpg",
+      image: "/assets/3. PRODUCT/grouper.png",
       imageClass: "object-cover object-center",
       processingTypes: ["Whole Round / WGGS", "Head Only"],
       freezingMethod: "Air Blast Quick Freezing",
@@ -79,7 +80,7 @@ export default function ProductShowcase({ onSelectProduct }: ProductShowcaseProp
       name: "PARROT FISH",
       scientificName: "Scarus spp.",
       category: "Demersal",
-      image: "/assets/3. PRODUCT/Salinan DEM. PARROT WGGS _ 7.jpeg",
+      image: "/assets/3. PRODUCT/parrot fish.jpeg",
       imageClass: "object-cover object-center",
       processingTypes: ["Whole, Gilled, Gutted, Scaled (WGGS)", "Whole Round"],
       freezingMethod: "Individual Quick Freezing (IQF) with Glazing",
@@ -91,7 +92,7 @@ export default function ProductShowcase({ onSelectProduct }: ProductShowcaseProp
       name: "RABBIT FISH",
       scientificName: "Siganus spp.",
       category: "Demersal",
-      image: "/assets/3. PRODUCT/rabbit fish-1.jpg",
+      image: "/assets/3. PRODUCT/rabbit fish.jpg",
       imageClass: "object-cover object-center",
       processingTypes: ["Whole Round"],
       freezingMethod: "IQF / Air Blast Quick Freezing",
@@ -103,7 +104,7 @@ export default function ProductShowcase({ onSelectProduct }: ProductShowcaseProp
       name: "LEATHER JACKET",
       scientificName: "Aluterus monoceros",
       category: "Demersal",
-      image: "/assets/3. PRODUCT/leather jacket.jpg",
+      image: "/assets/3. PRODUCT/leather jacket.png",
       imageClass: "object-cover object-center",
       isComingSoon: true,
       processingTypes: [],
@@ -116,7 +117,7 @@ export default function ProductShowcase({ onSelectProduct }: ProductShowcaseProp
       name: "MACKEREL SCAD",
       scientificName: "Decapterus spp.",
       category: "Pelagic",
-      image: "/assets/3. PRODUCT/Salinan PEL. MACKEREL SCAD _ 1.jpeg",
+      image: "/assets/3. PRODUCT/mackerel scad.jpeg",
       imageClass: "object-cover object-center",
       processingTypes: ["Whole Round"],
       freezingMethod: "Block in Air Blast Quick Freezer",
@@ -128,7 +129,7 @@ export default function ProductShowcase({ onSelectProduct }: ProductShowcaseProp
       name: "SPANISH MACKEREL",
       scientificName: "Scomberomorus commerson",
       category: "Pelagic",
-      image: "/assets/3. PRODUCT/spanish mackerel.jpeg",
+      image: "/assets/3. PRODUCT/spanish mackerel.png",
       imageClass: "object-cover object-center",
       isComingSoon: true,
       processingTypes: [],
@@ -163,15 +164,66 @@ export default function ProductShowcase({ onSelectProduct }: ProductShowcaseProp
       ? products
       : products.filter((p) => p.category === activeCategory);
 
+  // Auto reset scroll position and active index when category tab changes
+  useEffect(() => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollTo({ left: 0, behavior: "smooth" });
+      setActiveIndex(0);
+    }
+  }, [activeCategory]);
+
+  // Update active dot indicator dynamically on scroll
+  const handleScroll = () => {
+    if (!scrollRef.current) return;
+    const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+    const maxScroll = scrollWidth - clientWidth;
+    if (maxScroll <= 0) {
+      setActiveIndex(0);
+      return;
+    }
+    const total = filteredProducts.length;
+    const index = Math.min(
+      Math.max(0, Math.round((scrollLeft / maxScroll) * (total - 1))),
+      total - 1
+    );
+    setActiveIndex(index);
+  };
+
+  // Scroll left with wrap-around to end when reaching the start
   const scrollLeft = () => {
     if (scrollRef.current) {
-      scrollRef.current.scrollBy({ left: -320, behavior: "smooth" });
+      const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+      if (scrollLeft <= 20) {
+        // Wrap around to end
+        scrollRef.current.scrollTo({ left: scrollWidth - clientWidth, behavior: "smooth" });
+      } else {
+        scrollRef.current.scrollBy({ left: -320, behavior: "smooth" });
+      }
     }
   };
 
+  // Scroll right with wrap-around to beginning when reaching the end
   const scrollRight = () => {
     if (scrollRef.current) {
-      scrollRef.current.scrollBy({ left: 320, behavior: "smooth" });
+      const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+      if (scrollLeft + clientWidth >= scrollWidth - 20) {
+        // Wrap around to start
+        scrollRef.current.scrollTo({ left: 0, behavior: "smooth" });
+      } else {
+        scrollRef.current.scrollBy({ left: 320, behavior: "smooth" });
+      }
+    }
+  };
+
+  // Click on a specific dot to scroll directly to that product
+  const scrollToIndex = (index: number) => {
+    if (scrollRef.current) {
+      const { scrollWidth, clientWidth } = scrollRef.current;
+      const maxScroll = scrollWidth - clientWidth;
+      const total = filteredProducts.length;
+      if (total <= 1) return;
+      const targetLeft = (maxScroll / (total - 1)) * index;
+      scrollRef.current.scrollTo({ left: targetLeft, behavior: "smooth" });
     }
   };
 
@@ -198,11 +250,10 @@ export default function ProductShowcase({ onSelectProduct }: ProductShowcaseProp
                 <button
                   key={cat.label}
                   onClick={() => setActiveCategory(cat.value)}
-                  className={`px-5 py-2 rounded-full text-xs font-extrabold tracking-wider transition-all duration-200 uppercase cursor-pointer ${
-                    isActive
-                      ? "bg-[#062432] text-cyan-300 border-2 border-cyan-400/80 shadow-lg scale-105"
-                      : "bg-[#062432]/70 text-slate-200 hover:bg-[#062432] hover:text-white border border-cyan-500/30"
-                  }`}
+                  className={`px-5 py-2 rounded-full text-xs font-extrabold tracking-wider transition-all duration-200 uppercase cursor-pointer ${isActive
+                    ? "bg-[#062432] text-cyan-300 border-2 border-cyan-400/80 shadow-lg scale-105"
+                    : "bg-[#062432]/70 text-slate-200 hover:bg-[#062432] hover:text-white border border-cyan-500/30"
+                    }`}
                 >
                   {cat.label}
                 </button>
@@ -234,6 +285,7 @@ export default function ProductShowcase({ onSelectProduct }: ProductShowcaseProp
           {/* Side Scrolling Slider Track */}
           <div
             ref={scrollRef}
+            onScroll={handleScroll}
             className="flex space-x-5 sm:space-x-6 overflow-x-auto no-scrollbar py-6 px-3 scroll-smooth"
           >
             {filteredProducts.map((prod) => (
@@ -314,10 +366,10 @@ export default function ProductShowcase({ onSelectProduct }: ProductShowcaseProp
                     )}
                     {(!prod.processingTypes?.some((pt) => pt && pt.trim() !== "") &&
                       (!prod.sizeGrades || prod.sizeGrades.trim() === "")) && (
-                      <p className="font-tech text-slate-500 italic text-[11px]">
-                        Specs available on request
-                      </p>
-                    )}
+                        <p className="font-tech text-slate-500 italic text-[11px]">
+                          Specs available on request
+                        </p>
+                      )}
                   </div>
                 </div>
 
@@ -329,6 +381,22 @@ export default function ProductShowcase({ onSelectProduct }: ProductShowcaseProp
                   </span>
                 </div>
               </div>
+            ))}
+          </div>
+
+          {/* Slide Indicator Dots (Penanda Scroll seperti di Gallery) */}
+          <div className="flex justify-center items-center gap-2 pt-6">
+            {filteredProducts.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => scrollToIndex(i)}
+                className={`h-2.5 rounded-full transition-all duration-300 cursor-pointer ${
+                  activeIndex === i
+                    ? "w-8 bg-[#072433] border border-cyan-400 shadow-md"
+                    : "w-2.5 bg-white/40 hover:bg-white/70"
+                }`}
+                aria-label={`Go to product ${i + 1}`}
+              />
             ))}
           </div>
         </div>

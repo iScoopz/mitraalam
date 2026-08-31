@@ -6,7 +6,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative text-white pt-28 pb-10 flex items-center"
+      className="relative text-white min-h-[calc(100vh-80px)] pt-28 sm:pt-32 pb-12 flex flex-col justify-between"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
@@ -25,7 +25,7 @@ export default function Hero() {
             </div>
 
             {/* Subtitle */}
-            <p className="text-slate-200 text-sm sm:text-lg font-medium max-w-xl leading-relaxed drop-shadow-md">
+            <p className="text-slate-200 text-sm sm:text-base lg:text-lg font-medium max-w-xl leading-relaxed drop-shadow-md">
               High-Quality Indonesian Frozen Seafood for Global Markets. Premier
               processor of wild-caught Octopus, Squid, Cuttlefish, and Demersal
               Fish in Makassar, South Sulawesi.
@@ -53,6 +53,18 @@ export default function Hero() {
           </div>
         </div>
       </div>
+
+      {/* Scroll Down Prompt at Bottom */}
+      <a
+        href="#certification"
+        className="mx-auto flex flex-col items-center gap-1 text-cyan-300/70 hover:text-cyan-300 transition-colors pt-6 cursor-pointer"
+        aria-label="Scroll to Certifications"
+      >
+        <span className="text-[10px] sm:text-xs font-semibold tracking-widest uppercase">Scroll Down</span>
+        <svg className="w-4 h-4 text-cyan-400 animate-bounce mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+        </svg>
+      </a>
     </section>
   );
 }

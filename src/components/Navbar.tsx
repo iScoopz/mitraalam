@@ -58,11 +58,9 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         {/* Brand Name */}
         <a href="#home" className="flex items-center group">
-          <div>
-            <span className="font-display font-extrabold text-lg sm:text-xl tracking-wider text-cyan-400 group-hover:text-cyan-300 transition-colors uppercase drop-shadow-md">
-              CV. MITRA ALAM
-            </span>
-          </div>
+          <span className="font-display font-black text-xl sm:text-2xl tracking-wider text-cyan-400 group-hover:text-cyan-300 transition-colors uppercase drop-shadow-md">
+            CV. MITRA ALAM
+          </span>
         </a>
 
         {/* Desktop Nav Items */}
@@ -73,9 +71,9 @@ export default function Navbar() {
               <a
                 key={link.name}
                 href={link.href}
-                className={`px-3.5 py-1.5 rounded-sm text-xs font-bold tracking-wider transition-all duration-200 uppercase ${
+                className={`px-3.5 py-2 rounded-lg text-xs font-bold tracking-wider transition-all duration-200 uppercase ${
                   isActive
-                    ? "bg-cyan-500/20 text-cyan-300 border-b-2 border-cyan-400 shadow-sm"
+                    ? "bg-cyan-500/20 text-cyan-300 border border-cyan-400/50 shadow-sm"
                     : "text-slate-300 hover:text-white hover:bg-white/5"
                 }`}
               >
