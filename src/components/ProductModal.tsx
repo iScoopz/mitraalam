@@ -10,6 +10,7 @@ export interface SeafoodProduct {
   scientificName: string;
   category: "Cephalopod" | "Demersal" | "Pelagic";
   image: string;
+  imageClass?: string;
   isComingSoon?: boolean;
   processingTypes: string[];
   freezingMethod: string;
@@ -61,7 +62,7 @@ export default function ProductModal({ product, onClose }: ProductModalProps) {
               src={product.image}
               alt={product.name}
               fill
-              className="object-cover"
+              className={`object-cover ${product.imageClass || "scale-125 object-center"}`}
               priority
             />
           ) : (

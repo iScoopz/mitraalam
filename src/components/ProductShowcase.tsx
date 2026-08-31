@@ -20,6 +20,7 @@ export default function ProductShowcase({ onSelectProduct }: ProductShowcaseProp
       scientificName: "Octopus cyaneus",
       category: "Cephalopod",
       image: "/assets/3. PRODUCT/octopus.jpeg",
+      imageClass: "scale-[1.28] object-center",
       processingTypes: ["Whole Cleaned Ball | IQF", "Whole Block | Block Quick Frozen (BQF)"],
       freezingMethod: "Individual Quick Freezing (IQF) / Air Blast Quick Freeze",
       sizeGrades: "1-2 lbs, 2-4 lbs, 4-6 lbs, 6-8 lbs",
@@ -33,6 +34,7 @@ export default function ProductShowcase({ onSelectProduct }: ProductShowcaseProp
       scientificName: "Sepia esculenta",
       category: "Cephalopod",
       image: "/assets/3. PRODUCT/cuttlefish.jpeg",
+      imageClass: "scale-[1.28] object-center",
       processingTypes: ["Whole Cleaned | IQF", "Skin-on / Skinless Fillet | IQF"],
       freezingMethod: "IQF / Contact Plate Freeze",
       sizeGrades: "0/1 pcs/kg, 1-2 pcs/kg, 2-4 pcs/kg",
@@ -46,6 +48,7 @@ export default function ProductShowcase({ onSelectProduct }: ProductShowcaseProp
       scientificName: "Loligo sp.",
       category: "Cephalopod",
       image: "/assets/3. PRODUCT/squid.jpeg",
+      imageClass: "scale-[1.28] object-center",
       processingTypes: ["Whole Block | Block Quick Frozen", "Whole Cleaned Tube & Tentacle | IQF"],
       freezingMethod: "Block Quick Frozen (BQF) / IQF",
       sizeGrades: "Size : *as per request (10-15cm, 15-20cm, 20cm+)",
@@ -59,6 +62,7 @@ export default function ProductShowcase({ onSelectProduct }: ProductShowcaseProp
       scientificName: "Lutjanus campechanus",
       category: "Demersal",
       image: "/assets/3. PRODUCT/snapper.jpg",
+      imageClass: "scale-[1.52] object-[85%_center]",
       processingTypes: ["Whole Round / GGS / Fillet | IQF", "Skin-on Scaled Fillet"],
       freezingMethod: "IQF / Air Blast Frozen (-35°C)",
       sizeGrades: "300-500g, 500-800g, 800-1000g, 1000g+",
@@ -72,6 +76,7 @@ export default function ProductShowcase({ onSelectProduct }: ProductShowcaseProp
       scientificName: "Epinephelus spp.",
       category: "Demersal",
       image: "/assets/3. PRODUCT/grouper.jpg",
+      imageClass: "scale-[1.42] object-center",
       processingTypes: ["Whole Round / Gilled & Gutted | IQF", "Head-on / Headless Fillet"],
       freezingMethod: "Air Blast Quick Freeze (-35°C)",
       sizeGrades: "500-1000g, 1000-2000g, 2000-3000g",
@@ -85,6 +90,7 @@ export default function ProductShowcase({ onSelectProduct }: ProductShowcaseProp
       scientificName: "Scarus spp.",
       category: "Demersal",
       image: "/assets/3. PRODUCT/parrot fish.jpg",
+      imageClass: "scale-[1.52] object-[15%_center]",
       processingTypes: ["Whole, Gilled, Gutted, Scaled (GGS) | IQF", "Whole Round | IQF"],
       freezingMethod: "Individual Quick Freezing (IQF) with Glazing",
       sizeGrades: "0.5-1 lbs, 1-2 lbs, 2-3 lbs",
@@ -98,6 +104,7 @@ export default function ProductShowcase({ onSelectProduct }: ProductShowcaseProp
       scientificName: "Siganus spp.",
       category: "Demersal",
       image: "/assets/3. PRODUCT/rabbit fish.jpg",
+      imageClass: "scale-[1.38] object-center",
       processingTypes: ["Whole Round | IQF", "Gilled & Gutted | IQF"],
       freezingMethod: "IQF / Air Blast Frozen (-35°C)",
       sizeGrades: "200-300g, 300-500g, 500-800g",
@@ -111,6 +118,7 @@ export default function ProductShowcase({ onSelectProduct }: ProductShowcaseProp
       scientificName: "Monacanthidae",
       category: "Demersal",
       image: "/assets/3. PRODUCT/leather jacket.jpg",
+      imageClass: "scale-[1.38] object-center",
       isComingSoon: true,
       processingTypes: ["Headless, Gutted, Skinless (HGT) | IQF", "Whole Cleaned"],
       freezingMethod: "IQF / BQF",
@@ -125,6 +133,7 @@ export default function ProductShowcase({ onSelectProduct }: ProductShowcaseProp
       scientificName: "Decapterus macarellus",
       category: "Pelagic",
       image: "/assets/3. PRODUCT/mackerel scad.jpg",
+      imageClass: "scale-[1.38] object-center",
       processingTypes: ["Whole Round | Block Quick Frozen (BQF)", "Whole Round | IQF"],
       freezingMethod: "BQF 10kg/15kg block in Air Blast Freezer",
       sizeGrades: "4-6 pcs/kg, 6-8 pcs/kg, 8-10 pcs/kg, 10-12 pcs/kg",
@@ -138,6 +147,7 @@ export default function ProductShowcase({ onSelectProduct }: ProductShowcaseProp
       scientificName: "Scomberomorus commerson",
       category: "Pelagic",
       image: "/assets/3. PRODUCT/spanish mackerel.jpeg",
+      imageClass: "scale-[1.60] object-[center_85%]",
       isComingSoon: true,
       processingTypes: ["Whole Round / Steak / Fillet | IQF", "Gilled & Gutted"],
       freezingMethod: "Air Blast Quick Freeze (-35°C)",
@@ -268,12 +278,12 @@ export default function ProductShowcase({ onSelectProduct }: ProductShowcaseProp
 
                   {/* Seafood Image Container or Clean Coming Soon Box */}
                   {prod.image ? (
-                    <div className="relative h-40 sm:h-44 w-full rounded-xl overflow-hidden bg-white/70 shadow-sm border border-slate-200/80 mb-4">
+                    <div className="relative h-40 sm:h-44 w-full rounded-xl overflow-hidden bg-slate-100/90 shadow-inner border border-slate-300/80 mb-4">
                       <Image
                         src={prod.image}
                         alt={prod.name}
                         fill
-                        className="object-cover group-hover/card:scale-108 transition-transform duration-500"
+                        className={`object-cover group-hover/card:brightness-105 transition-all duration-500 ${prod.imageClass || "scale-[1.3] object-center"}`}
                       />
                       <div className="absolute inset-0 bg-[#072433]/30 opacity-0 group-hover/card:opacity-100 transition-opacity flex items-center justify-center">
                         <span className="bg-[#072433] text-cyan-300 text-[11px] font-bold px-3 py-1.5 rounded-lg flex items-center gap-1 shadow-md">
