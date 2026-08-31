@@ -17,9 +17,11 @@ export default function Hero() {
 
             {/* Main Headline */}
             <div className="space-y-1">
-              <h1 className="font-display text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight text-white leading-[1.12]">
-                Fresh from the Ocean, <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-teal-200 to-sky-300">
+              <h1 className="font-display text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight leading-[1.12]">
+                <span className="silver-text-60deg block drop-shadow-md">
+                  Fresh from the Ocean,
+                </span>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-teal-200 to-sky-300 block">
                   Frozen to Perfection.
                 </span>
               </h1>

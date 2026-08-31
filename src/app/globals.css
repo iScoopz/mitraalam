@@ -74,14 +74,27 @@ body {
 .stainless-steel-ribbon {
   background: linear-gradient(
     90deg,
-    #6b7884 0%,
-    #b0bcc6 22%,
-    #ffffff 50%,
-    #b0bcc6 78%,
-    #6b7884 100%
+    #66737f 0%,
+    #a6b3bd 18%,
+    #ffffff 36%,
+    #b8c4ce 56%,
+    #66737f 100%
   );
   box-shadow: 0 14px 35px -5px rgba(0, 0, 0, 0.45), inset 0 1px 2px rgba(255, 255, 255, 0.95), inset 0 -2px 4px rgba(0, 0, 0, 0.3);
   border: 1px solid rgba(255, 255, 255, 0.75);
+}
+
+.silver-text-60deg {
+  background: linear-gradient(
+    60deg,
+    #7a8793 0%,
+    #c8d2da 20%,
+    #ffffff 45%,
+    #c8d2da 70%,
+    #7a8793 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .stainless-steel-line {
