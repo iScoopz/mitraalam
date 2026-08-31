@@ -87,14 +87,14 @@ export default function AboutUs() {
 
           {/* Right Factory Packaging Photo */}
           <div className="lg:col-span-5 order-1 lg:order-2">
-            <div className="relative h-64 sm:h-80 w-full rounded-2xl overflow-hidden border-4 border-cyan-300 shadow-2xl bg-[#072433] group">
+            <div className="relative h-72 sm:h-84 w-full rounded-2xl overflow-hidden border-4 border-cyan-300 shadow-2xl bg-[#072433] group">
               <Image
                 src="/assets/5. COMMITMENT/5-02.png"
                 alt="Mitra Alam Export Commitment"
                 fill
-                className="object-contain p-2 group-hover:scale-105 transition-transform duration-700"
+                className="object-cover object-[center_40%] group-hover:scale-108 transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#072433]/60 via-transparent to-transparent pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#072433]/80 via-transparent to-transparent pointer-events-none" />
               <div className="absolute bottom-4 left-4 right-4">
                 <span className="text-xs font-bold uppercase tracking-wider text-cyan-300 drop-shadow">
                   Export Packaging & Cold Storage Operations
