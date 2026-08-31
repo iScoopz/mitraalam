@@ -9,7 +9,7 @@ export default function ExportCertifications() {
     { country: "Vietnam", code: "VR. A/B-559-27" },
     { country: "South Korea", code: "No 25 - 114" },
     { country: "Taiwan", code: "IT 036-27" },
-    { country: "USA ( FDA )", code: "No 12621818410" },
+    { country: "USA ( FDA )", code: "12621818410" },
   ];
 
   const haccpCertifications = [
