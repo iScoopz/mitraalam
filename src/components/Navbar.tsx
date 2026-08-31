@@ -12,24 +12,33 @@ export default function Navbar() {
     const handleScroll = () => {
       setScrolled(window.scrollY > 30);
 
-      // Section spy
+      // If scrolled to the bottom of the page, highlight Contact Us
+      const isAtBottom =
+        window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 150;
+      if (isAtBottom) {
+        setActiveSection("contact");
+        return;
+      }
+
+      // Section spy based on viewport position
       const sections = ["home", "about", "certification", "product", "gallery", "contact"];
-      const scrollPos = window.scrollY + 200;
+      let currentSection = "home";
 
       for (const section of sections) {
         const el = document.getElementById(section);
         if (el) {
-          const top = el.offsetTop;
-          const height = el.offsetHeight;
-          if (scrollPos >= top && scrollPos < top + height) {
-            setActiveSection(section);
-            break;
+          const rect = el.getBoundingClientRect();
+          if (rect.top <= 250) {
+            currentSection = section;
           }
         }
       }
+
+      setActiveSection(currentSection);
     };
 
     window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Initial check
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -71,6 +80,7 @@ export default function Navbar() {
               <a
                 key={link.name}
                 href={link.href}
+                onClick={() => setActiveSection(link.id)}
                 className={`px-3.5 py-2 rounded-lg text-xs font-bold tracking-wider transition-all duration-200 uppercase ${
                   isActive
                     ? "bg-cyan-500/20 text-cyan-300 border border-cyan-400/50 shadow-sm"

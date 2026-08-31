@@ -24,32 +24,32 @@ export default function GallerySlider() {
       id: 1,
       items: [
         {
-          src: "/assets/8. GALLERY/1.jpeg",
+          src: "/assets/8. GALLERY/gallery-13.png",
           title: "Processing & Freezing Operations",
           caption: "Daily processing line operations under strict hygiene protocols.",
         },
         {
-          src: "/assets/8. GALLERY/2.JPG",
+          src: "/assets/8. GALLERY/gallery-14.png",
           title: "Cold Chain Temperature Control",
           caption: "Maintaining core temperatures throughout handling and staging.",
         },
         {
-          src: "/assets/8. GALLERY/3.JPG",
+          src: "/assets/8. GALLERY/gallery-15.png",
           title: "Air Blast Freezing Facilities",
           caption: "Rapid flash-freezing preserving moisture and cellular integrity.",
         },
         {
-          src: "/assets/8. GALLERY/4.jpg",
+          src: "/assets/8. GALLERY/gallery-16.png",
           title: "Raw Material Grading",
           caption: "Detailed size and quality inspection upon dock landing.",
         },
         {
-          src: "/assets/8. GALLERY/5.jpeg",
+          src: "/assets/8. GALLERY/gallery-17.png",
           title: "Clean Processing Environment",
           caption: "Sanitized stainless steel workstations meeting international HACCP standards.",
         },
         {
-          src: "/assets/8. GALLERY/6.JPG",
+          src: "/assets/8. GALLERY/gallery-18.png",
           title: "Cold Storage Warehouse",
           caption: "Organized racking and palletized storage at -20°C to -25°C.",
         },
@@ -59,32 +59,32 @@ export default function GallerySlider() {
       id: 2,
       items: [
         {
-          src: "/assets/8. GALLERY/7.jpeg",
+          src: "/assets/8. GALLERY/gallery-19.png",
           title: "Seafood Selection & Sizing",
           caption: "Precision sorting and manual quality inspection.",
         },
         {
-          src: "/assets/8. GALLERY/8.jpeg",
+          src: "/assets/8. GALLERY/gallery-20.png",
           title: "Packaging & Sealing",
           caption: "Vacuum sealing and protective carton packing.",
         },
         {
-          src: "/assets/8. GALLERY/9.JPG",
+          src: "/assets/8. GALLERY/gallery-21.png",
           title: "Staff Hygiene & GMP Protocols",
           caption: "Fully geared processing staff following strict GMP standards.",
         },
         {
-          src: "/assets/8. GALLERY/10.jpg",
+          src: "/assets/8. GALLERY/gallery-22.png",
           title: "Dockside Landing Inspection",
           caption: "Fresh raw seafood inspection directly at Makassar harbor.",
         },
         {
-          src: "/assets/8. GALLERY/11.jpg",
+          src: "/assets/8. GALLERY/gallery-23.png",
           title: "Cephalopod Preparation",
           caption: "Specialized cleaning and ball-rolling for export octopus.",
         },
         {
-          src: "/assets/8. GALLERY/12.jpg",
+          src: "/assets/8. GALLERY/gallery-24.png",
           title: "Block Quick Freezing (BQF)",
           caption: "Uniform block freezing for industrial and culinary export.",
         },
@@ -94,32 +94,32 @@ export default function GallerySlider() {
       id: 3,
       items: [
         {
-          src: "/assets/8. GALLERY/13.jpg",
+          src: "/assets/8. GALLERY/gallery-25.png",
           title: "Demersal Fish Filleting",
           caption: "Careful precision filleting and skinning processes.",
         },
         {
-          src: "/assets/8. GALLERY/14.jpeg",
+          src: "/assets/8. GALLERY/gallery-26.png",
           title: "Export Inspection Verification",
           caption: "Verification of export specifications prior to container loading.",
         },
         {
-          src: "/assets/8. GALLERY/15.jpg",
+          src: "/assets/8. GALLERY/gallery-27.png",
           title: "Glazing & Protective Layer",
           caption: "Uniform ice glazing ensuring extended shelf life.",
         },
         {
-          src: "/assets/8. GALLERY/16.jpg",
+          src: "/assets/8. GALLERY/gallery-28.png",
           title: "Cold Storage Staging",
           caption: "Master cartons organized for seamless reefer container loading.",
         },
         {
-          src: "/assets/8. GALLERY/17.jpg",
+          src: "/assets/8. GALLERY/gallery-29.png",
           title: "Quality Control Laboratory",
           caption: "Microbiological and chemical testing for food safety compliance.",
         },
         {
-          src: "/assets/8. GALLERY/18.jpg",
+          src: "/assets/8. GALLERY/gallery-30.png",
           title: "Factory Facility View",
           caption: "Modern seafood processing facility in KIMA Industrial Estate.",
         },
@@ -129,32 +129,32 @@ export default function GallerySlider() {
       id: 4,
       items: [
         {
-          src: "/assets/8. GALLERY/19.jpeg",
+          src: "/assets/8. GALLERY/gallery-31.png",
           title: "Staff Training & QC Briefing",
           caption: "Continuous quality training for export processing personnel.",
         },
         {
-          src: "/assets/8. GALLERY/20.jpeg",
+          src: "/assets/8. GALLERY/gallery-32.png",
           title: "Weighing & Verification",
           caption: "Precision digital weighing per packaging batch.",
         },
         {
-          src: "/assets/8. GALLERY/21.jpeg",
+          src: "/assets/8. GALLERY/gallery-33.png",
           title: "Inner Polybag Sealing",
           caption: "Moisture-proof inner liners protecting frozen seafood.",
         },
         {
-          src: "/assets/8. GALLERY/22.JPG",
+          src: "/assets/8. GALLERY/gallery-34.png",
           title: "Cold Storage Inventory",
           caption: "108 Tons cold storage warehouse operation in Makassar.",
         },
         {
-          src: "/assets/8. GALLERY/23.JPG",
+          src: "/assets/8. GALLERY/gallery-35.png",
           title: "Reefer Container Loading",
           caption: "Direct plug-in cold chain loading for international shipments.",
         },
         {
-          src: "/assets/8. GALLERY/24.jpg",
+          src: "/assets/8. GALLERY/gallery-36.png",
           title: "Finished Export Ready Products",
           caption: "Certified premium frozen seafood ready for global delivery.",
         },
@@ -302,20 +302,10 @@ export default function GallerySlider() {
                       className="object-cover group-hover/item:scale-110 transition-transform duration-700"
                       loading="lazy"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#041822]/90 via-[#041822]/30 to-transparent opacity-0 group-hover/item:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-4 text-left">
-                      <div className="flex justify-end">
-                        <span className="w-8 h-8 rounded-full bg-[#072433]/80 text-cyan-300 flex items-center justify-center shadow-md">
-                          <Maximize2 className="w-4 h-4" />
-                        </span>
-                      </div>
-                      <div>
-                        <h4 className="font-display font-bold text-xs sm:text-sm text-white drop-shadow">
-                          {item.title}
-                        </h4>
-                        <p className="text-[10px] text-slate-300 line-clamp-1 font-light">
-                          {item.caption}
-                        </p>
-                      </div>
+                    <div className="absolute inset-0 bg-[#041822]/30 opacity-0 group-hover/item:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                      <span className="w-10 h-10 rounded-full bg-[#072433]/85 text-cyan-300 border border-cyan-400/60 flex items-center justify-center shadow-lg backdrop-blur-sm group-hover/item:scale-110 transition-transform">
+                        <Maximize2 className="w-5 h-5" />
+                      </span>
                     </div>
                   </div>
                 );
@@ -410,11 +400,8 @@ export default function GallerySlider() {
               </button>
             </div>
 
-            {/* Bottom Caption & Mobile Swipe Hint */}
-            <div className="flex flex-col items-center space-y-1 px-2">
-              <p className="text-xs sm:text-sm text-slate-200 font-light text-center max-w-xl">
-                {currentLightboxItem.caption}
-              </p>
+            {/* Bottom Swipe Hint */}
+            <div className="flex flex-col items-center space-y-1 px-2 pt-1">
               <span className="text-[10px] text-cyan-400/80 font-medium tracking-wide">
                 Geser (swipe) atau gunakan panah keyboard untuk melihat foto lainnya
               </span>
