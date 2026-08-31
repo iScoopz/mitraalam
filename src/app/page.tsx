@@ -8,6 +8,7 @@ import ProductShowcase from "@/components/ProductShowcase";
 import AboutUs from "@/components/AboutUs";
 import FacilitiesSection from "@/components/FacilitiesSection";
 import GallerySlider from "@/components/GallerySlider";
+import FaqSection from "@/components/FaqSection";
 import Footer from "@/components/Footer";
 import ProductModal, { SeafoodProduct } from "@/components/ProductModal";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
@@ -37,6 +38,9 @@ export default function Home() {
 
       {/* Visual Atmosphere & Facility Gallery Horizontal Slider */}
       <GallerySlider />
+
+      {/* FAQ & Export Guide for Google Rich Snippets */}
+      <FaqSection />
 
       {/* Footer with Maps, Location, Contact & Social */}
       <Footer />

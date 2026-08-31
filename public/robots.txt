@@ -1,4 +1,11 @@
-User-Agent: *
+User-agent: *
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
 Allow: /
 
 Sitemap: https://mitraalam.com/sitemap.xml
+Host: https://mitraalam.com

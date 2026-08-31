@@ -12,12 +12,11 @@ export interface SeafoodProduct {
   image: string;
   imageClass?: string;
   isComingSoon?: boolean;
-  processingTypes: string[];
-  freezingMethod: string;
-  sizeGrades: string;
-  packingSpec: string;
-  minOrder: string;
-  description: string;
+  processingTypes?: string[];
+  freezingMethod?: string;
+  sizeGrades?: string;
+  packingSpec?: string;
+  description?: string;
 }
 
 interface ProductModalProps {
@@ -43,8 +42,14 @@ export default function ProductModal({ product, onClose }: ProductModalProps) {
   if (!product) return null;
 
   const waMessage = encodeURIComponent(
-    `Hello CV. Mitra Alam, I am interested in placing an inquiry for ${product.name} (${product.scientificName}). Available specifications: ${product.sizeGrades}.`
+    `Hello CV. Mitra Alam, I am interested in placing an inquiry for ${product.name} (${product.scientificName}).`
   );
+
+  const validProcessingTypes = product.processingTypes?.filter((t) => t && t.trim() !== "") || [];
+  const hasFreezingMethod = product.freezingMethod && product.freezingMethod.trim() !== "";
+  const hasSizeGrades = product.sizeGrades && product.sizeGrades.trim() !== "";
+  const hasPackingSpec = product.packingSpec && product.packingSpec.trim() !== "";
+  const hasAnySpec = validProcessingTypes.length > 0 || hasFreezingMethod || hasSizeGrades || hasPackingSpec;
 
   return (
     <div
@@ -111,62 +116,74 @@ export default function ProductModal({ product, onClose }: ProductModalProps) {
 
         {/* Content Body */}
         <div className="p-6 space-y-6">
-          <p className="text-sm text-slate-300 font-light leading-relaxed">
-            {product.description}
-          </p>
+          {product.description && product.description.trim() !== "" && (
+            <p className="text-sm text-slate-300 font-light leading-relaxed">
+              {product.description}
+            </p>
+          )}
 
           {/* Technical Specifications Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 bg-[#051c28] p-4 rounded-xl border border-cyan-500/20 text-xs">
-            <div className="space-y-1">
-              <span className="text-cyan-400 font-bold uppercase flex items-center gap-1.5 text-[11px] tracking-wider">
-                <Package className="w-3.5 h-3.5" /> Processing Styles
-              </span>
-              <ul className="text-slate-200 space-y-0.5 pl-5 list-disc">
-                {product.processingTypes.map((t, idx) => (
-                  <li key={idx}>{t}</li>
-                ))}
-              </ul>
-            </div>
+          {hasAnySpec ? (
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 bg-[#051c28] p-4 rounded-xl border border-cyan-500/20 text-xs">
+              {validProcessingTypes.length > 0 && (
+                <div className="space-y-1">
+                  <span className="text-cyan-400 font-bold uppercase flex items-center gap-1.5 text-[11px] tracking-wider">
+                    <Package className="w-3.5 h-3.5" /> Processing Styles
+                  </span>
+                  <ul className="text-slate-200 space-y-0.5 pl-5 list-disc">
+                    {validProcessingTypes.map((t, idx) => (
+                      <li key={idx}>{t}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
 
-            <div className="space-y-1">
-              <span className="text-cyan-400 font-bold uppercase flex items-center gap-1.5 text-[11px] tracking-wider">
-                <Snowflake className="w-3.5 h-3.5" /> Freezing Technique
-              </span>
-              <p className="text-slate-200 font-tech font-medium">
-                {product.freezingMethod}
-              </p>
-            </div>
+              {hasFreezingMethod && (
+                <div className="space-y-1">
+                  <span className="text-cyan-400 font-bold uppercase flex items-center gap-1.5 text-[11px] tracking-wider">
+                    <Snowflake className="w-3.5 h-3.5" /> Freezing Technique
+                  </span>
+                  <p className="text-slate-200 font-tech font-medium">
+                    {product.freezingMethod}
+                  </p>
+                </div>
+              )}
 
-            <div className="space-y-1">
-              <span className="text-cyan-400 font-bold uppercase flex items-center gap-1.5 text-[11px] tracking-wider">
-                <Scale className="w-3.5 h-3.5" /> Available Sizing
-              </span>
-              <p className="text-slate-200 font-tech">
-                {product.sizeGrades}
-              </p>
-            </div>
+              {hasSizeGrades && (
+                <div className="space-y-1">
+                  <span className="text-cyan-400 font-bold uppercase flex items-center gap-1.5 text-[11px] tracking-wider">
+                    <Scale className="w-3.5 h-3.5" /> Available Sizing
+                  </span>
+                  <p className="text-slate-200 font-tech">
+                    {product.sizeGrades}
+                  </p>
+                </div>
+              )}
 
-            <div className="space-y-1">
-              <span className="text-cyan-400 font-bold uppercase flex items-center gap-1.5 text-[11px] tracking-wider">
-                <CheckCircle className="w-3.5 h-3.5 text-teal-400" /> Export Packaging
-              </span>
-              <p className="text-slate-200">
-                {product.packingSpec}
-              </p>
+              {hasPackingSpec && (
+                <div className="space-y-1">
+                  <span className="text-cyan-400 font-bold uppercase flex items-center gap-1.5 text-[11px] tracking-wider">
+                    <CheckCircle className="w-3.5 h-3.5 text-teal-400" /> Export Packaging
+                  </span>
+                  <p className="text-slate-200">
+                    {product.packingSpec}
+                  </p>
+                </div>
+              )}
             </div>
-          </div>
+          ) : (
+            <div className="bg-[#051c28] p-4 rounded-xl border border-cyan-500/20 text-xs text-center text-slate-300">
+              Detailed export specifications and custom cutting styles are available upon inquiry.
+            </div>
+          )}
 
           {/* CTA Action */}
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2">
-            <span className="text-xs text-slate-400">
-              Min. Order: <strong className="text-cyan-300 font-tech">{product.minOrder}</strong>
-            </span>
-
+          <div className="pt-2 flex justify-end">
             <a
               href={`https://wa.me/6282190931111?text=${waMessage}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto bg-gradient-to-r from-teal-500 to-cyan-500 hover:from-teal-400 hover:to-cyan-400 text-[#041822] font-bold text-xs px-6 py-3 rounded-xl uppercase tracking-wider shadow-lg flex items-center justify-center gap-2 transition-transform active:scale-95"
+              className="w-full sm:w-auto bg-gradient-to-r from-teal-500 to-cyan-500 hover:from-teal-400 hover:to-cyan-400 text-[#041822] font-bold text-xs px-6 py-3 rounded-xl uppercase tracking-wider shadow-lg flex items-center justify-center gap-2 transition-transform active:scale-95 cursor-pointer"
             >
               <Phone className="w-4 h-4" />
               <span>Inquire via WhatsApp</span>

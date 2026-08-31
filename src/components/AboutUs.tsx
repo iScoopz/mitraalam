@@ -6,21 +6,67 @@ export default function AboutUs() {
   const coreValues = [
     {
       title: "QUALITY",
-      image: "/assets/6. CORE VALUES/core-03.png",
       description:
-        "Raw materials sourced exclusively from certified suppliers with proven cold-chain handling expertise.",
+        "Raw materials sourced exclusively from certified suppliers with proven cold–chain handling expertise.",
+      icon: (
+        <svg
+          className="w-8 h-8 text-white stroke-[1.8]"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          {/* Certificate Badge Ribbon with Checkmark */}
+          <circle cx="12" cy="9" r="6" />
+          <path d="m9 9 2 2 4-4" />
+          <path d="M8.21 13.89 7 22l5-3 5 3-1.21-8.12" />
+        </svg>
+      ),
     },
     {
       title: "PRECISION",
-      image: "/assets/6. CORE VALUES/core-04.png",
       description:
         "Delivering the highest quality products with minimal failure tolerance and strict QC standards.",
+      icon: (
+        <svg
+          className="w-8 h-8 text-white stroke-[1.8]"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          {/* Target Bullseye with Arrow hitting Top-Right */}
+          <circle cx="12" cy="12" r="10" />
+          <circle cx="12" cy="12" r="6" />
+          <circle cx="12" cy="12" r="2" />
+          <path d="m19 5-6.5 6.5" />
+          <path d="M15 5h4v4" />
+        </svg>
+      ),
     },
     {
       title: "FLEXIBILITY",
-      image: "/assets/6. CORE VALUES/core-1-05.png",
       description:
         "Specializing in custom product specifications and open to discussing unique client needs.",
+      icon: (
+        <svg
+          className="w-8 h-8 text-white stroke-[1.8]"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          {/* Handshake Icon */}
+          <path d="m11 17 2 2a1 1 0 0 0 1.4 0l4.3-4.3a1 1 0 0 0 0-1.4L15 10" />
+          <path d="m18 11 3.3-3.3a1 1 0 0 0 0-1.4L18 3" />
+          <path d="m14 7 3-3" />
+          <path d="M3 13.5 7.5 9a1 1 0 0 1 1.4 0L13 13" />
+          <path d="m2 18 4.5 4.5a1 1 0 0 0 1.4 0L12 18" />
+        </svg>
+      ),
     },
   ];
 
@@ -34,7 +80,7 @@ export default function AboutUs() {
             <div className="relative w-60 h-60 sm:w-72 sm:h-72 rounded-full overflow-hidden border-4 border-cyan-300 shadow-2xl bg-[#072433] group">
               <Image
                 src="/assets/4. STORY/IMG_7531.JPG"
-                alt="Seafood Quality Inspection Story"
+                alt="CV. Mitra Alam Frozen Seafood Quality Inspection and Cold Chain Management"
                 fill
                 className="object-cover group-hover:scale-108 transition-transform duration-700"
               />
@@ -90,7 +136,7 @@ export default function AboutUs() {
             <div className="relative h-72 sm:h-84 w-full rounded-2xl overflow-hidden border-4 border-cyan-300 shadow-2xl bg-[#072433] group">
               <Image
                 src="/assets/5. COMMITMENT/5-02.png"
-                alt="Mitra Alam Export Commitment"
+                alt="CV. Mitra Alam Export Packaging and Cold Storage Operations in Makassar"
                 fill
                 className="object-cover object-[center_40%] group-hover:scale-108 transition-transform duration-700"
               />
@@ -104,7 +150,7 @@ export default function AboutUs() {
           </div>
         </div>
 
-        {/* Bottom Subsection: Our CORE VALUES */}
+        {/* Bottom Subsection: Our CORE VALUES matching User's Mockup */}
         <div className="space-y-8 pt-8 border-t border-cyan-200/20 text-center">
           <h3 className="font-display text-3xl sm:text-4xl font-black text-white uppercase drop-shadow-md">
             Our <span className="text-[#072433]">CORE VALUES</span>
@@ -114,24 +160,20 @@ export default function AboutUs() {
             {coreValues.map((val) => (
               <div
                 key={val.title}
-                className="ocean-teal-card rounded-2xl p-6 sm:p-8 text-center space-y-4 hover:translate-y-[-4px] hover:border-cyan-400 transition-all duration-300 flex flex-col items-center justify-start h-full"
+                className="bg-[#051c27] rounded-3xl p-6 sm:p-8 text-center space-y-4 shadow-2xl border border-cyan-500/20 hover:border-cyan-400/50 hover:translate-y-[-4px] transition-all duration-300 flex flex-col items-center justify-start h-full group"
               >
-                <div className="w-16 h-16 rounded-full bg-cyan-500/15 border border-cyan-400/40 flex items-center justify-center mx-auto shadow-inner p-2 shrink-0">
-                  <div className="relative w-10 h-10">
-                    <Image
-                      src={val.image}
-                      alt={val.title}
-                      fill
-                      className="object-contain"
-                    />
-                  </div>
+                {/* Circular Icon with Cyan Border matching Screenshot */}
+                <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#041722] border-2 border-cyan-400 flex items-center justify-center mx-auto shadow-[0_0_15px_rgba(6,182,212,0.25)] group-hover:scale-105 transition-transform">
+                  {val.icon}
                 </div>
 
-                <h4 className="font-display font-extrabold text-lg sm:text-xl text-cyan-300 tracking-wider uppercase">
+                {/* Core Value Title in Cyan */}
+                <h4 className="font-display font-black text-lg sm:text-xl text-cyan-300 tracking-wider uppercase">
                   {val.title}
                 </h4>
 
-                <p className="text-slate-300 text-xs sm:text-sm font-normal leading-relaxed">
+                {/* Core Value Narrative Description */}
+                <p className="text-slate-200 text-xs sm:text-sm font-normal leading-relaxed">
                   {val.description}
                 </p>
               </div>

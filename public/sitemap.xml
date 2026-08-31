@@ -1,39 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url>
-<loc>https://mitraalam.com</loc>
-<lastmod>2026-08-31T11:24:14.486Z</lastmod>
-<changefreq>weekly</changefreq>
-<priority>1</priority>
-</url>
-<url>
-<loc>https://mitraalam.com/#about</loc>
-<lastmod>2026-08-31T11:24:14.486Z</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.8</priority>
-</url>
-<url>
-<loc>https://mitraalam.com/#product</loc>
-<lastmod>2026-08-31T11:24:14.486Z</lastmod>
-<changefreq>weekly</changefreq>
-<priority>0.9</priority>
-</url>
-<url>
-<loc>https://mitraalam.com/#certifications</loc>
-<lastmod>2026-08-31T11:24:14.486Z</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.8</priority>
-</url>
-<url>
-<loc>https://mitraalam.com/#gallery</loc>
-<lastmod>2026-08-31T11:24:14.486Z</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.7</priority>
-</url>
-<url>
-<loc>https://mitraalam.com/#contact</loc>
-<lastmod>2026-08-31T11:24:14.486Z</lastmod>
-<changefreq>monthly</changefreq>
-<priority>0.8</priority>
-</url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://mitraalam.com</loc>
+    <lastmod>2026-08-31T20:30:00+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://mitraalam.com/assets/1.%20COVER/logo-01.png</image:loc>
+      <image:title>CV. MITRA ALAM - Indonesian Frozen Seafood Exporter</image:title>
+      <image:caption>Premier HACCP, GMP and US FDA certified seafood processor in Makassar, Indonesia</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://mitraalam.com/assets/3.%20PRODUCT/octopus.jpeg</image:loc>
+      <image:title>Frozen Indonesian Octopus (Octopus cyaneus)</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://mitraalam.com/assets/3.%20PRODUCT/cuttlefish.jpeg</image:loc>
+      <image:title>Frozen Indonesian Cuttlefish (Sepia esculenta)</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://mitraalam.com/assets/3.%20PRODUCT/squid.jpeg</image:loc>
+      <image:title>Frozen Indonesian Loligo Squid</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://mitraalam.com/assets/3.%20PRODUCT/snapper.jpg</image:loc>
+      <image:title>Frozen Indonesian Red Snapper</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://mitraalam.com/assets/3.%20PRODUCT/grouper.jpg</image:loc>
+      <image:title>Frozen Indonesian Grouper</image:title>
+    </image:image>
+  </url>
 </urlset>

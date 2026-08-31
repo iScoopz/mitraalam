@@ -21,12 +21,10 @@ export default function ProductShowcase({ onSelectProduct }: ProductShowcaseProp
       category: "Cephalopod",
       image: "/assets/3. PRODUCT/octopus.jpeg",
       imageClass: "scale-[1.28] object-center",
-      processingTypes: ["Whole Cleaned Ball | IQF", "Whole Block | Block Quick Frozen (BQF)"],
-      freezingMethod: "Individual Quick Freezing (IQF) / Air Blast Quick Freeze",
+      processingTypes: ["Whole Cleaned Ball", "Whole Block"],
+      freezingMethod: "Individual Quick Freezing (IQF) / Air Blast Quick Freezing",
       sizeGrades: "1-2 lbs, 2-4 lbs, 4-6 lbs, 6-8 lbs",
-      packingSpec: "10 kg / Master Carton or Custom Packaging",
-      minOrder: "1 x 20ft FCL (~12-14 MT)",
-      description: "Wild-caught premium grade Indonesian octopus, thoroughly gutted, eye & beak removed, and ball-rolled or block frozen at peak freshness.",
+      packingSpec: "IWP (Individually Wrapped) / 30 lbs / Master Carton with Protective Inner PE Liner or Custom Packaging",
     },
     {
       id: "cuttlefish",
@@ -35,12 +33,10 @@ export default function ProductShowcase({ onSelectProduct }: ProductShowcaseProp
       category: "Cephalopod",
       image: "/assets/3. PRODUCT/cuttlefish.jpeg",
       imageClass: "scale-[1.28] object-center",
-      processingTypes: ["Whole Cleaned | IQF", "Skin-on / Skinless Fillet | IQF"],
-      freezingMethod: "IQF / Contact Plate Freeze",
-      sizeGrades: "0/1 pcs/kg, 1-2 pcs/kg, 2-4 pcs/kg",
-      packingSpec: "1 kg plain bag x 10 / Master Carton",
-      minOrder: "1 x 20ft FCL (~12 MT)",
-      description: "Tender, snow-white wild cuttlefish, expertly skinned, deseeded, and flash frozen to maintain delicate texture and sweet flavor.",
+      processingTypes: ["Whole Cleaned"],
+      freezingMethod: "IQF / Air Blast Quick Freezing",
+      sizeGrades: "U-1 pcs/kg, 1-2 pcs/kg, 2-4 pcs/kg",
+      packingSpec: "IVP (Individually Vacuum); 75% N.W, 25% glazing; 22 lbs / Master Carton with Polybabag Liner or Custom Packaging",
     },
     {
       id: "squid",
@@ -49,26 +45,22 @@ export default function ProductShowcase({ onSelectProduct }: ProductShowcaseProp
       category: "Cephalopod",
       image: "/assets/3. PRODUCT/squid.jpeg",
       imageClass: "scale-[1.28] object-center",
-      processingTypes: ["Whole Block | Block Quick Frozen", "Whole Cleaned Tube & Tentacle | IQF"],
-      freezingMethod: "Block Quick Frozen (BQF) / IQF",
+      processingTypes: ["Whole Block"],
+      freezingMethod: "Air Blast Quick Freezing",
       sizeGrades: "Size : *as per request (10-15cm, 15-20cm, 20cm+)",
-      packingSpec: "2 kg block x 6 / Master Carton (12 kg net)",
-      minOrder: "1 x 20ft / 40ft FCL",
-      description: "Directly sourced from Indonesian clean waters, fresh Loligo squid packed in pristine quick-frozen blocks for industrial and culinary export.",
+      packingSpec: "10 kg / Master Carton with Polybag Liner or Custom Packaging",
     },
     {
       id: "redsnapper",
-      name: "RED SNAPPER",
-      scientificName: "Lutjanus campechanus",
+      name: "SNAPPER",
+      scientificName: "Lutjanus spp.",
       category: "Demersal",
       image: "/assets/3. PRODUCT/snapper.jpg",
       imageClass: "scale-[1.52] object-[85%_center]",
-      processingTypes: ["Whole Round / GGS / Fillet | IQF", "Skin-on Scaled Fillet"],
-      freezingMethod: "IQF / Air Blast Frozen (-35°C)",
-      sizeGrades: "300-500g, 500-800g, 800-1000g, 1000g+",
-      packingSpec: "10 kg Master Carton with polybag liner",
-      minOrder: "1 x 20ft FCL",
-      description: "Prime red snapper sustainably harvested from Indonesian archipelago waters, celebrated worldwide for delicate flaky texture and mild sweet taste.",
+      processingTypes: ["Whole Round / WGGS / Fillet", "Skin-on Scaled Fillet"],
+      freezingMethod: "IQF / Air Blast Quick Freezing",
+      sizeGrades: "0.5-1 lbs, 1-1.5 lbs, 1.5-2 lbs, 2-3 lbs, 3-4 lbs, 4+ lbs",
+      packingSpec: "IVP (Individually Vacuum) / 10 lbs / Master Carton with Polybag Liner or Custom Packaging",
     },
     {
       id: "grouper",
@@ -77,12 +69,10 @@ export default function ProductShowcase({ onSelectProduct }: ProductShowcaseProp
       category: "Demersal",
       image: "/assets/3. PRODUCT/grouper.jpg",
       imageClass: "scale-[1.42] object-center",
-      processingTypes: ["Whole Round / Gilled & Gutted | IQF", "Head-on / Headless Fillet"],
-      freezingMethod: "Air Blast Quick Freeze (-35°C)",
-      sizeGrades: "500-1000g, 1000-2000g, 2000-3000g",
-      packingSpec: "Individually wrapped / 15 kg Master Carton",
-      minOrder: "1 x 20ft FCL",
-      description: "Rich and firm white meat grouper, carefully handled and fast-chilled immediately after dock landing in Makassar.",
+      processingTypes: ["Whole Round / WGGS", "Head Only"],
+      freezingMethod: "Air Blast Quick Freezing",
+      sizeGrades: " Head only > 500-1000g, 1000-2000g, 2000-3000g",
+      packingSpec: "IWP (Individually Wrapped) / 30 lbs / Master Carton with Polybag Liner or Custom Packaging",
     },
     {
       id: "parrotfish",
@@ -91,12 +81,10 @@ export default function ProductShowcase({ onSelectProduct }: ProductShowcaseProp
       category: "Demersal",
       image: "/assets/3. PRODUCT/parrot fish.jpg",
       imageClass: "scale-[1.52] object-[15%_center]",
-      processingTypes: ["Whole, Gilled, Gutted, Scaled (GGS) | IQF", "Whole Round | IQF"],
+      processingTypes: ["Whole, Gilled, Gutted, Scaled (WGGS)", "Whole Round"],
       freezingMethod: "Individual Quick Freezing (IQF) with Glazing",
       sizeGrades: "0.5-1 lbs, 1-2 lbs, 2-3 lbs",
-      packingSpec: "IWP (Individually Wrapped) / 10 kg Carton",
-      minOrder: "1 x 20ft FCL",
-      description: "Vibrant coral reef demersal fish with firm white flesh, cleaned to international export food safety standards.",
+      packingSpec: "IVP (Individually Vacuum) / 10 lbs / Master Carton with Polybag Liner or Custom Packaging",
     },
     {
       id: "rabbitfish",
@@ -105,41 +93,35 @@ export default function ProductShowcase({ onSelectProduct }: ProductShowcaseProp
       category: "Demersal",
       image: "/assets/3. PRODUCT/rabbit fish.jpg",
       imageClass: "scale-[1.38] object-center",
-      processingTypes: ["Whole Round | IQF", "Gilled & Gutted | IQF"],
-      freezingMethod: "IQF / Air Blast Frozen (-35°C)",
-      sizeGrades: "200-300g, 300-500g, 500-800g",
-      packingSpec: "10 kg Master Carton",
-      minOrder: "1 x 20ft FCL",
-      description: "Fresh white meat rabbit fish (Ikan Baronang), highly regarded for tender texture and delicate sweet seafood taste.",
+      processingTypes: ["Whole Round"],
+      freezingMethod: "IQF / Air Blast Quick Freezing",
+      sizeGrades: "300-500g, 500-800g, 800+g",
+      packingSpec: "IVP (Individually Vacuum) / 20 lbs / Master Carton with Polybag Liner or Custom Packaging",
     },
     {
       id: "leatherjacket",
       name: "LEATHER JACKET",
-      scientificName: "Monacanthidae",
+      scientificName: "Aluterus monoceros",
       category: "Demersal",
       image: "/assets/3. PRODUCT/leather jacket.jpg",
       imageClass: "scale-[1.38] object-center",
       isComingSoon: true,
-      processingTypes: ["Headless, Gutted, Skinless (HGT) | IQF", "Whole Cleaned"],
-      freezingMethod: "IQF / BQF",
-      sizeGrades: "100-200g, 200-300g, 300-500g",
-      packingSpec: "10 kg Master Carton",
-      minOrder: "1 x 20ft FCL",
-      description: "Carefully skinned and cleaned leather jacket fish with lean, firm white meat ideal for Asian and global retail markets.",
+      processingTypes: ["Whole Round", "Fillet with skin-off"],
+      freezingMethod: " ",
+      sizeGrades: " ",
+      packingSpec: " ",
     },
     {
       id: "mackerel",
       name: "MACKEREL SCAD",
-      scientificName: "Decapterus macarellus",
+      scientificName: "Decapterus spp.",
       category: "Pelagic",
       image: "/assets/3. PRODUCT/mackerel scad.jpg",
       imageClass: "scale-[1.38] object-center",
-      processingTypes: ["Whole Round | Block Quick Frozen (BQF)", "Whole Round | IQF"],
-      freezingMethod: "BQF 10kg/15kg block in Air Blast Freezer",
+      processingTypes: ["Whole Round"],
+      freezingMethod: "Block in Air Blast Quick Freezer",
       sizeGrades: "4-6 pcs/kg, 6-8 pcs/kg, 8-10 pcs/kg, 10-12 pcs/kg",
-      packingSpec: "10 kg / 15 kg net weight carton block",
-      minOrder: "1 x 40ft FCL (~27 MT)",
-      description: "High oil-content pelagic fish (Ikan Layang), high protein and nutrient rich, popular across Asian and global canned/frozen markets.",
+      packingSpec: "Bulk Pack) / 2*10pack / 20 lbs / Master Carton with Polybag Liner or Custom Packaging",
     },
     {
       id: "spanishmackerel",
@@ -149,12 +131,10 @@ export default function ProductShowcase({ onSelectProduct }: ProductShowcaseProp
       image: "/assets/3. PRODUCT/spanish mackerel.jpeg",
       imageClass: "scale-[1.60] object-[center_85%]",
       isComingSoon: true,
-      processingTypes: ["Whole Round / Steak / Fillet | IQF", "Gilled & Gutted"],
-      freezingMethod: "Air Blast Quick Freeze (-35°C)",
-      sizeGrades: "1-2 kg, 2-3 kg, 3-5 kg, 5kg+",
-      packingSpec: "15 kg / 20 kg Master Carton",
-      minOrder: "1 x 20ft FCL",
-      description: "Premium grade Spanish Mackerel (Ikan Tenggiri), richly flavored and firm, renowned for export culinary and surimi applications.",
+      processingTypes: [" "],
+      freezingMethod: " ",
+      sizeGrades: " ",
+      packingSpec: " ",
     },
     {
       id: "largeheadhairtail",
@@ -164,11 +144,9 @@ export default function ProductShowcase({ onSelectProduct }: ProductShowcaseProp
       image: "",
       isComingSoon: true,
       processingTypes: ["Whole Round | IQF / Block", "Headless, Gutted (HGT)"],
-      freezingMethod: "Air Blast Quick Freeze (-35°C) / IQF",
-      sizeGrades: "200-300g, 300-500g, 500-700g, 700g+",
-      packingSpec: "10 kg Master Carton",
-      minOrder: "1 x 20ft / 40ft FCL",
-      description: "Indonesian Ribbonfish (Ikan Layur), elongated silver pelagic fish, celebrated across global markets for lean and delicate white meat.",
+      freezingMethod: " ",
+      sizeGrades: " ",
+      packingSpec: " ",
     },
   ];
 
@@ -281,7 +259,8 @@ export default function ProductShowcase({ onSelectProduct }: ProductShowcaseProp
                     <div className="relative h-40 sm:h-44 w-full rounded-xl overflow-hidden bg-slate-100/90 shadow-inner border border-slate-300/80 mb-4">
                       <Image
                         src={prod.image}
-                        alt={prod.name}
+                        alt={`Frozen ${prod.name} (${prod.scientificName}) - CV. MITRA ALAM Indonesian Seafood Exporter`}
+                        title={`Indonesian Frozen ${prod.name} (${prod.scientificName})`}
                         fill
                         className={`object-cover group-hover/card:brightness-105 transition-all duration-500 ${prod.imageClass || "scale-[1.3] object-center"}`}
                       />
@@ -319,14 +298,24 @@ export default function ProductShowcase({ onSelectProduct }: ProductShowcaseProp
 
                   {/* Technical Specifications from Mockup */}
                   <div className="space-y-1.5 text-[11px] text-slate-700 font-medium text-left border-t border-slate-300/60 pt-2.5">
-                    {prod.processingTypes.map((pt, idx) => (
-                      <p key={idx} className="leading-tight text-slate-800">
-                        {pt}
+                    {prod.processingTypes
+                      ?.filter((pt) => pt && pt.trim() !== "")
+                      .map((pt, idx) => (
+                        <p key={idx} className="leading-tight text-slate-800">
+                          {pt}
+                        </p>
+                      ))}
+                    {prod.sizeGrades && prod.sizeGrades.trim() !== "" && (
+                      <p className="font-tech text-slate-900 font-semibold pt-1">
+                        {prod.sizeGrades}
                       </p>
-                    ))}
-                    <p className="font-tech text-slate-900 font-semibold pt-1">
-                      {prod.sizeGrades}
-                    </p>
+                    )}
+                    {(!prod.processingTypes?.some((pt) => pt && pt.trim() !== "") &&
+                      (!prod.sizeGrades || prod.sizeGrades.trim() === "")) && (
+                      <p className="font-tech text-slate-500 italic">
+                        Specs available on request
+                      </p>
+                    )}
                   </div>
                 </div>
 

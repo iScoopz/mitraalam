@@ -1,0 +1,23 @@
+{
+  "name": "CV. MITRA ALAM - Indonesian Frozen Seafood Exporter",
+  "short_name": "CV. MITRA ALAM",
+  "description": "High-Quality Indonesian Frozen Seafood Exporter. HACCP, GMP, & US FDA Certified in Makassar, Indonesia.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#041822",
+  "theme_color": "#06b6d4",
+  "icons": [
+    {
+      "src": "/assets/1. COVER/logo-01.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/1. COVER/logo-01.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

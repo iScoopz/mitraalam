@@ -13,7 +13,7 @@ export default function Navbar() {
       setScrolled(window.scrollY > 30);
 
       // Section spy
-      const sections = ["home", "about", "certification", "product", "gallery", "contact"];
+      const sections = ["home", "about", "certification", "product", "gallery", "faq", "contact"];
       const scrollPos = window.scrollY + 200;
 
       for (const section of sections) {
@@ -39,6 +39,7 @@ export default function Navbar() {
     { name: "CERTIFICATION", href: "#certification", id: "certification" },
     { name: "PRODUCT", href: "#product", id: "product" },
     { name: "GALLERY", href: "#gallery", id: "gallery" },
+    { name: "FAQ", href: "#faq", id: "faq" },
     { name: "CONTACT US", href: "#contact", id: "contact" },
   ];
 
