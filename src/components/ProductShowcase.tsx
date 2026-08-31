@@ -211,7 +211,7 @@ export default function ProductShowcase({ onSelectProduct }: ProductShowcaseProp
           </div>
         </div>
 
-        {/* Horizontal Slider Track with Side Arrow Controls */}
+        {/* Horizontal Slider Track with Side Arrow Controls matching Screenshot */}
         <div className="relative group/carousel px-2">
           {/* Scroll Left Button */}
           <button
@@ -244,7 +244,7 @@ export default function ProductShowcase({ onSelectProduct }: ProductShowcaseProp
               >
                 <div>
                   {/* Category Pill on Card Header */}
-                  <div className="flex justify-between items-center mb-3">
+                  <div className="flex justify-between items-center mb-3.5">
                     <span className="bg-[#072433] text-cyan-300 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-inner">
                       {prod.category}
                     </span>
@@ -255,24 +255,24 @@ export default function ProductShowcase({ onSelectProduct }: ProductShowcaseProp
                     )}
                   </div>
 
-                  {/* Seafood Image Container or Clean Coming Soon Box */}
+                  {/* Seafood Image Container */}
                   {prod.image ? (
-                    <div className="relative h-40 sm:h-44 w-full rounded-xl overflow-hidden bg-slate-100/90 shadow-inner border border-slate-300/80 mb-4">
+                    <div className="relative h-44 w-full rounded-xl overflow-hidden bg-slate-100 shadow-inner border border-slate-300/80 mb-4">
                       <Image
                         src={prod.image}
                         alt={`Frozen ${prod.name} (${prod.scientificName}) - CV. MITRA ALAM Indonesian Seafood Exporter`}
                         title={`Indonesian Frozen ${prod.name} (${prod.scientificName})`}
                         fill
-                        className={`object-cover group-hover/card:brightness-105 transition-all duration-500 ${prod.imageClass || "object-cover object-center"}`}
+                        className={`object-cover group-hover/card:scale-105 group-hover/card:brightness-105 transition-all duration-500 ${prod.imageClass || "object-cover object-center"}`}
                       />
                       <div className="absolute inset-0 bg-[#072433]/30 opacity-0 group-hover/card:opacity-100 transition-opacity flex items-center justify-center">
-                        <span className="bg-[#072433] text-cyan-300 text-[11px] font-bold px-3 py-1.5 rounded-lg flex items-center gap-1 shadow-md">
+                        <span className="bg-[#072433] text-cyan-300 text-[11px] font-bold px-3.5 py-1.5 rounded-lg flex items-center gap-1 shadow-md">
                           <Eye className="w-3.5 h-3.5" /> View Specs
                         </span>
                       </div>
                     </div>
                   ) : (
-                    <div className="relative h-40 sm:h-44 w-full rounded-xl overflow-hidden bg-gradient-to-br from-[#062432] via-[#093549] to-[#041a24] shadow-inner border border-cyan-500/30 mb-4 flex flex-col items-center justify-center p-4 text-center group-hover/card:border-amber-400/60 transition-colors">
+                    <div className="relative h-44 w-full rounded-xl overflow-hidden bg-gradient-to-br from-[#062432] via-[#093549] to-[#041a24] shadow-inner border border-cyan-500/30 mb-4 flex flex-col items-center justify-center p-4 text-center group-hover/card:border-amber-400/60 transition-colors">
                       <span className="bg-amber-400 text-slate-900 font-black text-[10px] uppercase px-3 py-1 rounded-full tracking-widest shadow-md mb-1.5">
                         Coming Soon
                       </span>
@@ -280,7 +280,7 @@ export default function ProductShowcase({ onSelectProduct }: ProductShowcaseProp
                         Image Unavailable
                       </span>
                       <div className="absolute inset-0 bg-[#072433]/40 opacity-0 group-hover/card:opacity-100 transition-opacity flex items-center justify-center">
-                        <span className="bg-[#072433] text-cyan-300 text-[11px] font-bold px-3 py-1.5 rounded-lg flex items-center gap-1 shadow-md">
+                        <span className="bg-[#072433] text-cyan-300 text-[11px] font-bold px-3.5 py-1.5 rounded-lg flex items-center gap-1 shadow-md">
                           <Eye className="w-3.5 h-3.5" /> View Specs
                         </span>
                       </div>
@@ -288,7 +288,7 @@ export default function ProductShowcase({ onSelectProduct }: ProductShowcaseProp
                   )}
 
                   {/* Product Title & Latin Name */}
-                  <div className="space-y-0.5 mb-3 text-left">
+                  <div className="space-y-1 mb-3.5 text-left">
                     <h3 className="font-display font-extrabold text-base sm:text-lg text-[#072331] tracking-wide uppercase leading-tight group-hover/card:text-[#0b485e] transition-colors">
                       {prod.name}
                     </h3>
@@ -297,23 +297,24 @@ export default function ProductShowcase({ onSelectProduct }: ProductShowcaseProp
                     </p>
                   </div>
 
-                  {/* Technical Specifications from Mockup */}
-                  <div className="space-y-1.5 text-[11px] text-slate-700 font-medium text-left border-t border-slate-300/60 pt-2.5">
+                  {/* Technical Specifications */}
+                  <div className="space-y-1.5 text-xs text-slate-700 font-medium text-left border-t border-slate-300/60 pt-3">
                     {prod.processingTypes
                       ?.filter((pt) => pt && pt.trim() !== "")
                       .map((pt, idx) => (
-                        <p key={idx} className="leading-tight text-slate-800">
-                          {pt}
+                        <p key={idx} className="leading-snug text-slate-800 flex items-center gap-1.5">
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#08485e] shrink-0"></span>
+                          <span>{pt}</span>
                         </p>
                       ))}
                     {prod.sizeGrades && prod.sizeGrades.trim() !== "" && (
-                      <p className="font-tech text-slate-900 font-semibold pt-1">
+                      <p className="font-tech text-slate-900 font-bold pt-1 text-[11px]">
                         {prod.sizeGrades}
                       </p>
                     )}
                     {(!prod.processingTypes?.some((pt) => pt && pt.trim() !== "") &&
                       (!prod.sizeGrades || prod.sizeGrades.trim() === "")) && (
-                      <p className="font-tech text-slate-500 italic">
+                      <p className="font-tech text-slate-500 italic text-[11px]">
                         Specs available on request
                       </p>
                     )}
@@ -321,9 +322,9 @@ export default function ProductShowcase({ onSelectProduct }: ProductShowcaseProp
                 </div>
 
                 {/* Card Bottom Inquire Hint */}
-                <div className="mt-4 pt-3 border-t border-slate-300/80 flex items-center justify-between text-[11px] font-bold text-[#083c4e]">
-                  <span>Export Specs</span>
-                  <span className="group-hover/card:translate-x-1 transition-transform">
+                <div className="mt-5 pt-3.5 border-t border-slate-300/80 flex items-center justify-between text-xs font-bold text-[#083c4e]">
+                  <span className="tracking-wide">Export Specs</span>
+                  <span className="group-hover/card:translate-x-1.5 transition-transform flex items-center gap-1 text-[#0b5c75]">
                     Inquire &rarr;
                   </span>
                 </div>

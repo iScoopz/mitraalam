@@ -93,7 +93,7 @@ export default function AboutUs() {
           {/* Right Narrative Text */}
           <div className="lg:col-span-8 space-y-5 text-left">
             <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight drop-shadow-md">
-              We Produce <span className="text-[#072433]">High-Quality</span> Frozen Seafood
+              We Produce <span className="text-cyan-400 drop-shadow-[0_2px_10px_rgba(34,211,238,0.3)]">High-Quality</span> Frozen Seafood
             </h2>
 
             <div className="space-y-4 text-slate-100 text-sm sm:text-base font-normal leading-relaxed">
