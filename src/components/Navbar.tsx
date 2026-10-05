@@ -68,7 +68,7 @@ export default function Navbar() {
         {/* Brand Name */}
         <a href="#home" className="flex items-center group">
           <span className="font-display font-black text-xl sm:text-2xl tracking-wider text-cyan-400 group-hover:text-cyan-300 transition-colors uppercase drop-shadow-md">
-            CV. MITRA ALAM
+            CV MITRA ALAM
           </span>
         </a>
 

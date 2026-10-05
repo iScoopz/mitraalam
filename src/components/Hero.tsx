@@ -12,9 +12,13 @@ export default function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           {/* Left Column: Headline & Subtitle */}
           <div className="lg:col-span-7 space-y-4 sm:space-y-6 text-left">
-            {/* Main Headline */}
+            {/* Main Headline with Brand Entity for Google SEO */}
             <div className="space-y-1">
               <h1 className="font-display text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight leading-[1.12]">
+                <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-cyan-500/15 border border-cyan-400/40 text-cyan-300 font-mono text-xs sm:text-sm font-extrabold tracking-[0.2em] uppercase mb-3 drop-shadow-sm">
+                  <span className="w-2 h-2 rounded-full bg-cyan-400 animate-ping" />
+                  CV MITRA ALAM MAKASSAR
+                </span>
                 <span className="silver-text-60deg block drop-shadow-md">
                   Fresh from the Ocean,
                 </span>
@@ -24,15 +28,13 @@ export default function Hero() {
               </h1>
             </div>
 
-            {/* Subtitle */}
+            {/* Subtitle with High-Density Search Intent Keywords */}
             <p className="text-slate-200 text-sm sm:text-base lg:text-lg font-medium max-w-xl leading-relaxed drop-shadow-md">
-              High-Quality Indonesian Frozen Seafood for Global Markets. Premier
-              processor of wild-caught Octopus, Squid, Cuttlefish, and Demersal
-              Fish in Makassar, South Sulawesi.
+              <strong className="text-white font-semibold">CV Mitra Alam</strong> (<strong className="text-cyan-300 font-semibold">Mitra Alam</strong>) adalah eksportir dan produsen seafood beku terpercaya berstandar HACCP, GMP, &amp; US FDA di Makassar, Sulawesi Selatan. Spesialis Octopus (Gurita), Squid (Cumi), Cuttlefish (Sotong), Red Snapper (Kakap), dan Grouper (Kerapu) untuk pasar internasional &amp; domestik.
             </p>
           </div>
 
-          {/* Right Column: Official CV. MITRA ALAM Logo */}
+          {/* Right Column: Official CV MITRA ALAM Logo */}
           <div className="lg:col-span-5 flex justify-center lg:justify-end">
             <div className="relative w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96 group flex items-center justify-center">
               {/* Outer Cyan Glow */}
@@ -42,8 +44,8 @@ export default function Hero() {
               <div className="relative w-full h-full hover:scale-105 transition-transform duration-500 flex items-center justify-center">
                 <Image
                   src="/assets/1. COVER/logo-01.png"
-                  alt="CV. MITRA ALAM - High-Quality Indonesian Frozen Seafood Exporter and Processor Logo"
-                  title="CV. MITRA ALAM - Indonesian Frozen Seafood Exporter"
+                  alt="CV Mitra Alam - Mitra Alam High-Quality Indonesian Frozen Seafood Exporter and Processor Logo"
+                  title="CV Mitra Alam - Indonesian Frozen Seafood Exporter"
                   fill
                   priority
                   className="object-contain drop-shadow-2xl"

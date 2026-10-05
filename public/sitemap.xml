@@ -3,33 +3,53 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://mitraalam.com</loc>
-    <lastmod>2026-08-31T20:30:00+08:00</lastmod>
+    <lastmod>2026-10-05T20:55:00+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://mitraalam.com/assets/1.%20COVER/logo-01.png</image:loc>
-      <image:title>CV. MITRA ALAM - Indonesian Frozen Seafood Exporter</image:title>
-      <image:caption>Premier HACCP, GMP and US FDA certified seafood processor in Makassar, Indonesia</image:caption>
+      <image:title>CV Mitra Alam - Indonesian Frozen Seafood Exporter &amp; Processor Makassar</image:title>
+      <image:caption>Premier HACCP, GMP and US FDA certified seafood processor in Makassar, South Sulawesi, Indonesia</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://mitraalam.com/assets/3.%20PRODUCT/octopus.jpeg</image:loc>
-      <image:title>Frozen Indonesian Octopus (Octopus cyaneus)</image:title>
+      <image:title>Frozen Indonesian Octopus (Octopus cyaneus) - CV Mitra Alam</image:title>
+      <image:caption>Wild-caught premium grade Indonesian octopus, ball-rolled IQF or BQF block</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://mitraalam.com/assets/3.%20PRODUCT/cuttlefish.jpeg</image:loc>
-      <image:title>Frozen Indonesian Cuttlefish (Sepia esculenta)</image:title>
+      <image:title>Frozen Indonesian Cuttlefish (Sepia esculenta) - CV Mitra Alam</image:title>
+      <image:caption>Tender wild Indonesian cuttlefish whole cleaned or skinless fillet</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://mitraalam.com/assets/3.%20PRODUCT/squid.jpeg</image:loc>
-      <image:title>Frozen Indonesian Loligo Squid</image:title>
+      <image:title>Frozen Indonesian Loligo Squid - CV Mitra Alam</image:title>
+      <image:caption>Fresh Indonesian Loligo squid packed in quick-frozen blocks (BQF)</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://mitraalam.com/assets/3.%20PRODUCT/snapper.jpg</image:loc>
-      <image:title>Frozen Indonesian Red Snapper</image:title>
+      <image:title>Frozen Indonesian Red Snapper (Lutjanus spp.) - CV Mitra Alam</image:title>
+      <image:caption>Prime Indonesian red snapper whole round, WGGS, or skin-on fillet</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://mitraalam.com/assets/3.%20PRODUCT/grouper.jpg</image:loc>
-      <image:title>Frozen Indonesian Grouper</image:title>
+      <image:title>Frozen Indonesian Grouper (Epinephelus spp.) - CV Mitra Alam</image:title>
+      <image:caption>Firm white meat grouper blast frozen at -35°C in Makassar</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://mitraalam.com/assets/3.%20PRODUCT/spanish%20mackerel.jpeg</image:loc>
+      <image:title>Frozen Spanish Mackerel / Tenggiri (Scomberomorus commerson) - CV Mitra Alam</image:title>
+      <image:caption>High-oil-content pelagic Spanish mackerel premium cut for export</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://mitraalam.com/assets/4.%20STORY/IMG_7531.JPG</image:loc>
+      <image:title>CV Mitra Alam Quality Inspection and Cold Chain Management</image:title>
+      <image:caption>Strict HACCP and GMP quality control at Makassar facility</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://mitraalam.com/assets/5.%20COMMITMENT/5-02.png</image:loc>
+      <image:title>CV Mitra Alam Cold Storage and Packaging Operations</image:title>
+      <image:caption>Air blast freezing and export packing facility at Jl. Lantebung Makassar</image:caption>
     </image:image>
   </url>
 </urlset>

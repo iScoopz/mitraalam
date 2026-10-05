@@ -4,29 +4,40 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://mitraalam.com"),
   title: {
-    default: "CV. MITRA ALAM | Indonesian Frozen Seafood Exporter & Supplier",
-    template: "%s | CV. MITRA ALAM",
+    default: "Mitra Alam | CV Mitra Alam - Indonesian Frozen Seafood Exporter Makassar",
+    template: "%s | CV Mitra Alam",
   },
   description:
-    "CV. Mitra Alam is a premier HACCP, GMP, and US FDA certified frozen seafood processor & exporter based in Makassar, South Sulawesi, Indonesia. Specializing in Octopus, Squid, Cuttlefish, Red Snapper, Grouper, and Pelagic Fish for global export.",
-  applicationName: "CV. MITRA ALAM",
-  authors: [{ name: "CV. MITRA ALAM", url: "https://mitraalam.com" }],
-  creator: "CV. MITRA ALAM",
-  publisher: "CV. MITRA ALAM",
+    "Mitra Alam (CV Mitra Alam) adalah eksportir dan pabrik pengolahan seafood beku resmi berstandar HACCP, GMP, & US FDA di Makassar, Sulawesi Selatan. Melayani ekspor dan pasokan Gurita (Octopus), Cumi (Squid), Sotong (Cuttlefish), Kakap Merah (Snapper), dan Kerapu (Grouper).",
+  applicationName: "CV Mitra Alam",
+  authors: [{ name: "CV Mitra Alam", url: "https://mitraalam.com" }],
+  creator: "CV Mitra Alam",
+  publisher: "CV Mitra Alam",
   category: "Business & Industrial > Food & Beverage > Seafood Supplier",
   keywords: [
-    "CV. Mitra Alam",
+    "Mitra Alam",
+    "CV Mitra Alam",
+    "Mitra Alam Makassar",
     "CV Mitra Alam Makassar",
     "Mitra Alam Seafood",
+    "CV Mitra Alam Seafood",
+    "Mitra Alam Frozen Seafood",
+    "Pabrik Mitra Alam",
+    "Cold Storage Mitra Alam",
     "Indonesian Frozen Seafood Exporter",
     "Frozen Seafood Supplier Indonesia",
     "Seafood Exporter Makassar",
     "Eksportir Seafood Beku Indonesia",
     "Supplier Hasil Laut Makassar",
+    "Supplier Ikan Beku Makassar",
+    "Pabrik Pengolahan Ikan Makassar",
+    "Cold Storage Makassar Lantebung",
+    "Cold Storage Makassar KIMA",
     "HACCP Seafood Indonesia",
     "US FDA Registered Seafood Processor",
     "GMP Certified Seafood Exporter",
     "Frozen Octopus Indonesia",
+    "Eksportir Gurita Makassar",
     "Octopus cyaneus exporter",
     "Frozen Cuttlefish Sepia",
     "Frozen Loligo Squid",
@@ -35,16 +46,17 @@ export const metadata: Metadata = {
     "Pelagic Fish Exporter",
     "Spanish Mackerel Tenggiri",
     "Grouper Exporter Indonesia",
-    "Cold Storage Makassar KIMA",
     "Air Blast Freezer ABF Indonesia",
     "Indonesian Fish Processing Plant",
   ],
   alternates: {
     canonical: "https://mitraalam.com",
     languages: {
-      "en-US": "https://mitraalam.com",
-      "id-ID": "https://mitraalam.com",
+      "x-default": "https://mitraalam.com",
     },
+  },
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || "google-site-verification-token",
   },
   robots: {
     index: true,
@@ -61,45 +73,45 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/assets/1. COVER/logo-01.png", sizes: "any" },
+      { url: "/assets/1.%20COVER/logo-01.png", sizes: "any" },
       { url: "/favicon.ico", sizes: "any" },
     ],
-    shortcut: "/assets/1. COVER/logo-01.png",
-    apple: "/assets/1. COVER/logo-01.png",
+    shortcut: "/assets/1.%20COVER/logo-01.png",
+    apple: "/assets/1.%20COVER/logo-01.png",
   },
   manifest: "/manifest.json",
   openGraph: {
-    title: "CV. MITRA ALAM | Indonesian Frozen Seafood Exporter & Supplier",
+    title: "Mitra Alam | CV Mitra Alam - Indonesian Frozen Seafood Exporter Makassar",
     description:
-      "Fresh from the Ocean, Frozen to Perfection. CV. Mitra Alam is a premier HACCP, GMP, and US FDA certified frozen seafood processor and exporter based in Makassar, Indonesia.",
+      "Fresh from the Ocean, Frozen to Perfection. Mitra Alam (CV Mitra Alam) is a premier HACCP, GMP, and US FDA certified frozen seafood processor and exporter based in Makassar, South Sulawesi, Indonesia.",
     url: "https://mitraalam.com",
-    siteName: "CV. MITRA ALAM",
+    siteName: "Mitra Alam",
     images: [
       {
-        url: "/assets/1. COVER/logo-01.png",
+        url: "https://mitraalam.com/assets/1.%20COVER/logo-01.png",
         width: 1200,
         height: 630,
-        alt: "CV. MITRA ALAM - Indonesian Frozen Seafood Exporter",
+        alt: "CV Mitra Alam - Indonesian Frozen Seafood Exporter and Processor Makassar",
       },
     ],
-    locale: "en_US",
-    alternateLocale: ["id_ID"],
+    locale: "id_ID",
+    alternateLocale: ["en_US"],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "CV. MITRA ALAM | Indonesian Frozen Seafood Exporter",
+    title: "Mitra Alam | CV Mitra Alam - Indonesian Frozen Seafood Exporter Makassar",
     description:
-      "High-Quality Indonesian Frozen Seafood. HACCP, GMP, & US FDA Registered Processor in Makassar, Indonesia.",
-    images: ["/assets/1. COVER/logo-01.png"],
+      "High-Quality Indonesian Frozen Seafood. HACCP, GMP, & US FDA Registered Processor in Makassar, South Sulawesi, Indonesia.",
+    images: ["https://mitraalam.com/assets/1.%20COVER/logo-01.png"],
   },
   other: {
     "geo.region": "ID-SN",
     "geo.placename": "Makassar, Sulawesi Selatan",
     "geo.position": "-5.109033;119.516782",
     "ICBM": "-5.109033, 119.516782",
-    "language": "English, Indonesian",
-    "revisit-after": "7 days",
+    "language": "Indonesian, English",
+    "revisit-after": "3 days",
     "rating": "General",
   },
 };
@@ -108,30 +120,35 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": ["Organization", "LocalBusiness", "FoodEstablishment"],
+      "@type": ["Organization", "LocalBusiness", "WholesaleStore"],
       "@id": "https://mitraalam.com/#organization",
-      name: "CV. MITRA ALAM",
+      name: "CV Mitra Alam",
+      legalName: "CV Mitra Alam",
       alternateName: [
+        "Mitra Alam",
+        "Mitra Alam Makassar",
+        "CV. Mitra Alam",
+        "Mitra Alam Seafood",
+        "CV Mitra Alam Seafood",
         "Mitra Alam Frozen Seafood",
-        "CV Mitra Alam",
-        "Mitra Alam Seafood Makassar",
+        "CV Mitra Alam Makassar",
       ],
       url: "https://mitraalam.com",
       logo: {
         "@type": "ImageObject",
         url: "https://mitraalam.com/assets/1.%20COVER/logo-01.png",
-        caption: "CV. MITRA ALAM Logo",
+        caption: "CV Mitra Alam Logo",
       },
       image: "https://mitraalam.com/assets/1.%20COVER/logo-01.png",
       description:
-        "CV. Mitra Alam is a premier Indonesian seafood processor and exporter specializing in high-quality frozen cephalopods (octopus, squid, cuttlefish), demersal, and pelagic fish with HACCP, GMP, and US FDA certification.",
+        "CV Mitra Alam (Mitra Alam) is a premier Indonesian seafood processor and exporter specializing in high-quality frozen cephalopods (octopus, squid, cuttlefish), demersal, and pelagic fish with HACCP, GMP, and US FDA certification.",
       foundingDate: "2017",
       address: {
         "@type": "PostalAddress",
-        streetAddress: "Jl. Kima 10 Kav E 1A, Daya, Kec. Biringkanaya",
+        streetAddress: "Jl. Lantebung No. 9",
         addressLocality: "Makassar",
         addressRegion: "Sulawesi Selatan",
-        postalCode: "90241",
+        postalCode: "90244",
         addressCountry: "ID",
       },
       geo: {
@@ -226,7 +243,13 @@ const jsonLd = {
       "@type": "WebSite",
       "@id": "https://mitraalam.com/#website",
       url: "https://mitraalam.com",
-      name: "CV. MITRA ALAM",
+      name: "Mitra Alam",
+      alternateName: [
+        "CV Mitra Alam",
+        "Mitra Alam Makassar",
+        "CV. Mitra Alam",
+        "Mitra Alam Seafood",
+      ],
       description: "Indonesian Frozen Seafood Exporter & Processing Plant",
       publisher: {
         "@id": "https://mitraalam.com/#organization",
@@ -237,7 +260,7 @@ const jsonLd = {
       "@type": "WebPage",
       "@id": "https://mitraalam.com/#webpage",
       url: "https://mitraalam.com",
-      name: "CV. MITRA ALAM | Indonesian Frozen Seafood Exporter & Supplier",
+      name: "Mitra Alam | CV Mitra Alam - Indonesian Frozen Seafood Exporter & Supplier",
       isPartOf: {
         "@id": "https://mitraalam.com/#website",
       },
@@ -245,7 +268,7 @@ const jsonLd = {
         "@id": "https://mitraalam.com/#organization",
       },
       description:
-        "CV. Mitra Alam is a leading Indonesian frozen seafood exporter certified by HACCP, GMP, and US FDA in Makassar, Indonesia.",
+        "Mitra Alam (CV Mitra Alam) is a leading Indonesian frozen seafood exporter certified by HACCP, GMP, and US FDA in Makassar, Indonesia.",
       breadcrumb: {
         "@id": "https://mitraalam.com/#breadcrumb",
       },
@@ -295,7 +318,7 @@ const jsonLd = {
     {
       "@type": "ItemList",
       "@id": "https://mitraalam.com/#productlist",
-      name: "Export Seafood Products by CV. MITRA ALAM",
+      name: "Export Seafood Products by CV Mitra Alam",
       itemListElement: [
         {
           "@type": "Product",
@@ -307,14 +330,17 @@ const jsonLd = {
           category: "Cephalopod",
           brand: {
             "@type": "Brand",
-            name: "CV. MITRA ALAM",
+            name: "CV Mitra Alam",
           },
           offers: {
             "@type": "Offer",
             availability: "https://schema.org/InStock",
             priceCurrency: "USD",
-            price: "Contact for Quote",
+            price: "0",
+            priceValidUntil: "2027-12-31",
             itemCondition: "https://schema.org/NewCondition",
+            description: "Wholesale export quote available upon request",
+            url: "https://mitraalam.com/#product",
           },
         },
         {
@@ -327,13 +353,17 @@ const jsonLd = {
           category: "Cephalopod",
           brand: {
             "@type": "Brand",
-            name: "CV. MITRA ALAM",
+            name: "CV Mitra Alam",
           },
           offers: {
             "@type": "Offer",
             availability: "https://schema.org/InStock",
             priceCurrency: "USD",
-            price: "Contact for Quote",
+            price: "0",
+            priceValidUntil: "2027-12-31",
+            itemCondition: "https://schema.org/NewCondition",
+            description: "Wholesale export quote available upon request",
+            url: "https://mitraalam.com/#product",
           },
         },
         {
@@ -346,13 +376,17 @@ const jsonLd = {
           category: "Cephalopod",
           brand: {
             "@type": "Brand",
-            name: "CV. MITRA ALAM",
+            name: "CV Mitra Alam",
           },
           offers: {
             "@type": "Offer",
             availability: "https://schema.org/InStock",
             priceCurrency: "USD",
-            price: "Contact for Quote",
+            price: "0",
+            priceValidUntil: "2027-12-31",
+            itemCondition: "https://schema.org/NewCondition",
+            description: "Wholesale export quote available upon request",
+            url: "https://mitraalam.com/#product",
           },
         },
         {
@@ -365,13 +399,17 @@ const jsonLd = {
           category: "Demersal Fish",
           brand: {
             "@type": "Brand",
-            name: "CV. MITRA ALAM",
+            name: "CV Mitra Alam",
           },
           offers: {
             "@type": "Offer",
             availability: "https://schema.org/InStock",
             priceCurrency: "USD",
-            price: "Contact for Quote",
+            price: "0",
+            priceValidUntil: "2027-12-31",
+            itemCondition: "https://schema.org/NewCondition",
+            description: "Wholesale export quote available upon request",
+            url: "https://mitraalam.com/#product",
           },
         },
         {
@@ -384,13 +422,17 @@ const jsonLd = {
           category: "Demersal Fish",
           brand: {
             "@type": "Brand",
-            name: "CV. MITRA ALAM",
+            name: "CV Mitra Alam",
           },
           offers: {
             "@type": "Offer",
             availability: "https://schema.org/InStock",
             priceCurrency: "USD",
-            price: "Contact for Quote",
+            price: "0",
+            priceValidUntil: "2027-12-31",
+            itemCondition: "https://schema.org/NewCondition",
+            description: "Wholesale export quote available upon request",
+            url: "https://mitraalam.com/#product",
           },
         },
         {
@@ -404,13 +446,17 @@ const jsonLd = {
           category: "Pelagic Fish",
           brand: {
             "@type": "Brand",
-            name: "CV. MITRA ALAM",
+            name: "CV Mitra Alam",
           },
           offers: {
             "@type": "Offer",
             availability: "https://schema.org/InStock",
             priceCurrency: "USD",
-            price: "Contact for Quote",
+            price: "0",
+            priceValidUntil: "2027-12-31",
+            itemCondition: "https://schema.org/NewCondition",
+            description: "Wholesale export quote available upon request",
+            url: "https://mitraalam.com/#product",
           },
         },
       ],
@@ -421,18 +467,18 @@ const jsonLd = {
       mainEntity: [
         {
           "@type": "Question",
-          name: "What seafood products does CV. Mitra Alam export from Indonesia?",
+          name: "What seafood products does CV Mitra Alam export from Indonesia?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "CV. Mitra Alam specializes in exporting premium Indonesian frozen seafood including Cephalopods (Octopus cyaneus, Cuttlefish Sepia esculenta, Loligo Squid), Demersal fish (Red Snapper, Grouper, Parrotfish, Leatherjacket, Rabbitfish), and Pelagic fish (Spanish Mackerel Tenggiri, Mackerel Scad). All products are processed under strict HACCP and GMP standards.",
+            text: "CV Mitra Alam specializes in exporting premium Indonesian frozen seafood including Cephalopods (Octopus cyaneus, Cuttlefish Sepia esculenta, Loligo Squid), Demersal fish (Red Snapper, Grouper, Parrotfish, Leatherjacket, Rabbitfish), and Pelagic fish (Spanish Mackerel Tenggiri, Mackerel Scad). All products are processed under strict HACCP and GMP standards.",
           },
         },
         {
           "@type": "Question",
-          name: "Is CV. Mitra Alam certified for seafood export to the USA, China, and Vietnam?",
+          name: "Is CV Mitra Alam certified for seafood export to the USA, China, and Vietnam?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Yes, CV. Mitra Alam is fully registered with the US FDA (Registration: 12621818410), China (CIDN18PP2310200112 / CR 999 - 27), Vietnam (VR. A/B-559-27), South Korea (No 25 - 114), and Taiwan (IT 036-27). We also hold official HACCP certifications for Cephalopods, Demersal, and Pelagic fish.",
+            text: "Yes, CV Mitra Alam is fully registered with the US FDA (Registration: 12621818410), China (CIDN18PP2310200112 / CR 999 - 27), Vietnam (VR. A/B-559-27), South Korea (No 25 - 114), and Taiwan (IT 036-27). We also hold official HACCP certifications for Cephalopods, Demersal, and Pelagic fish.",
           },
         },
         {
@@ -445,10 +491,10 @@ const jsonLd = {
         },
         {
           "@type": "Question",
-          name: "Where is CV. Mitra Alam located and what is your cold storage capacity?",
+          name: "Where is CV Mitra Alam located and what is your cold storage capacity?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Our processing plant and cold storage are strategically located in the KIMA Industrial Estate (Jl. Kima 10 Kav E 1A, Makassar, South Sulawesi, Indonesia), just minutes from the Port of Makassar. Our facilities feature 3 Air Blast Freezers (ABF) (~3.5 tons/cycle) and cold storage capacity of 108 Tons maintained at -20°C to -25°C.",
+            text: "Our processing plant and cold storage are strategically located at Jl. Lantebung No. 9, Makassar, South Sulawesi 90244, just minutes from the Port of Makassar. Our facilities feature 3 Air Blast Freezers (ABF) (~3.5 tons/cycle) and cold storage capacity of 108 Tons maintained at -20°C to -25°C.",
           },
         },
         {
@@ -470,13 +516,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="id" className="scroll-smooth">
       <head>
-        <link rel="canonical" href="https://mitraalam.com" />
-        <meta name="geo.region" content="ID-SN" />
-        <meta name="geo.placename" content="Makassar" />
-        <meta name="geo.position" content="-5.109033;119.516782" />
-        <meta name="ICBM" content="-5.109033, 119.516782" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

@@ -42,7 +42,7 @@ export default function ProductModal({ product, onClose }: ProductModalProps) {
   if (!product) return null;
 
   const waMessage = encodeURIComponent(
-    `Hello CV. Mitra Alam, I am interested in placing an inquiry for ${product.name} (${product.scientificName}).`
+    `Hello CV Mitra Alam, I am interested in placing an inquiry for ${product.name} (${product.scientificName}).`
   );
 
   const validProcessingTypes = product.processingTypes?.filter((t) => t && t.trim() !== "") || [];

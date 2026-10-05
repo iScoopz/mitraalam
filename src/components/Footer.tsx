@@ -13,7 +13,7 @@ export default function Footer() {
       <div className="absolute inset-0 z-0 overflow-hidden">
         <Image
           src="/assets/1. COVER/BACKGROUND-14.png"
-          alt="CV. MITRA ALAM Footer Ocean Background"
+          alt="CV Mitra Alam Footer Ocean Background"
           fill
           className="object-cover object-center rotate-180 scale-105"
         />
@@ -27,7 +27,7 @@ export default function Footer() {
           <div className="lg:col-span-4 space-y-4 text-left">
             <div>
               <h3 className="font-display font-extrabold text-xl text-white tracking-wider uppercase drop-shadow-md">
-                CV. MITRA ALAM
+                CV MITRA ALAM
               </h3>
             </div>
 
@@ -39,7 +39,7 @@ export default function Footer() {
             <div className="flex items-center space-x-3 pt-2">
               {/* WhatsApp */}
               <a
-                href="https://wa.me/6282190931111?text=Hello%20CV.%20Mitra%20Alam%2C%20I%20would%20like%20to%20inquire%20about%20your%20frozen%20seafood%20export%20services."
+                href="https://wa.me/6282190931111?text=Hello%20CV%20Mitra%20Alam%2C%20I%20would%20like%20to%20inquire%20about%20your%20frozen%20seafood%20export%20services."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-[#072d3e]/90 text-cyan-300 border border-cyan-400/40 flex items-center justify-center hover:bg-emerald-600 hover:text-white hover:border-emerald-400 transition-all shadow-md cursor-pointer backdrop-blur-sm"
@@ -54,7 +54,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-[#072d3e]/90 text-cyan-300 border border-cyan-400/40 flex items-center justify-center hover:bg-gradient-to-tr hover:from-amber-500 hover:via-pink-600 hover:to-purple-600 hover:text-white hover:border-pink-400 transition-all shadow-md cursor-pointer backdrop-blur-sm"
-                aria-label="Follow CV. Mitra Alam on Instagram"
+                aria-label="Follow CV Mitra Alam on Instagram"
               >
                 <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
                   <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
@@ -65,7 +65,7 @@ export default function Footer() {
               <a
                 href="mailto:mitraalam9@gmail.com"
                 className="w-10 h-10 rounded-full bg-[#072d3e]/90 text-cyan-300 border border-cyan-400/40 flex items-center justify-center hover:bg-cyan-600 hover:text-white hover:border-cyan-300 transition-all shadow-md cursor-pointer backdrop-blur-sm"
-                aria-label="Email CV. Mitra Alam directly"
+                aria-label="Email CV Mitra Alam directly"
               >
                 <Mail className="w-5 h-5" />
               </a>
@@ -81,7 +81,7 @@ export default function Footer() {
             {/* Real Interactive Google Maps Embed */}
             <div className="rounded-2xl overflow-hidden border-2 border-cyan-400/40 shadow-xl relative h-44 bg-[#0d3446] group">
               <iframe
-                title="CV. MITRA ALAM Real Factory Location Map"
+                title="CV MITRA ALAM Real Factory Location Map"
                 src="https://maps.google.com/maps?q=Jl.+Lantebung+No.+9,+Makassar,+Sulawesi+Selatan&t=&z=15&ie=UTF8&iwloc=&output=embed"
                 width="100%"
                 height="100%"
@@ -167,7 +167,7 @@ export default function Footer() {
       {/* Bottom Copyright Bar */}
       <div className="bg-[#031119]/90 text-center py-4 border-t border-cyan-500/20 relative z-10 backdrop-blur-sm">
         <p className="text-[11px] text-slate-400 font-medium tracking-wider">
-          &copy;2026 by CV. Mitra Alam. All Rights Reserved.
+          &copy; 2026 CV Mitra Alam. All Rights Reserved.
         </p>
       </div>
     </footer>

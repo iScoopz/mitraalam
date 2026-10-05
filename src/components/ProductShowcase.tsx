@@ -312,7 +312,7 @@ export default function ProductShowcase({ onSelectProduct }: ProductShowcaseProp
                     <div className="relative h-44 w-full rounded-xl overflow-hidden bg-slate-100 shadow-inner border border-slate-300/80 mb-4">
                       <Image
                         src={prod.image}
-                        alt={`Frozen ${prod.name} (${prod.scientificName}) - CV. MITRA ALAM Indonesian Seafood Exporter`}
+                        alt={`Frozen ${prod.name} (${prod.scientificName}) - CV MITRA ALAM Indonesian Seafood Exporter`}
                         title={`Indonesian Frozen ${prod.name} (${prod.scientificName})`}
                         fill
                         className={`object-cover group-hover/card:scale-105 group-hover/card:brightness-105 transition-all duration-500 ${prod.imageClass || "object-cover object-center"}`}

@@ -331,7 +331,8 @@ export default function GallerySlider() {
                   >
                     <Image
                       src={item.src}
-                      alt={item.title}
+                      alt={`${item.title} - CV MITRA ALAM Indonesian Frozen Seafood Processing Plant Makassar`}
+                      title={`${item.title} - CV MITRA ALAM`}
                       fill
                       sizes="(max-width: 768px) 50vw, 33vw"
                       className="object-cover group-hover/item:scale-110 transition-transform duration-700"
@@ -403,7 +404,8 @@ export default function GallerySlider() {
             <div className="relative w-full h-[58vh] sm:h-[68vh] rounded-2xl overflow-hidden border-2 border-cyan-400/50 shadow-2xl bg-[#041822] flex items-center justify-center group/lightbox">
               <Image
                 src={currentLightboxItem.src}
-                alt={currentLightboxItem.title}
+                alt={`${currentLightboxItem.title} - CV MITRA ALAM Makassar`}
+                title={`${currentLightboxItem.title} - CV MITRA ALAM`}
                 fill
                 sizes="(max-width: 1024px) 100vw, 85vw"
                 className="object-contain p-1 sm:p-2"

@@ -28,7 +28,7 @@ export default function Home() {
         <div className="absolute inset-0 z-0">
           <Image
             src="/assets/1. COVER/BACKGROUND-14.png"
-            alt="CV. MITRA ALAM Ocean Cover Background"
+            alt="CV Mitra Alam Ocean Cover Background"
             fill
             priority
             className="object-cover object-top"

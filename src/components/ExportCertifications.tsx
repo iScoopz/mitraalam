@@ -105,7 +105,7 @@ export default function ExportCertifications() {
               <div className="relative w-20 h-16 sm:w-24 sm:h-20 shrink-0 drop-shadow-md group-hover:scale-105 transition-transform flex items-center justify-center">
                 <Image
                   src="/assets/2. CERTIFICATE/GMP.png"
-                  alt="GMP Certified Indonesian Seafood Processing Facility - CV. Mitra Alam"
+                  alt="GMP Certified Indonesian Seafood Processing Facility - CV Mitra Alam"
                   fill
                   className="object-contain"
                 />
@@ -125,7 +125,7 @@ export default function ExportCertifications() {
               <div className="relative w-20 h-16 sm:w-24 sm:h-20 shrink-0 drop-shadow-md group-hover:scale-105 transition-transform flex items-center justify-center">
                 <Image
                   src="/assets/2. CERTIFICATE/Food_and_Drug_Administration_logo.svg.png"
-                  alt="US FDA Registered Seafood Facility No 12621818410 - CV. Mitra Alam"
+                  alt="US FDA Registered Seafood Facility No 12621818410 - CV Mitra Alam"
                   fill
                   className="object-contain"
                 />
@@ -145,7 +145,7 @@ export default function ExportCertifications() {
               <div className="relative w-20 h-16 sm:w-24 sm:h-20 shrink-0 drop-shadow-md group-hover:scale-105 transition-transform flex items-center justify-center">
                 <Image
                   src="/assets/2. CERTIFICATE/haccp-removebg-preview.png"
-                  alt="HACCP Certified Indonesian Frozen Seafood Exporter - CV. Mitra Alam"
+                  alt="HACCP Certified Indonesian Frozen Seafood Exporter - CV Mitra Alam"
                   fill
                   style={{ transform: "scale(2.2)" }}
                   className="object-contain"

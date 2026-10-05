@@ -83,7 +83,7 @@ export default function AboutUs() {
             <div className="relative w-60 h-60 sm:w-72 sm:h-72 rounded-full overflow-hidden border-4 border-cyan-300 shadow-2xl bg-[#072433] group">
               <Image
                 src="/assets/4. STORY/IMG_7531.JPG"
-                alt="CV. Mitra Alam Frozen Seafood Quality Inspection and Cold Chain Management"
+                alt="CV Mitra Alam Frozen Seafood Quality Inspection and Cold Chain Management"
                 fill
                 className="object-cover group-hover:scale-108 transition-transform duration-700"
               />
@@ -92,16 +92,21 @@ export default function AboutUs() {
 
           {/* Right Narrative Text */}
           <div className="lg:col-span-8 space-y-5 text-left">
-            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight drop-shadow-md">
-              We Produce <span className="text-cyan-400 drop-shadow-[0_2px_10px_rgba(34,211,238,0.3)]">High-Quality</span> Frozen Seafood
-            </h2>
+            <div>
+              <span className="text-cyan-400 text-xs sm:text-sm font-bold tracking-[0.2em] uppercase block mb-1">
+                About CV MITRA ALAM
+              </span>
+              <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight drop-shadow-md">
+                We Produce <span className="text-cyan-400 drop-shadow-[0_2px_10px_rgba(34,211,238,0.3)]">High-Quality</span> Frozen Seafood
+              </h2>
+            </div>
 
             <div className="space-y-4 text-slate-100 text-sm sm:text-base font-normal leading-relaxed">
               <p>
-                Established in 2017 as a small frozen seafood manufacturer based in Makassar, initially serving the Indonesian domestic market as a specialist in mackerel scad, mackerel tuna, and skipjack tuna.
+                <strong className="text-white font-semibold">CV Mitra Alam</strong> (<strong className="text-white font-semibold">Mitra Alam</strong>) was established in 2017 as a premium frozen seafood manufacturer based in Makassar, South Sulawesi. Starting with the Indonesian domestic market specializing in pelagic fish, we have continuously elevated our processing standards.
               </p>
               <p>
-                In 2020, amidst the pandemic, we expanded our operations into the international export market and diversified our product range to include cephalopods and demersal fish. We remain fully committed to delivering exceptional production quality to ensure total customer satisfaction.
+                In 2020, CV Mitra Alam expanded into international export markets across Asia and the Americas, diversifying into wild-caught cephalopods (octopus, cuttlefish, squid) and demersal fish. Our certified facilities and strict cold-chain handling ensure the finest Indonesian seafood reaches global tables.
               </p>
             </div>
           </div>
@@ -133,7 +138,7 @@ export default function AboutUs() {
             <div className="relative h-80 sm:h-96 md:h-[420px] lg:h-[460px] w-full rounded-3xl overflow-hidden border-4 border-cyan-300 shadow-2xl bg-[#072433] group">
               <Image
                 src="/assets/5. COMMITMENT/5-02.png"
-                alt="CV. Mitra Alam Export Packaging and Cold Storage Operations in Makassar"
+                alt="CV Mitra Alam Export Packaging and Cold Storage Operations in Makassar"
                 fill
                 className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
               />
