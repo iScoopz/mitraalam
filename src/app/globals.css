@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
 @import "tailwindcss";
 
 :root {
@@ -18,19 +17,155 @@
 body {
   background-color: #041822;
   color: #f1f5f9;
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: var(--font-jakarta), sans-serif;
   overflow-x: hidden;
   scroll-behavior: smooth;
 }
 
 /* Custom Typography */
 .font-display {
-  font-family: 'Outfit', sans-serif;
+  font-family: var(--font-outfit), sans-serif;
 }
 
 .font-tech {
-  font-family: 'Space Grotesk', monospace;
+  font-variant-numeric: tabular-nums;
 }
+
+/* ───────────── Motion layer ─────────────
+   Every hidden start state sits behind html.js + no-preference, so no-JS and reduced-motion visitors get the finished page. */
+:root {
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.76, 0, 0.24, 1);
+  --ease-soft: cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+/* Scroll progress: a water line under the navbar */
+.scroll-progress {
+  position: absolute; left: 0; right: 0; bottom: 0; height: 2px;
+  background: #67e8f9; transform-origin: 0 50%; transform: scaleX(0);
+}
+@supports (animation-timeline: scroll()) {
+  .scroll-progress { animation: progress linear both; animation-timeline: scroll(root); }
+}
+@keyframes progress { to { transform: scaleX(1); } }
+
+/* Hero load: lines rise from behind their baseline, then the sentence and buttons */
+.lines .line { display: block; overflow: clip; padding-bottom: 0.08em; margin-bottom: -0.08em; }
+.lines [data-line] { display: block; }
+@media (prefers-reduced-motion: no-preference) {
+  .js .lines [data-line] { transform: translateY(105%); animation: lift-in 900ms var(--ease-expo) forwards; animation-delay: calc(var(--i) * 110ms + 150ms); }
+  .js [data-load] { opacity: 0; transform: translateY(14px); animation: lift-in 600ms var(--ease-out) forwards; animation-delay: var(--d, 420ms); }
+}
+@keyframes lift-in { to { opacity: 1; transform: none; } }
+
+/* Logo floats on the current */
+@media (prefers-reduced-motion: no-preference) {
+  .float { animation: float 7s ease-in-out infinite; }
+}
+@keyframes float { 50% { transform: translateY(-14px) rotate(-1.5deg); } }
+
+/* Rising bubbles, behind the copy; they rise through the first screen, not the whole cover */
+.bubbles { position: absolute; left: 0; right: 0; top: 0; height: 100svh; overflow: clip; pointer-events: none; }
+.bubbles span {
+  position: absolute; bottom: -40px; left: var(--x); width: var(--s); height: var(--s);
+  border-radius: 50%;
+  background: radial-gradient(circle at 32% 28%, rgba(255, 255, 255, 0.7) 0 8%, rgba(165, 243, 252, 0.22) 22%, rgba(165, 243, 252, 0.06) 62%, rgba(165, 243, 252, 0.18) 100%);
+  box-shadow: inset 0 0 0 1px rgba(207, 250, 254, 0.45);
+  opacity: 0;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .bubbles span { animation: bubble var(--t) linear var(--delay) infinite; }
+}
+@keyframes bubble {
+  8% { opacity: 1; }
+  25% { transform: translate(18px, -26vh); }
+  50% { transform: translate(-12px, -52vh); }
+  75% { transform: translate(16px, -78vh); }
+  90% { opacity: 0.9; }
+  to { transform: translate(-10px, -105vh); opacity: 0; }
+}
+
+/* Reveal on scroll, once, with a short stagger */
+@media (prefers-reduced-motion: no-preference) {
+  .js [data-reveal] { opacity: 0; transform: translateY(28px); transition: opacity 700ms var(--ease-out), transform 900ms var(--ease-expo); transition-delay: calc(var(--i, 0) * 80ms); }
+  .js [data-reveal].is-in { opacity: 1; transform: none; }
+  /* Shutter: a photo opens from the bottom while settling from a slight zoom */
+  /* the observed wrapper stays unclipped: Chrome's IntersectionObserver counts a fully clipped target as out of view */
+  .js [data-reveal="shutter"] { opacity: 1; transform: none; }
+  .js [data-reveal="shutter"] > * { clip-path: inset(0 0 100% 0); transition: clip-path 1200ms var(--ease-in-out); }
+  .js [data-reveal="shutter"] img { transform: scale(1.15); transition: transform 1600ms var(--ease-soft); }
+  .js [data-reveal="shutter"].is-in > * { clip-path: inset(0 round 1.5rem); }
+  .js [data-reveal="shutter"].is-in img { transform: none; }
+}
+
+/* Gallery tiles fade in each time the slide changes */
+@media (prefers-reduced-motion: no-preference) {
+  .tile-in { animation: lift-in 700ms var(--ease-out) both; animation-delay: calc(var(--i) * 70ms); opacity: 0; transform: translateY(18px); }
+}
+
+/* Brushed-silver sheen that sweeps across metal surfaces on hover and once on reveal */
+.sheen { position: relative; overflow: clip; }
+.sheen::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(105deg, transparent 35%, rgba(255, 255, 255, 0.75) 50%, transparent 65%);
+  transform: translateX(-120%);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .sheen:hover::after, .sheen.is-in::after { transition: transform 1100ms var(--ease-in-out); transform: translateX(120%); }
+}
+
+/* 3D tilt toward the pointer; Effects.tsx feeds --rx / --ry */
+[data-tilt] { transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)); transition: transform 400ms var(--ease-out); will-change: transform; }
+[data-reveal][data-tilt].is-in { transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)); transition: transform 400ms var(--ease-out), opacity 700ms var(--ease-out); }
+
+/* Rolling figures */
+.roll__digits { display: inline-flex; font-variant-numeric: tabular-nums; line-height: 1; }
+.roll__col { display: inline-block; height: 1em; overflow: clip; }
+.roll__strip { display: flex; flex-direction: column; transform: translateY(calc(var(--d) * -1em)); }
+.roll__strip > span { height: 1em; }
+@media (prefers-reduced-motion: no-preference) {
+  .roll:not(.is-in) .roll__strip { transform: none; }
+  .roll.is-in .roll__strip { transition: transform 1400ms var(--ease-expo) calc(var(--i) * 90ms); }
+}
+
+/* Dialogs: the backdrop fades, the panel rises a little */
+@media (prefers-reduced-motion: no-preference) {
+  .modal-backdrop { animation: fade-in 200ms ease both; }
+  .modal-panel { animation: lift-in 320ms var(--ease-out) both; opacity: 0; transform: translateY(16px) scale(0.98); }
+}
+@keyframes fade-in { from { opacity: 0; } }
+
+/* Light that follows the pointer across brushed-silver cards */
+.sheen[data-tilt]::before {
+  content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none; border-radius: inherit;
+  background: radial-gradient(260px circle at var(--mx, 50%) var(--my, 50%), rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0) 65%);
+  mix-blend-mode: overlay; opacity: 0; transition: opacity 300ms ease;
+}
+@media (hover: hover) and (pointer: fine) {
+  .sheen[data-tilt]:hover::before { opacity: 1; }
+}
+
+/* Frost glint that runs across "Frozen to Perfection." on load, then every few seconds */
+.frost {
+  background: linear-gradient(110deg, #67e8f9 42%, #f0fdff 50%, #67e8f9 58%) 100% 0 / 250% 100%;
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .frost { animation: frost 7s ease-in-out 1.3s infinite; }
+}
+@keyframes frost { 0% { background-position: 100% 0; } 18%, 100% { background-position: 0% 0; } }
+
+/* Product photo morph into the modal (View Transitions; other browsers just open the modal) */
+::view-transition-group(product-photo) { animation-duration: 450ms; animation-timing-function: var(--ease-out); }
+
+/* Sliding underline under the active navbar link */
+.nav-indicator { position: absolute; bottom: 2px; left: 0; height: 2px; border-radius: 2px; background: #67e8f9; transition: transform 450ms var(--ease-out), width 450ms var(--ease-out); }
+
+/* Accordion opens to its real height */
+.acc__panel { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 360ms var(--ease-out); }
+.acc__panel > div { overflow: hidden; }
+.acc__panel.is-open { grid-template-rows: 1fr; }
 
 /* Silver Metallic 3D Text Gradient */
 .silver-metallic-text {
@@ -51,7 +186,7 @@ body {
     #dbe5ec 70%,
     #8d9aa5 100%
   );
-  box-shadow: 0 16px 36px -6px rgba(4, 24, 34, 0.4), inset 0 1px 2px rgba(255, 255, 255, 0.95);
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.95);
   border: 1px solid rgba(255, 255, 255, 0.9);
 }
 
@@ -65,7 +200,7 @@ body {
     #dbe5ec 70%,
     #8d9aa5 100%
   );
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35), inset 0 2px 3px rgba(255, 255, 255, 0.95);
+  box-shadow: inset 0 2px 3px rgba(255, 255, 255, 0.95);
   border: 1px solid rgba(255, 255, 255, 0.9);
 }
 
@@ -79,7 +214,7 @@ body {
     #dbe5ec 70%,
     #8d9aa5 100%
   );
-  box-shadow: 0 14px 32px -6px rgba(4, 24, 34, 0.4), inset 0 1px 2px rgba(255, 255, 255, 0.95);
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.95);
   border: 1px solid rgba(255, 255, 255, 0.9);
 }
 
@@ -105,7 +240,7 @@ body {
     #b8c4ce 56%,
     #66737f 100%
   );
-  box-shadow: 0 14px 35px -5px rgba(0, 0, 0, 0.45), inset 0 1px 2px rgba(255, 255, 255, 0.95), inset 0 -2px 4px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.95), inset 0 -2px 4px rgba(0, 0, 0, 0.3);
   border: 1px solid rgba(255, 255, 255, 0.75);
 }
 

@@ -5,14 +5,11 @@ import { ExternalLink, MessageCircle, Mail } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer id="contact" className="text-white pt-14 relative overflow-hidden">
-      {/* Stainless Steel Metallic Gradient Top Line Divider matching Navbar */}
-      <div className="absolute top-0 left-0 right-0 h-[1.5px] stainless-steel-line z-20 pointer-events-none shadow-[0_1px_6px_rgba(255,255,255,0.4)]" />
-
+    <footer id="contact" className="text-white pt-14 relative lg:sticky lg:bottom-0 z-0 overflow-hidden">
       {/* Background Image: BACKGROUND-14.png rotated 180 degrees */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <Image
-          src="/assets/1. COVER/BACKGROUND-14.png"
+          src="/assets/1. COVER/BACKGROUND-14.webp"
           alt="CV Mitra Alam Footer Ocean Background"
           fill
           className="object-cover object-center rotate-180 scale-105"
@@ -26,12 +23,12 @@ export default function Footer() {
           {/* Column 1: Brand Info & Social Icons */}
           <div className="lg:col-span-4 space-y-4 text-left">
             <div>
-              <h3 className="font-display font-extrabold text-xl text-white tracking-wider uppercase drop-shadow-md">
+              <h3 className="font-display font-black text-2xl text-white uppercase">
                 CV MITRA ALAM
               </h3>
             </div>
 
-            <p className="text-xs sm:text-sm text-slate-200 font-normal leading-relaxed max-w-sm drop-shadow">
+            <p className="text-base text-slate-100 font-normal leading-relaxed max-w-sm">
               We select raw material carefully, produce high quality frozen seafood, ready to deliver ocean freshness directly to Global Markets.
             </p>
 
@@ -42,7 +39,7 @@ export default function Footer() {
                 href="https://wa.me/6282190931111?text=Hello%20CV%20Mitra%20Alam%2C%20I%20would%20like%20to%20inquire%20about%20your%20frozen%20seafood%20export%20services."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-[#072d3e]/90 text-cyan-300 border border-cyan-400/40 flex items-center justify-center hover:bg-emerald-600 hover:text-white hover:border-emerald-400 transition-all shadow-md cursor-pointer backdrop-blur-sm"
+                className="w-10 h-10 rounded-full bg-[#072d3e]/90 text-cyan-300 flex items-center justify-center hover:bg-emerald-600 hover:text-white hover:border-emerald-400 transition-all cursor-pointer"
                 aria-label="Contact via WhatsApp"
               >
                 <MessageCircle className="w-5 h-5" />
@@ -53,7 +50,7 @@ export default function Footer() {
                 href="https://www.instagram.com/cv.mitraalam?igsi=NHR0NDE3bGNxZjli"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-[#072d3e]/90 text-cyan-300 border border-cyan-400/40 flex items-center justify-center hover:bg-gradient-to-tr hover:from-amber-500 hover:via-pink-600 hover:to-purple-600 hover:text-white hover:border-pink-400 transition-all shadow-md cursor-pointer backdrop-blur-sm"
+                className="w-10 h-10 rounded-full bg-[#072d3e]/90 text-cyan-300 flex items-center justify-center hover:bg-gradient-to-tr hover:from-amber-500 hover:via-pink-600 hover:to-purple-600 hover:text-white hover:border-pink-400 transition-all cursor-pointer"
                 aria-label="Follow CV Mitra Alam on Instagram"
               >
                 <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
@@ -64,7 +61,7 @@ export default function Footer() {
               {/* Email Direct Link */}
               <a
                 href="mailto:mitraalam9@gmail.com"
-                className="w-10 h-10 rounded-full bg-[#072d3e]/90 text-cyan-300 border border-cyan-400/40 flex items-center justify-center hover:bg-cyan-600 hover:text-white hover:border-cyan-300 transition-all shadow-md cursor-pointer backdrop-blur-sm"
+                className="w-10 h-10 rounded-full bg-[#072d3e]/90 text-cyan-300 flex items-center justify-center hover:bg-cyan-600 hover:text-white hover:border-cyan-300 transition-all cursor-pointer"
                 aria-label="Email CV Mitra Alam directly"
               >
                 <Mail className="w-5 h-5" />
@@ -74,12 +71,12 @@ export default function Footer() {
 
           {/* Column 2: REAL GOOGLE MAPS EMBED */}
           <div className="lg:col-span-4 space-y-3 text-left">
-            <h4 className="font-display font-black text-sm tracking-wider uppercase text-cyan-300 drop-shadow">
-              MAPS
+            <h4 className="font-display font-black text-lg text-cyan-300">
+              Map
             </h4>
 
             {/* Real Interactive Google Maps Embed */}
-            <div className="rounded-2xl overflow-hidden border-2 border-cyan-400/40 shadow-xl relative h-44 bg-[#0d3446] group">
+            <div className="rounded-2xl overflow-hidden relative h-44 bg-[#0d3446] group">
               <iframe
                 title="CV MITRA ALAM Real Factory Location Map"
                 src="https://maps.google.com/maps?q=Jl.+Lantebung+No.+9,+Makassar,+Sulawesi+Selatan&t=&z=15&ie=UTF8&iwloc=&output=embed"
@@ -95,26 +92,26 @@ export default function Footer() {
                 href="https://maps.google.com/?q=Jl.+Lantebung+No.+9,+Makassar,+Sulawesi+Selatan"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="absolute bottom-2 right-2 px-2.5 py-1 rounded-md bg-[#041822]/90 hover:bg-[#072d3e] text-cyan-300 text-[10px] font-bold border border-cyan-400/40 flex items-center gap-1 shadow-md transition-all cursor-pointer backdrop-blur-sm"
+                className="absolute bottom-2 right-2 px-2.5 py-1 rounded-md bg-[#041822]/90 hover:bg-[#072d3e] text-cyan-300 text-sm font-bold flex items-center gap-1 transition-all cursor-pointer"
               >
-                <span>Buka Google Maps</span>
+                <span>Open in Google Maps</span>
                 <ExternalLink className="w-3 h-3" />
               </a>
             </div>
           </div>
 
-          {/* Column 3: LOCATION & CONTACT */}
+          {/* Column 3: Location & contact */}
           <div className="lg:col-span-4 space-y-3 text-left">
-            <h4 className="font-display font-black text-sm tracking-wider uppercase text-cyan-300 drop-shadow">
-              LOCATION & CONTACT
+            <h4 className="font-display font-black text-lg text-cyan-300">
+              Location & contact
             </h4>
 
             {/* Frosted White/Silver Card */}
-            <div className="metallic-card rounded-2xl p-5 text-[#072331] shadow-xl space-y-3.5 border border-white/80 backdrop-blur-md">
-              <div className="flex items-start gap-3 text-xs leading-relaxed font-semibold">
+            <div className="metallic-card rounded-2xl p-5 text-[#072331] space-y-3.5">
+              <div className="flex items-start gap-3 text-sm leading-relaxed font-semibold">
                 <div className="relative w-5 h-5 shrink-0 mt-0.5">
                   <Image
-                    src="/assets/9. CONTACT US/contact us-10.png"
+                    src="/assets/9. CONTACT US/contact us-10.webp"
                     alt="Location"
                     fill
                     className="object-contain"
@@ -126,10 +123,10 @@ export default function Footer() {
                 </span>
               </div>
 
-              <div className="flex items-center gap-3 text-xs font-bold border-t border-slate-300/60 pt-2.5">
+              <div className="flex items-center gap-3 text-sm font-bold pt-1">
                 <div className="relative w-5 h-5 shrink-0">
                   <Image
-                    src="/assets/9. CONTACT US/contact us-11.png"
+                    src="/assets/9. CONTACT US/contact us-11.webp"
                     alt="Phone"
                     fill
                     className="object-contain"
@@ -143,10 +140,10 @@ export default function Footer() {
                 </a>
               </div>
 
-              <div className="flex items-center gap-3 text-xs font-bold border-t border-slate-300/60 pt-2.5">
+              <div className="flex items-center gap-3 text-sm font-bold pt-1">
                 <div className="relative w-5 h-5 shrink-0">
                   <Image
-                    src="/assets/9. CONTACT US/contact us-12.png"
+                    src="/assets/9. CONTACT US/contact us-12.webp"
                     alt="Email"
                     fill
                     className="object-contain"
@@ -154,7 +151,7 @@ export default function Footer() {
                 </div>
                 <a
                   href="mailto:mitraalam9@gmail.com"
-                  className="hover:text-cyan-800 transition-colors text-xs font-medium"
+                  className="hover:text-cyan-800 transition-colors text-sm font-semibold"
                 >
                   mitraalam9@gmail.com
                 </a>
@@ -164,9 +161,17 @@ export default function Footer() {
         </div>
       </div>
 
+      {/* Closing wordmark at full width */}
+      <p
+        aria-hidden="true"
+        className="relative z-10 px-4 sm:px-6 lg:px-8 font-display font-black text-[10.5vw] leading-[0.8] tracking-[-0.04em] text-white/10 whitespace-nowrap text-center select-none translate-y-[0.12em]"
+      >
+        CV MITRA ALAM
+      </p>
+
       {/* Bottom Copyright Bar */}
-      <div className="bg-[#031119]/90 text-center py-4 border-t border-cyan-500/20 relative z-10 backdrop-blur-sm">
-        <p className="text-[11px] text-slate-400 font-medium tracking-wider">
+      <div className="bg-[#031119]/90 text-center py-4 relative z-10">
+        <p className="text-sm text-slate-300 font-medium">
           &copy; 2026 CV Mitra Alam. All Rights Reserved.
         </p>
       </div>

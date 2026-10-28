@@ -5,7 +5,7 @@ import Image from "next/image";
 export default function AboutUs() {
   const coreValues = [
     {
-      title: "QUALITY",
+      title: "Quality",
       description:
         "Raw materials sourced exclusively from certified suppliers with proven cold–chain handling expertise.",
       icon: (
@@ -25,7 +25,7 @@ export default function AboutUs() {
       ),
     },
     {
-      title: "PRECISION",
+      title: "Precision",
       description:
         "Delivering the highest quality products with minimal failure tolerance and strict QC standards.",
       icon: (
@@ -47,7 +47,7 @@ export default function AboutUs() {
       ),
     },
     {
-      title: "FLEXIBILITY",
+      title: "Flexibility",
       description:
         "Specializing in custom product specifications and open to discussing unique client needs.",
       icon: (
@@ -73,35 +73,30 @@ export default function AboutUs() {
   return (
     <section
       id="about"
-      className="py-20 text-white relative overflow-hidden"
+      className="py-20 text-white relative overflow-clip"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-20">
         {/* Top Subsection: We Produce High-Quality Frozen Seafood */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           {/* Left Circular Photo */}
           <div className="lg:col-span-4 flex justify-center">
-            <div className="relative w-60 h-60 sm:w-72 sm:h-72 rounded-full overflow-hidden border-4 border-cyan-300 shadow-2xl bg-[#072433] group">
+            <div data-reveal className="relative w-60 h-60 sm:w-72 sm:h-72 rounded-full overflow-clip bg-[#072433] group">
               <Image
-                src="/assets/4. STORY/IMG_7531.JPG"
+                src="/assets/4. STORY/IMG_7531.webp"
                 alt="CV Mitra Alam Frozen Seafood Quality Inspection and Cold Chain Management"
                 fill
-                className="object-cover group-hover:scale-108 transition-transform duration-700"
+                className="object-cover "
               />
             </div>
           </div>
 
           {/* Right Narrative Text */}
-          <div className="lg:col-span-8 space-y-5 text-left">
-            <div>
-              <span className="text-cyan-400 text-xs sm:text-sm font-bold tracking-[0.2em] uppercase block mb-1">
-                About CV MITRA ALAM
-              </span>
-              <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight drop-shadow-md">
-                We Produce <span className="text-cyan-400 drop-shadow-[0_2px_10px_rgba(34,211,238,0.3)]">High-Quality</span> Frozen Seafood
-              </h2>
-            </div>
+          <div data-reveal className="lg:col-span-8 space-y-5 text-left">
+            <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-[-0.02em] leading-[1.02]">
+              About CV Mitra Alam
+            </h2>
 
-            <div className="space-y-4 text-slate-100 text-sm sm:text-base font-normal leading-relaxed">
+            <div className="space-y-4 text-slate-100 text-base lg:text-lg font-normal leading-relaxed max-w-[65ch]">
               <p>
                 <strong className="text-white font-semibold">CV Mitra Alam</strong> (<strong className="text-white font-semibold">Mitra Alam</strong>) was established in 2017 as a premium frozen seafood manufacturer based in Makassar, South Sulawesi. Starting with the Indonesian domestic market specializing in pelagic fish, we have continuously elevated our processing standards.
               </p>
@@ -113,14 +108,14 @@ export default function AboutUs() {
         </div>
 
         {/* Middle Subsection: Our COMMITMENT */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center pt-8 border-t border-cyan-200/20">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center pt-8">
           {/* Left Commitment Text */}
-          <div className="lg:col-span-6 space-y-5 text-left order-2 lg:order-1">
-            <h3 className="font-display text-3xl sm:text-4xl font-black text-white uppercase drop-shadow-md">
-              Our <span className="text-cyan-400 drop-shadow-[0_2px_10px_rgba(34,211,238,0.3)]">COMMITMENT</span>
+          <div data-reveal className="lg:col-span-6 space-y-5 text-left order-2 lg:order-1">
+            <h3 className="font-display text-3xl sm:text-4xl font-black text-white tracking-[-0.02em]">
+              Our commitment
             </h3>
 
-            <div className="space-y-4 text-slate-100 text-sm sm:text-base font-normal leading-relaxed">
+            <div className="space-y-4 text-slate-100 text-base lg:text-lg font-normal leading-relaxed max-w-[65ch]">
               <p>
                 We started as a small operation and steadily expanded our facilities, workforce, and product range. We never imagined our manufacturing capabilities would grow to where they are today.
               </p>
@@ -134,47 +129,49 @@ export default function AboutUs() {
           </div>
 
           {/* Right Factory Packaging Photo - Enlarged and fully visible */}
-          <div className="lg:col-span-6 order-1 lg:order-2">
-            <div className="relative h-80 sm:h-96 md:h-[420px] lg:h-[460px] w-full rounded-3xl overflow-hidden border-4 border-cyan-300 shadow-2xl bg-[#072433] group">
+          <div data-reveal="shutter" className="lg:col-span-6 order-1 lg:order-2">
+            <div
+              className="relative h-80 sm:h-96 md:h-[420px] lg:h-[460px] w-full rounded-3xl overflow-clip bg-[#072433] group">
               <Image
-                src="/assets/5. COMMITMENT/5-02.png"
+                src="/assets/5. COMMITMENT/5-02.webp"
                 alt="CV Mitra Alam Export Packaging and Cold Storage Operations in Makassar"
                 fill
-                className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                className="object-cover object-center "
               />
             </div>
           </div>
         </div>
 
-        {/* Bottom Subsection: Our CORE VALUES matching User's Mockup */}
-        <div className="space-y-8 pt-8 border-t border-cyan-200/20 text-center">
-          <h3 className="font-display text-3xl sm:text-4xl font-black text-white uppercase drop-shadow-md">
-            Our <span className="text-cyan-400 drop-shadow-[0_2px_10px_rgba(34,211,238,0.3)]">CORE VALUES</span>
-          </h3>
+        {/* Bottom Subsection: Core values as a list set large, heading held on the left */}
+        <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 pt-8">
+          <div className="lg:col-span-4">
+            <h3 data-reveal className="lg:sticky lg:top-28 font-display text-5xl sm:text-6xl font-black text-white tracking-[-0.03em] leading-none">
+              Our core values
+            </h3>
+          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
-            {coreValues.map((val) => (
-              <div
+          <ul className="lg:col-span-8 space-y-3">
+            {coreValues.map((val, i) => (
+              <li
                 key={val.title}
-                className="bg-[#051c27] rounded-3xl p-6 sm:p-8 text-center space-y-4 shadow-2xl border border-cyan-500/20 hover:border-cyan-400/50 hover:translate-y-[-4px] transition-all duration-300 flex flex-col items-center justify-start h-full group"
+                data-reveal
+                style={{ "--i": i } as React.CSSProperties}
+                className="grid sm:grid-cols-12 gap-4 sm:gap-8 items-start rounded-3xl bg-[#051c27]/70 hover:bg-[#051c27] p-6 sm:p-8 transition-colors duration-300 group"
               >
-                {/* Circular Icon with Cyan Border matching Screenshot */}
-                <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#041722] border-2 border-cyan-400 flex items-center justify-center mx-auto shadow-[0_0_15px_rgba(6,182,212,0.25)] group-hover:scale-105 transition-transform">
-                  {val.icon}
+                <div className="sm:col-span-5 flex items-center gap-4">
+                  <div className="w-14 h-14 shrink-0 rounded-full bg-[#041722] text-cyan-300 flex items-center justify-center group-hover:scale-105 transition-transform [&_svg]:w-7 [&_svg]:h-7 [&_svg]:text-cyan-300">
+                    {val.icon}
+                  </div>
+                  <h4 className="font-display font-black text-3xl sm:text-4xl tracking-[-0.02em] text-white">
+                    {val.title}
+                  </h4>
                 </div>
-
-                {/* Core Value Title in Cyan */}
-                <h4 className="font-display font-black text-lg sm:text-xl text-cyan-300 tracking-wider uppercase">
-                  {val.title}
-                </h4>
-
-                {/* Core Value Narrative Description */}
-                <p className="text-slate-200 text-xs sm:text-sm font-normal leading-relaxed">
+                <p className="sm:col-span-7 text-slate-100 text-base sm:text-lg leading-relaxed sm:pt-2">
                   {val.description}
                 </p>
-              </div>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </div>
     </section>

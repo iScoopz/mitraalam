@@ -1,8 +1,8 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import Image from "next/image";
-import { X, CheckCircle, Package, Scale, Snowflake, Phone, ArrowRight } from "lucide-react";
+import { X, CheckCircle, Package, Scale, Snowflake, Phone } from "lucide-react";
 
 export interface SeafoodProduct {
   id: string;
@@ -25,6 +25,8 @@ interface ProductModalProps {
 }
 
 export default function ProductModal({ product, onClose }: ProductModalProps) {
+  const closeRef = useRef<HTMLButtonElement>(null);
+
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
@@ -32,6 +34,7 @@ export default function ProductModal({ product, onClose }: ProductModalProps) {
     if (product) {
       document.body.style.overflow = "hidden";
       window.addEventListener("keydown", handleKeyDown);
+      closeRef.current?.focus();
     }
     return () => {
       document.body.style.overflow = "unset";
@@ -53,15 +56,18 @@ export default function ProductModal({ product, onClose }: ProductModalProps) {
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-[#041822]/85 backdrop-blur-md p-4 sm:p-6 overflow-y-auto animate-in fade-in duration-200"
+      className="modal-backdrop fixed inset-0 z-50 flex items-center justify-center bg-[#041822]/90 p-4 sm:p-6 overflow-y-auto"
       onClick={onClose}
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="product-modal-title"
     >
       <div
-        className="relative max-w-2xl w-full bg-[#072433] rounded-2xl border border-cyan-400/40 shadow-2xl overflow-hidden text-white my-8 animate-in zoom-in-95 duration-200"
+        className="modal-panel relative max-w-2xl w-full bg-[#072433] rounded-3xl shadow-2xl overflow-hidden text-white my-8"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Top Header Bar */}
-        <div className="relative h-60 sm:h-72 w-full bg-[#051c28] flex items-center justify-center overflow-hidden">
+        <div style={product.image ? { viewTransitionName: "product-photo" } : undefined} className="relative h-60 sm:h-72 w-full bg-[#051c28] flex items-center justify-center overflow-hidden">
           {product.image ? (
             <Image
               src={product.image}
@@ -72,10 +78,10 @@ export default function ProductModal({ product, onClose }: ProductModalProps) {
             />
           ) : (
             <div className="flex flex-col items-center justify-center p-6 text-center space-y-2">
-              <span className="px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-widest bg-amber-400 text-slate-900 shadow-lg">
+              <span className="px-4 py-1.5 rounded-full text-sm font-bold bg-amber-400 text-slate-900">
                 Coming Soon
               </span>
-              <p className="text-slate-300 text-xs font-tech font-semibold">
+              <p className="text-slate-200 text-sm font-medium">
                 Photo currently unavailable &bull; Product details verified
               </p>
             </div>
@@ -84,8 +90,9 @@ export default function ProductModal({ product, onClose }: ProductModalProps) {
 
           {/* Close Button */}
           <button
+            ref={closeRef}
             onClick={onClose}
-            className="absolute top-4 right-4 w-9 h-9 rounded-full bg-[#041822]/80 text-cyan-300 border border-cyan-400/50 flex items-center justify-center hover:bg-cyan-900/60 hover:text-white transition-colors cursor-pointer shadow-lg z-10"
+            className="absolute top-4 right-4 w-10 h-10 rounded-full bg-[#041822]/85 text-cyan-300 flex items-center justify-center hover:bg-[#041822] hover:text-white focus-visible:outline-2 focus-visible:outline-cyan-300 transition-colors cursor-pointer z-10"
             aria-label="Close modal"
           >
             <X className="w-5 h-5" />
@@ -93,11 +100,11 @@ export default function ProductModal({ product, onClose }: ProductModalProps) {
 
           {/* Badges Container */}
           <div className="absolute top-4 left-4 flex items-center gap-2 z-10">
-            <span className="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-cyan-500/90 text-[#041822] shadow-md">
+            <span className="px-3 py-1 rounded-full text-sm font-semibold bg-cyan-300 text-[#041822]">
               {product.category}
             </span>
             {product.isComingSoon && (
-              <span className="px-3 py-1 rounded-full text-xs font-black uppercase tracking-wider bg-amber-400 text-slate-900 shadow-md">
+              <span className="px-3 py-1 rounded-full text-sm font-bold bg-amber-400 text-slate-900">
                 Coming Soon
               </span>
             )}
@@ -105,10 +112,10 @@ export default function ProductModal({ product, onClose }: ProductModalProps) {
 
           {/* Bottom Title on Image */}
           <div className="absolute bottom-4 left-4 right-4">
-            <h2 className="font-display text-2xl sm:text-3xl font-extrabold text-white tracking-wide">
+            <h2 id="product-modal-title" className="font-display text-3xl sm:text-4xl font-black text-white tracking-[-0.02em]">
               {product.name}
             </h2>
-            <p className="text-cyan-300 text-sm font-tech italic">
+            <p className="text-cyan-300 text-base italic">
               ( {product.scientificName} )
             </p>
           </div>
@@ -117,20 +124,20 @@ export default function ProductModal({ product, onClose }: ProductModalProps) {
         {/* Content Body */}
         <div className="p-6 space-y-6">
           {product.description && product.description.trim() !== "" && (
-            <p className="text-sm text-slate-300 font-light leading-relaxed">
+            <p className="text-base text-slate-100 leading-relaxed">
               {product.description}
             </p>
           )}
 
           {/* Technical Specifications Grid */}
           {hasAnySpec && (
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 bg-[#051c28] p-4 rounded-xl border border-cyan-500/20 text-xs">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 bg-[#051c28] p-5 rounded-2xl text-base">
               {validProcessingTypes.length > 0 && (
                 <div className="space-y-1">
-                  <span className="text-cyan-400 font-bold uppercase flex items-center gap-1.5 text-[11px] tracking-wider">
+                  <span className="text-cyan-300 font-semibold flex items-center gap-2 text-sm">
                     <Package className="w-3.5 h-3.5" /> Processing Styles
                   </span>
-                  <ul className="text-slate-200 space-y-0.5 pl-5 list-disc">
+                  <ul className="text-slate-100 space-y-0.5 pl-5 list-disc">
                     {validProcessingTypes.map((t, idx) => (
                       <li key={idx}>{t}</li>
                     ))}
@@ -140,10 +147,10 @@ export default function ProductModal({ product, onClose }: ProductModalProps) {
 
               {hasFreezingMethod && (
                 <div className="space-y-1">
-                  <span className="text-cyan-400 font-bold uppercase flex items-center gap-1.5 text-[11px] tracking-wider">
+                  <span className="text-cyan-300 font-semibold flex items-center gap-2 text-sm">
                     <Snowflake className="w-3.5 h-3.5" /> Freezing Technique
                   </span>
-                  <p className="text-slate-200 font-tech font-medium">
+                  <p className="text-slate-100 font-medium">
                     {product.freezingMethod}
                   </p>
                 </div>
@@ -151,10 +158,10 @@ export default function ProductModal({ product, onClose }: ProductModalProps) {
 
               {hasSizeGrades && (
                 <div className="space-y-1">
-                  <span className="text-cyan-400 font-bold uppercase flex items-center gap-1.5 text-[11px] tracking-wider">
+                  <span className="text-cyan-300 font-semibold flex items-center gap-2 text-sm">
                     <Scale className="w-3.5 h-3.5" /> Available Sizing
                   </span>
-                  <p className="text-slate-200 font-tech">
+                  <p className="text-slate-100 font-tech">
                     {product.sizeGrades}
                   </p>
                 </div>
@@ -162,10 +169,10 @@ export default function ProductModal({ product, onClose }: ProductModalProps) {
 
               {hasPackingSpec && (
                 <div className="space-y-1">
-                  <span className="text-cyan-400 font-bold uppercase flex items-center gap-1.5 text-[11px] tracking-wider">
+                  <span className="text-cyan-300 font-semibold flex items-center gap-2 text-sm">
                     <CheckCircle className="w-3.5 h-3.5 text-teal-400" /> Export Packaging
                   </span>
-                  <p className="text-slate-200">
+                  <p className="text-slate-100">
                     {product.packingSpec}
                   </p>
                 </div>
@@ -179,11 +186,10 @@ export default function ProductModal({ product, onClose }: ProductModalProps) {
               href={`https://wa.me/6282190931111?text=${waMessage}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto bg-gradient-to-r from-teal-500 to-cyan-500 hover:from-teal-400 hover:to-cyan-400 text-[#041822] font-bold text-xs px-6 py-3 rounded-xl uppercase tracking-wider shadow-lg flex items-center justify-center gap-2 transition-transform active:scale-95 cursor-pointer"
+              className="w-full sm:w-auto bg-cyan-300 hover:bg-white text-[#041822] font-bold text-base px-6 py-3.5 rounded-full flex items-center justify-center gap-2 transition active:scale-95 cursor-pointer"
             >
               <Phone className="w-4 h-4" />
-              <span>Inquire via WhatsApp</span>
-              <ArrowRight className="w-4 h-4" />
+              <span>Inquire about {product.name}</span>
             </a>
           </div>
         </div>

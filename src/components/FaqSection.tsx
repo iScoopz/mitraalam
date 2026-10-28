@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Send, Mail, ChevronDown, HelpCircle } from "lucide-react";
+import { Send, Mail, ChevronDown } from "lucide-react";
 
 export default function FaqSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
@@ -37,92 +37,89 @@ export default function FaqSection() {
   return (
     <section
       id="faq"
-      className="pt-12 pb-16 text-white relative overflow-hidden"
+      className="pt-12 pb-16 text-white relative overflow-clip"
     >
-      {/* Subtle Background Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
-
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
         {/* FAQ Header */}
-        <div className="text-center space-y-2">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan-500/15 border border-cyan-400/30 text-cyan-300 text-xs font-bold uppercase tracking-widest">
-            <HelpCircle className="w-3.5 h-3.5 text-cyan-400" />
-            Frequently Asked Questions
+        <div className="lg:col-span-5 lg:sticky lg:top-28 space-y-8">
+          <div data-reveal className="space-y-4">
+            <h2 className="font-display text-5xl sm:text-6xl font-black text-white tracking-[-0.03em] leading-none">
+              Export FAQ
+            </h2>
+            <p className="text-slate-100 text-base sm:text-lg font-normal leading-relaxed">
+              Common questions about our frozen seafood exports, licensing and facilities in Makassar.
+            </p>
           </div>
-          <h2 className="font-display text-3xl sm:text-4xl font-black text-white tracking-wide uppercase drop-shadow-md">
-            FAQ &amp; Export <span className="text-cyan-400 drop-shadow-[0_2px_10px_rgba(34,211,238,0.3)]">Information</span>
-          </h2>
-          <p className="text-slate-200 text-xs sm:text-sm max-w-xl mx-auto font-normal">
-            Pertanyaan umum seputar layanan ekspor seafood beku, perizinan, dan fasilitas CV Mitra Alam Makassar.
-          </p>
+
+          {/* Inquiry Call to Action Box */}
+          <div
+            id="inquiry"
+            data-reveal
+            className="p-7 sm:p-8 rounded-3xl bg-[#072433] space-y-4"
+          >
+            <h3 className="font-display text-2xl sm:text-3xl font-black text-white tracking-[-0.02em] leading-tight">
+              Need a custom specification?
+            </h3>
+            <p className="text-slate-100 text-base font-normal leading-relaxed">
+              Our export sales team in Makassar is ready to assist you with
+              technical product sheets, lab reports, and competitive price quotes.
+            </p>
+            <div className="flex flex-wrap items-center gap-3 pt-2">
+              <a
+                href="https://wa.me/6282190931111?text=Hello%20CV%20Mitra%20Alam%2C%20I%20have%20an%20export%20inquiry%20regarding%20frozen%20seafood."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-emerald-500 hover:bg-emerald-400 text-[#041822] text-sm sm:text-base font-bold hover:scale-105 active:scale-95 transition-all cursor-pointer"
+              >
+                <Send className="w-4 h-4" />
+                <span>Chat on WhatsApp (+62 821-9093-1111)</span>
+              </a>
+              <a
+                href="mailto:mitraalam9@gmail.com"
+                className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-[#041822] hover:bg-[#0b3548] text-cyan-300 text-sm sm:text-base font-bold hover:scale-105 active:scale-95 transition-all cursor-pointer"
+              >
+                <Mail className="w-4 h-4" />
+                <span>Email: mitraalam9@gmail.com</span>
+              </a>
+            </div>
+          </div>
         </div>
 
         {/* Visible Accordion matching FAQPage Schema */}
-        <div className="space-y-3">
+        <div className="lg:col-span-7 space-y-3">
           {faqs.map((faq, index) => {
             const isOpen = openIndex === index;
             return (
               <div
                 key={index}
-                className="rounded-2xl border border-cyan-500/20 bg-[#051c27]/85 backdrop-blur-sm overflow-hidden transition-all duration-300 hover:border-cyan-400/40 shadow-lg"
+                className="rounded-2xl bg-[#051c27]/85 overflow-hidden transition-colors duration-300 hover:bg-[#062636]"
               >
                 <button
                   onClick={() => setOpenIndex(isOpen ? null : index)}
                   className="w-full text-left px-5 sm:px-6 py-4 sm:py-5 flex items-center justify-between gap-4 cursor-pointer group"
                   aria-expanded={isOpen}
                 >
-                  <span className="font-display font-bold text-sm sm:text-base text-slate-100 group-hover:text-cyan-300 transition-colors">
+                  <span className="font-display font-bold text-base sm:text-lg text-slate-100 group-hover:text-cyan-300 transition-colors">
                     {faq.question}
                   </span>
                   <div
-                    className={`w-8 h-8 rounded-full bg-cyan-500/15 border border-cyan-400/30 flex items-center justify-center shrink-0 text-cyan-300 transition-transform duration-300 ${
+                    className={`w-8 h-8 rounded-full bg-cyan-500/15 flex items-center justify-center shrink-0 text-cyan-300 transition-transform duration-300 ${
                       isOpen ? "rotate-180 bg-cyan-400 text-[#041822]" : ""
                     }`}
                   >
                     <ChevronDown className="w-4 h-4" />
                   </div>
                 </button>
-                {isOpen && (
-                  <div className="px-5 sm:px-6 pb-5 pt-1 border-t border-cyan-500/10 text-slate-300 text-xs sm:text-sm leading-relaxed font-normal animate-fadeIn">
-                    <p>{faq.answer}</p>
+                <div className={`acc__panel${isOpen ? " is-open" : ""}`}>
+                  <div>
+                    <p className="px-5 sm:px-6 pb-5 pt-1 text-slate-100 text-base leading-relaxed max-w-[70ch] font-normal">{faq.answer}</p>
                   </div>
-                )}
+                </div>
               </div>
             );
           })}
         </div>
 
-        {/* Inquiry Call to Action Box */}
-        <div
-          id="inquiry"
-          className="p-8 sm:p-10 rounded-3xl bg-gradient-to-r from-[#072433] via-[#083044] to-[#072433] border border-cyan-400/35 text-center space-y-5 shadow-2xl"
-        >
-          <h3 className="font-display text-xl sm:text-2xl lg:text-3xl font-black text-white leading-tight">
-            Have a Specific Seafood Specification or Custom Inquiry?
-          </h3>
-          <p className="text-slate-200 text-xs sm:text-sm md:text-base max-w-2xl mx-auto font-normal leading-relaxed">
-            Our export sales team in Makassar is ready to assist you with
-            technical product sheets, lab reports, and competitive price quotes.
-          </p>
-          <div className="flex flex-wrap justify-center items-center gap-3.5 pt-3">
-            <a
-              href="https://wa.me/6282190931111?text=Hello%20CV%20Mitra%20Alam%2C%20I%20have%20an%20export%20inquiry%20regarding%20frozen%20seafood."
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-white text-xs sm:text-sm font-bold shadow-lg shadow-emerald-500/25 hover:scale-105 active:scale-95 transition-all cursor-pointer"
-            >
-              <Send className="w-4 h-4" />
-              <span>Chat on WhatsApp (+62 821-9093-1111)</span>
-            </a>
-            <a
-              href="mailto:mitraalam9@gmail.com"
-              className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-[#041822] hover:bg-[#072d3e] border border-cyan-400/40 text-cyan-300 text-xs sm:text-sm font-bold shadow-md hover:scale-105 active:scale-95 transition-all cursor-pointer"
-            >
-              <Mail className="w-4 h-4" />
-              <span>Email: mitraalam9@gmail.com</span>
-            </a>
-          </div>
-        </div>
       </div>
     </section>
   );
