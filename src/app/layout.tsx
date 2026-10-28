@@ -1,5 +1,10 @@
 import type { Metadata } from "next";
+import { Outfit, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
+
+// Self-hosted at build time: no request to Google Fonts and no render-blocking @import
+const outfit = Outfit({ subsets: ["latin"], variable: "--font-outfit" });
+const jakarta = Plus_Jakarta_Sans({ subsets: ["latin"], variable: "--font-jakarta" });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://mitraalam.com"),
@@ -38,6 +43,10 @@ export const metadata: Metadata = {
     "GMP Certified Seafood Exporter",
     "Frozen Octopus Indonesia",
     "Eksportir Gurita Makassar",
+    "Supplier Cumi Beku Makassar",
+    "Sotong Beku Indonesia",
+    "Kakap Merah Beku",
+    "Kerapu Beku Makassar",
     "Octopus cyaneus exporter",
     "Frozen Cuttlefish Sepia",
     "Frozen Loligo Squid",
@@ -94,8 +103,8 @@ export const metadata: Metadata = {
         alt: "CV Mitra Alam - Indonesian Frozen Seafood Exporter and Processor Makassar",
       },
     ],
-    locale: "id_ID",
-    alternateLocale: ["en_US"],
+    locale: "en_US",
+    alternateLocale: ["id_ID"],
     type: "website",
   },
   twitter: {
@@ -326,7 +335,7 @@ const jsonLd = {
           name: "Frozen Indonesian Octopus (Octopus cyaneus)",
           description:
             "Wild-caught premium grade Indonesian octopus, thoroughly gutted, eye & beak removed, ball-rolled (IQF) or block frozen (BQF).",
-          image: "https://mitraalam.com/assets/3.%20PRODUCT/octopus.jpeg",
+          image: "https://mitraalam.com/assets/3.%20PRODUCT/octopus.webp",
           category: "Cephalopod",
           brand: {
             "@type": "Brand",
@@ -349,7 +358,7 @@ const jsonLd = {
           name: "Frozen Cuttlefish (Sepia esculenta)",
           description:
             "Tender, snow-white wild Indonesian cuttlefish, whole cleaned or skinless fillet, flash-frozen with IQF or plate freezer.",
-          image: "https://mitraalam.com/assets/3.%20PRODUCT/cuttlefish.jpeg",
+          image: "https://mitraalam.com/assets/3.%20PRODUCT/cuttlefish-jpeg.webp",
           category: "Cephalopod",
           brand: {
             "@type": "Brand",
@@ -372,7 +381,7 @@ const jsonLd = {
           name: "Frozen Loligo Squid (Loligo sp.)",
           description:
             "Directly sourced from clean Indonesian waters, fresh Loligo squid packed in pristine quick-frozen blocks (BQF) or whole cleaned tube & tentacle.",
-          image: "https://mitraalam.com/assets/3.%20PRODUCT/squid.jpeg",
+          image: "https://mitraalam.com/assets/3.%20PRODUCT/squid-jpeg.webp",
           category: "Cephalopod",
           brand: {
             "@type": "Brand",
@@ -395,7 +404,7 @@ const jsonLd = {
           name: "Frozen Snapper (Lutjanus spp.)",
           description:
             "Prime snapper sustainably harvested from Indonesian archipelago waters, available as whole round, WGGS, or skin-on scaled fillet.",
-          image: "https://mitraalam.com/assets/3.%20PRODUCT/snapper.jpg",
+          image: "https://mitraalam.com/assets/3.%20PRODUCT/snapper-jpg.webp",
           category: "Demersal Fish",
           brand: {
             "@type": "Brand",
@@ -418,7 +427,7 @@ const jsonLd = {
           name: "Frozen Grouper (Epinephelus spp.)",
           description:
             "Rich and firm white meat grouper, fast-chilled immediately after dock landing in Makassar and blast frozen at -35°C.",
-          image: "https://mitraalam.com/assets/3.%20PRODUCT/grouper.jpg",
+          image: "https://mitraalam.com/assets/3.%20PRODUCT/grouper-jpg.webp",
           category: "Demersal Fish",
           brand: {
             "@type": "Brand",
@@ -442,7 +451,7 @@ const jsonLd = {
           description:
             "High-oil-content pelagic Spanish mackerel, premium cut for sashimi, steaks, and culinary export markets.",
           image:
-            "https://mitraalam.com/assets/3.%20PRODUCT/spanish%20mackerel.jpeg",
+            "https://mitraalam.com/assets/3.%20PRODUCT/spanish%20mackerel-jpeg.webp",
           category: "Pelagic Fish",
           brand: {
             "@type": "Brand",
@@ -516,8 +525,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="id" className="scroll-smooth">
+    <html lang="en" className={`scroll-smooth ${outfit.variable} ${jakarta.variable}`} suppressHydrationWarning>
       <head>
+        {/* Gate for motion start states: without JS everything stays visible */}
+        <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

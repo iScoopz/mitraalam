@@ -6,7 +6,7 @@ import { ChevronLeft, ChevronRight, Eye, Sparkles } from "lucide-react";
 import { SeafoodProduct } from "./ProductModal";
 
 interface ProductShowcaseProps {
-  onSelectProduct: (product: SeafoodProduct) => void;
+  onSelectProduct: (product: SeafoodProduct, card: HTMLElement) => void;
 }
 
 export default function ProductShowcase({ onSelectProduct }: ProductShowcaseProps) {
@@ -20,7 +20,7 @@ export default function ProductShowcase({ onSelectProduct }: ProductShowcaseProp
       name: "OCTOPUS",
       scientificName: "Octopus cyaneus",
       category: "Cephalopod",
-      image: "/assets/3. PRODUCT/Salinan CEP. OCTOPUS BALL _ 3.jpeg",
+      image: "/assets/3. PRODUCT/Salinan CEP. OCTOPUS BALL _ 3.webp",
       imageClass: "object-cover object-center",
       processingTypes: ["Whole Cleaned Ball", "Whole Block"],
       freezingMethod: "Individual Quick Freezing (IQF) / Air Blast Quick Freezing",
@@ -32,7 +32,7 @@ export default function ProductShowcase({ onSelectProduct }: ProductShowcaseProp
       name: "CUTTLEFISH",
       scientificName: "Sepia esculenta",
       category: "Cephalopod",
-      image: "/assets/3. PRODUCT/cuttlefish.png",
+      image: "/assets/3. PRODUCT/cuttlefish-png.webp",
       imageClass: "object-cover object-center",
       processingTypes: ["Whole Cleaned"],
       freezingMethod: "IQF / Air Blast Quick Freezing",
@@ -44,7 +44,7 @@ export default function ProductShowcase({ onSelectProduct }: ProductShowcaseProp
       name: "SQUID",
       scientificName: "Loligo sp.",
       category: "Cephalopod",
-      image: "/assets/3. PRODUCT/squid.png",
+      image: "/assets/3. PRODUCT/squid-png.webp",
       imageClass: "object-cover object-center",
       processingTypes: ["Whole Block"],
       freezingMethod: "Air Blast Quick Freezing",
@@ -56,7 +56,7 @@ export default function ProductShowcase({ onSelectProduct }: ProductShowcaseProp
       name: "SNAPPER",
       scientificName: "Lutjanus spp.",
       category: "Demersal",
-      image: "/assets/3. PRODUCT/snapper.png",
+      image: "/assets/3. PRODUCT/snapper-png.webp",
       imageClass: "object-cover object-center",
       processingTypes: ["Whole Round / WGGS / Fillet", "Skin-on Scaled Fillet"],
       freezingMethod: "IQF / Air Blast Quick Freezing",
@@ -68,7 +68,7 @@ export default function ProductShowcase({ onSelectProduct }: ProductShowcaseProp
       name: "GROUPER",
       scientificName: "Epinephelus spp.",
       category: "Demersal",
-      image: "/assets/3. PRODUCT/grouper.png",
+      image: "/assets/3. PRODUCT/grouper-png.webp",
       imageClass: "object-cover object-center",
       processingTypes: ["Whole Round / WGGS", "Head Only"],
       freezingMethod: "Air Blast Quick Freezing",
@@ -80,7 +80,7 @@ export default function ProductShowcase({ onSelectProduct }: ProductShowcaseProp
       name: "PARROT FISH",
       scientificName: "Scarus spp.",
       category: "Demersal",
-      image: "/assets/3. PRODUCT/parrot fish.jpeg",
+      image: "/assets/3. PRODUCT/parrot fish.webp",
       imageClass: "object-cover object-center",
       processingTypes: ["Whole, Gilled, Gutted, Scaled (WGGS)", "Whole Round"],
       freezingMethod: "Individual Quick Freezing (IQF) with Glazing",
@@ -92,7 +92,7 @@ export default function ProductShowcase({ onSelectProduct }: ProductShowcaseProp
       name: "RABBIT FISH",
       scientificName: "Siganus spp.",
       category: "Demersal",
-      image: "/assets/3. PRODUCT/rabbit fish.jpg",
+      image: "/assets/3. PRODUCT/rabbit fish.webp",
       imageClass: "object-cover object-center",
       processingTypes: ["Whole Round"],
       freezingMethod: "IQF / Air Blast Quick Freezing",
@@ -104,7 +104,7 @@ export default function ProductShowcase({ onSelectProduct }: ProductShowcaseProp
       name: "LEATHER JACKET",
       scientificName: "Aluterus monoceros",
       category: "Demersal",
-      image: "/assets/3. PRODUCT/leather jacket.png",
+      image: "/assets/3. PRODUCT/leather jacket.webp",
       imageClass: "object-cover object-center",
       isComingSoon: true,
       processingTypes: [],
@@ -117,7 +117,7 @@ export default function ProductShowcase({ onSelectProduct }: ProductShowcaseProp
       name: "MACKEREL SCAD",
       scientificName: "Decapterus spp.",
       category: "Pelagic",
-      image: "/assets/3. PRODUCT/mackerel scad.jpeg",
+      image: "/assets/3. PRODUCT/mackerel scad.webp",
       imageClass: "object-cover object-center",
       processingTypes: ["Whole Round"],
       freezingMethod: "Block in Air Blast Quick Freezer",
@@ -129,7 +129,7 @@ export default function ProductShowcase({ onSelectProduct }: ProductShowcaseProp
       name: "SPANISH MACKEREL",
       scientificName: "Scomberomorus commerson",
       category: "Pelagic",
-      image: "/assets/3. PRODUCT/spanish mackerel.png",
+      image: "/assets/3. PRODUCT/spanish mackerel-png.webp",
       imageClass: "object-cover object-center",
       isComingSoon: true,
       processingTypes: [],
@@ -230,29 +230,29 @@ export default function ProductShowcase({ onSelectProduct }: ProductShowcaseProp
   return (
     <section
       id="product"
-      className="pt-16 pb-20 text-white relative overflow-hidden"
+      className="pt-16 pb-20 text-white relative overflow-clip"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-8">
         {/* Section Header matching Screenshot 1 */}
-        <div className="text-center space-y-3">
-          <h2 className="font-display text-4xl sm:text-5xl font-black text-white tracking-wide uppercase drop-shadow-md">
-            Our <span className="text-cyan-400 drop-shadow-[0_2px_10px_rgba(34,211,238,0.3)]">PRODUCT</span>
+        <div data-reveal className="grid lg:grid-cols-12 gap-x-10 gap-y-5 items-end">
+          <h2 className="lg:col-span-7 font-display text-5xl sm:text-6xl font-black text-white tracking-[-0.03em] leading-none">
+            Our products
           </h2>
-          <p className="text-slate-100 text-xs sm:text-sm max-w-2xl mx-auto font-medium leading-relaxed drop-shadow-sm">
+          <p className="lg:col-span-5 text-slate-100 text-base sm:text-lg font-medium leading-relaxed">
             We specialize in processing high-quality seafood, freezing fresh raw materials at peak freshness.
           </p>
 
           {/* Filter Tabs matching Mockup Pill Style */}
-          <div className="flex flex-wrap justify-center gap-2.5 pt-3">
+          <div className="lg:col-span-12 flex flex-wrap gap-2.5">
             {categories.map((cat) => {
               const isActive = activeCategory === cat.value;
               return (
                 <button
                   key={cat.label}
                   onClick={() => setActiveCategory(cat.value)}
-                  className={`px-5 py-2 rounded-full text-xs font-extrabold tracking-wider transition-all duration-200 uppercase cursor-pointer ${isActive
-                    ? "bg-[#062432] text-cyan-300 border-2 border-cyan-400/80 shadow-lg scale-105"
-                    : "bg-[#062432]/70 text-slate-200 hover:bg-[#062432] hover:text-white border border-cyan-500/30"
+                  className={`px-5 py-2.5 rounded-full text-sm font-bold transition-all duration-200 cursor-pointer ${isActive
+                    ? "bg-cyan-300 text-[#041822]"
+                    : "bg-[#062432]/70 text-slate-100 hover:bg-[#062432] hover:text-white"
                     }`}
                 >
                   {cat.label}
@@ -291,17 +291,21 @@ export default function ProductShowcase({ onSelectProduct }: ProductShowcaseProp
             {filteredProducts.map((prod) => (
               <div
                 key={prod.id}
-                onClick={() => onSelectProduct(prod)}
-                className="w-[260px] sm:w-[290px] shrink-0 metallic-card rounded-2xl p-4 sm:p-5 text-[#072331] shadow-xl hover:translate-y-[-6px] hover:shadow-2xl transition-all duration-300 cursor-pointer flex flex-col justify-between group/card border border-white/80"
+                onClick={(e) => onSelectProduct(prod, e.currentTarget)}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); onSelectProduct(prod, e.currentTarget); } }}
+                data-tilt
+                className="sheen w-[260px] sm:w-[290px] shrink-0 metallic-card rounded-2xl p-4 sm:p-5 text-[#072331] hover:translate-y-[-6px] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-300 transition-all duration-300 cursor-pointer flex flex-col justify-between group/card"
               >
                 <div>
                   {/* Category Pill on Card Header */}
                   <div className="flex justify-between items-center mb-3.5">
-                    <span className="bg-[#072433] text-cyan-300 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-inner">
+                    <span className="bg-[#072433] text-cyan-300 text-xs font-semibold px-3 py-1 rounded-full">
                       {prod.category}
                     </span>
                     {prod.isComingSoon && (
-                      <span className="bg-amber-400 text-slate-900 text-[10px] font-black px-2.5 py-0.5 rounded-full uppercase tracking-wider shadow-sm">
+                      <span className="bg-amber-400 text-slate-900 text-xs font-bold px-2.5 py-0.5 rounded-full">
                         Coming Soon
                       </span>
                     )}
@@ -309,7 +313,7 @@ export default function ProductShowcase({ onSelectProduct }: ProductShowcaseProp
 
                   {/* Seafood Image Container */}
                   {prod.image ? (
-                    <div className="relative h-44 w-full rounded-xl overflow-hidden bg-slate-100 shadow-inner border border-slate-300/80 mb-4">
+                    <div data-photo className="relative h-44 w-full rounded-xl overflow-hidden bg-slate-100 mb-4">
                       <Image
                         src={prod.image}
                         alt={`Frozen ${prod.name} (${prod.scientificName}) - CV MITRA ALAM Indonesian Seafood Exporter`}
@@ -318,21 +322,21 @@ export default function ProductShowcase({ onSelectProduct }: ProductShowcaseProp
                         className={`object-cover group-hover/card:scale-105 group-hover/card:brightness-105 transition-all duration-500 ${prod.imageClass || "object-cover object-center"}`}
                       />
                       <div className="absolute inset-0 bg-[#072433]/30 opacity-0 group-hover/card:opacity-100 transition-opacity flex items-center justify-center">
-                        <span className="bg-[#072433] text-cyan-300 text-[11px] font-bold px-3.5 py-1.5 rounded-lg flex items-center gap-1 shadow-md">
+                        <span className="bg-[#072433] text-cyan-300 text-sm font-bold px-3.5 py-1.5 rounded-lg flex items-center gap-1">
                           <Eye className="w-3.5 h-3.5" /> View Specs
                         </span>
                       </div>
                     </div>
                   ) : (
-                    <div className="relative h-44 w-full rounded-xl overflow-hidden bg-gradient-to-br from-[#062432] via-[#093549] to-[#041a24] shadow-inner border border-cyan-500/30 mb-4 flex flex-col items-center justify-center p-4 text-center group-hover/card:border-amber-400/60 transition-colors">
-                      <span className="bg-amber-400 text-slate-900 font-black text-[10px] uppercase px-3 py-1 rounded-full tracking-widest shadow-md mb-1.5">
+                    <div className="relative h-44 w-full rounded-xl overflow-hidden bg-[#062432] mb-4 flex flex-col items-center justify-center p-4 text-center group-hover/card:border-amber-400/60 transition-colors">
+                      <span className="bg-amber-400 text-slate-900 font-bold text-xs px-3 py-1 rounded-full mb-1.5">
                         Coming Soon
                       </span>
-                      <span className="text-[10px] font-bold text-slate-300 uppercase tracking-wider">
+                      <span className="text-sm font-semibold text-slate-200">
                         Image Unavailable
                       </span>
                       <div className="absolute inset-0 bg-[#072433]/40 opacity-0 group-hover/card:opacity-100 transition-opacity flex items-center justify-center">
-                        <span className="bg-[#072433] text-cyan-300 text-[11px] font-bold px-3.5 py-1.5 rounded-lg flex items-center gap-1 shadow-md">
+                        <span className="bg-[#072433] text-cyan-300 text-sm font-bold px-3.5 py-1.5 rounded-lg flex items-center gap-1">
                           <Eye className="w-3.5 h-3.5" /> View Specs
                         </span>
                       </div>
@@ -341,16 +345,16 @@ export default function ProductShowcase({ onSelectProduct }: ProductShowcaseProp
 
                   {/* Product Title & Latin Name */}
                   <div className="space-y-1 mb-3.5 text-left">
-                    <h3 className="font-display font-extrabold text-base sm:text-lg text-[#072331] tracking-wide uppercase leading-tight group-hover/card:text-[#0b485e] transition-colors">
+                    <h3 className="font-display font-extrabold text-base sm:text-lg text-[#072331] uppercase leading-tight group-hover/card:text-[#0b485e] transition-colors">
                       {prod.name}
                     </h3>
-                    <p className="text-[11px] text-slate-600 font-tech italic font-semibold">
+                    <p className="text-sm text-slate-600 italic font-medium">
                       ( {prod.scientificName} )
                     </p>
                   </div>
 
                   {/* Technical Specifications */}
-                  <div className="space-y-1.5 text-xs text-slate-700 font-medium text-left border-t border-slate-300/60 pt-3">
+                  <div className="space-y-1.5 text-sm text-slate-700 font-medium text-left">
                     {prod.processingTypes
                       ?.filter((pt) => pt && pt.trim() !== "")
                       .map((pt, idx) => (
@@ -360,13 +364,13 @@ export default function ProductShowcase({ onSelectProduct }: ProductShowcaseProp
                         </p>
                       ))}
                     {prod.sizeGrades && prod.sizeGrades.trim() !== "" && (
-                      <p className="font-tech text-slate-900 font-bold pt-1 text-[11px]">
+                      <p className="font-tech text-slate-900 font-bold pt-1 text-sm">
                         {prod.sizeGrades}
                       </p>
                     )}
                     {(!prod.processingTypes?.some((pt) => pt && pt.trim() !== "") &&
                       (!prod.sizeGrades || prod.sizeGrades.trim() === "")) && (
-                        <p className="font-tech text-slate-500 italic text-[11px]">
+                        <p className="text-slate-600 italic text-sm">
                           Specs available on request
                         </p>
                       )}
@@ -374,11 +378,19 @@ export default function ProductShowcase({ onSelectProduct }: ProductShowcaseProp
                 </div>
 
                 {/* Card Bottom Inquire Hint */}
-                <div className="mt-5 pt-3.5 border-t border-slate-300/80 flex items-center justify-between text-xs font-bold text-[#083c4e]">
-                  <span className="tracking-wide">Export Specs</span>
-                  <span className="group-hover/card:translate-x-1.5 transition-transform flex items-center gap-1 text-[#0b5c75]">
-                    Inquire &rarr;
-                  </span>
+                <div className="mt-5 pt-1 flex items-center justify-between text-sm font-bold text-[#083c4e]">
+                  <span className="underline underline-offset-4 decoration-[#083c4e]/30 group-hover/card:decoration-[#083c4e]">View specs</span>
+                  <a
+                    href={`https://wa.me/6282190931111?text=${encodeURIComponent(`Hello CV Mitra Alam, I am interested in ${prod.name} (${prod.scientificName}). Could you share price and specifications?`)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()}
+                    onKeyDown={(e) => e.stopPropagation()}
+                    className="inline-flex items-center px-4 py-2 rounded-full bg-[#072433] text-cyan-300 hover:bg-[#0b485e] hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#072433] transition-colors"
+                    aria-label={`Inquire about ${prod.name} on WhatsApp`}
+                  >
+                    Inquire
+                  </a>
                 </div>
               </div>
             ))}
